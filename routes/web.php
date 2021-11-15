@@ -13,14 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'IndexController@index')->name('index');
+
+// Authenticated users only
+Route::middleware(['auth'])->group(function () {
+    Route::get('/reserveren', 'ReserveController@index')->name('index');
+    Route::get('/tournooien', 'TournamentController@index')->name('index');
 });
 
+// Auth Routes
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
