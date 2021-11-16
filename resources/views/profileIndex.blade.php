@@ -46,7 +46,7 @@
     <div class="container account" data-aos="fade-up">
         <h1>Instellingen</h1>
 
-        <section class="account-details-change">
+        <section class="account-details">
             <div class="list">
                 <div class="list-item"><a href="/profile">Account</a></div>
                 <div class="list-item"><a href="/edit-profile">Aanpassen</a></div>
@@ -76,18 +76,19 @@
 
                         <div class="row">
                             <div class="col">
-                                <label for="inputEmail" class="form-label">Email:</label>
+                                <label for="inputEmail" class="form-label">Email</label>
                                 <p>JohnDoe@mailchimp.com</p>
                             </div>
 
                             <div class="col">
-                                <label for="inputPhone" class="form-label">Telefoonnummer:</label>
+                                <label for="inputPhone" class="form-label">Telefoonnummer</label>
                                 <p>0682736123</p>
                             </div>
                         </div>
 
                     </form>
                 </div>
+            </div>
 
             <div class="profile-reservations">
                 <h1>Reserveringen</h1>
@@ -126,6 +127,7 @@
                 </table>
             </div>
         </section>
+    </div>
 
         <div class="modal fade" tabindex="-1" id="modalDelete" data-bs-backdrop="static" data-bs-keyboard="false" >
             <div class="modal-dialog modal-dialog-centered">
