@@ -49,7 +49,8 @@
             </ul>
           </li>
           @else
-          <li><a class="getstarted" href="/login">Wordt lid!</a></li>
+          <li><a class="nav-link" href="/register">Registeren</a></li>
+          <li><a class="getstarted" href="/login">Inloggen</a></li>
           @endif
 
         </ul>
