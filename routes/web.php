@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'IndexController@index')->name('index');
+Route::get('/menu', 'MenuController@index')->name('menu');
 
 // Authenticated users only
 Route::middleware(['auth'])->group(function () {
