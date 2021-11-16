@@ -54,7 +54,7 @@
             </div>
 
             <div class="account-options">
-                <h1>Account aanpassen</h1>
+                <h1>Mijn Account</h1>
 
                 <div class="profile-update">
                     <h3>Profielfoto</h3>
