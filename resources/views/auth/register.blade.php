@@ -37,7 +37,7 @@
 						Registeren
 					</span>
 					<div class="wrap-input100 validate-input" data-validate = "Naam is verplicht">
-						<input class="input100" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" placeholder="Naam" data-validate = "Je moet een Email invullen">
+						<input class="input100" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  autocomplete="name" placeholder="Naam" data-validate = "Je moet een naam invullen">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
@@ -50,11 +50,7 @@
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
 					</div>
-                    @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
+
 
 					<div class="wrap-input100 validate-input" data-validate = "Wachtwoord is verplicht">
 						<input class="input100" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="current-password" placeholder="Wachtwoord" data-validate = "Je moet een wachtwoord invullen">
@@ -63,11 +59,9 @@
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
-                    @error('password')
-                        <strong>{{ $message }}</strong>
-                    @enderror
+
                     <div class="wrap-input100 validate-input" data-validate = "Wachtwoord herhalen is verplicht">
-						<input class="input100" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="current-password" placeholder="Wachtwoord bevestigen" data-validate = "Je moet een wachtwoord invullen">
+						<input class="input100" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation"  autocomplete="current-password" placeholder="Wachtwoord bevestigen" data-validate = "Je moet een wachtwoord invullen">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
