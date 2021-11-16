@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DTV | Home</title>
+  <title>DTV | Profiel</title>
   <meta content="" name="description">
 
   <meta content="" name="keywords">
@@ -64,25 +64,25 @@
                     <form action="#">
                         <div class="row">
                             <div class="col">
-                                <label for="inputNickname" class="form-label">Gebruikersnaam:</label>
-                                <p>John da men</p>
+                                <label for="inputNickname" class="form-label">Voornaam:</label>
+                                <p>{{$user->name}}</p>
                             </div>
 
                             <div class="col">
-                                <label for="inputName" class="form-label">Volledige naam:</label>
-                                <p>John Doe</p>
+                                <label for="inputName" class="form-label">Achternaam:</label>
+                                <p></p>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col">
                                 <label for="inputEmail" class="form-label">Email</label>
-                                <p>JohnDoe@mailchimp.com</p>
+                                <p>{{$user->email}}</p>
                             </div>
 
                             <div class="col">
-                                <label for="inputPhone" class="form-label">Telefoonnummer</label>
-                                <p>0682736123</p>
+                                <label for="inputPhone" class="form-label">Lid nummer</label>
+                                <p>{{$user->id}}</p>
                             </div>
                         </div>
 
