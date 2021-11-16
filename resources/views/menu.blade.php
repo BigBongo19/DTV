@@ -60,7 +60,6 @@
 
     #item_list{
       width: calc(75% - 10px);
-      margin-left: 10px;
       display: flex;
       flex-wrap: wrap;
       padding: 10px;
@@ -109,6 +108,17 @@
       transform: scale(1.05);
       transition: 500ms;
       cursor: pointer;
+    }
+    @media only screen and (max-width: 768px) {
+        #random_item_card_border{
+            display: none;
+        }
+        #menu{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 0%;
+        }
     }
 
   </style>
@@ -170,8 +180,8 @@
       <?php
         for($x = 0; $x <= 4; $x++){
           ?>
-          <div class="col-lg-3 col-md-6 eten" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
+          <div class="col-lg-3 col-md-6 eten d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+
         <div id="list_item_card_border" class="hover-zoom">
           <div>
             <img id="card_image_list" src="images/perfect-hot-dog.jpg">
@@ -180,11 +190,9 @@
             <p>willekeurig item</p>
             <p>$0.00</p>
           </div>
-        </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
+      <div class="col-lg-3 col-md-6 drinken d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
             <img id="card_image_list" src="images/perfect-hot-dog.jpg">
@@ -193,7 +201,6 @@
             <p>willekeurig item</p>
             <p>$0.00</p>
           </div>
-        </div>
         </div>
       </div>
           <?php
