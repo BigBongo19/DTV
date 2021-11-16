@@ -54,71 +54,76 @@
             </div>
 
             <div class="account-options">
-                <h1>Mijn Account</h1>
+                <h1>Account</h1>
 
                 <div class="profile-update">
                     <h3>Profielfoto</h3>
                     <div class="avatar">
                         <img src="assets/img/team/team-1.jpg" alt="team 1">
-                        <a href="#" class="link-primary">Upload</a>
-                        <a href="#" class="link-secondary">Remove</a>
                     </div>
                     <form action="#">
                         <div class="row">
                             <div class="col">
                                 <label for="inputNickname" class="form-label">Gebruikersnaam:</label>
-                                <input type="email" class="form-control" id="inputNickname"
-                                    aria-describedby="nicknameHelp" name="nickname">
-                                <div id="nicknameHelp" class="form-text">Deze naam is zichtbaar voor iedereen</div>
+                                <p>John da men</p>
                             </div>
 
                             <div class="col">
                                 <label for="inputName" class="form-label">Volledige naam:</label>
-                                <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp"
-                                    name="name">
-                                <div id="nameHelp" class="form-text">Hoe wil je worden genoemd?</div>
+                                <p>John Doe</p>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col">
-                                <label for="inputEmail" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
-                                    name="email">
-                                <div id="emailHelp" class="form-text">Om in te loggen</div>
+                                <label for="inputEmail" class="form-label">Email:</label>
+                                <p>JohnDoe@mailchimp.com</p>
                             </div>
 
                             <div class="col">
-                                <label for="inputPhone" class="form-label">Telefoonnummer</label>
-                                <input type="tel" class="form-control" id="inputPhone" aria-describedby="phoneHelp"
-                                    name="phone">
-                                <div id="phoneHelp" class="form-text">Zodat wij u kunnen bereiken</div>
-                            </div>
-                        </div>
-
-                        <div class="row change_pass">
-                            <div class="col">
-                                <div class="text">
-                                    <label for="inputEmail" class="form-label">Wachtwoord aanpassen</label>
-                                    <div id="emailHelp" class="form-text">Hier kunt u uw wachtwoord aanpassen</div>
-                                </div>
-                                <button type="button" class="btn btn-secondary">Wijzig wachtwoord</button>
-                            </div>
-                        </div>
-
-                        <div class="row delete">
-                            <div class="col">
-                                <div class="text">
-                                    <label for="inputEmail" class="form-label">Account Verwijderen</label>
-                                    <div id="emailHelp" class="form-text">Als u uw account verwijderd, verwijderd u ook
-                                        al uw gegevens</div>
-                                </div>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDelete">Verwijderen</button>
+                                <label for="inputPhone" class="form-label">Telefoonnummer:</label>
+                                <p>0682736123</p>
                             </div>
                         </div>
 
                     </form>
                 </div>
+
+            <div class="profile-reservations">
+                <h1>Reserveringen</h1>
+
+                <table>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Tijdstip</th>
+                        <th>Baan</th>
+                    </tr>
+                    <tr>
+                        <td>11/26/2021</td>
+                        <td>11:00</td>
+                        <td>Tennisbaan 1</td>
+                    </tr>
+                    <tr>
+                        <td>11/27/2021</td>
+                        <td>16:00</td>
+                        <td>Tennisbaan 4</td>
+                    </tr>
+                    <tr>
+                        <td>11/28/2021</td>
+                        <td>08:30</td>
+                        <td>Squashbaan 1</td>
+                    </tr>
+                    <tr>
+                        <td>11/29/2021</td>
+                        <td>15:45</td>
+                        <td>Tennisbaan 5</td>
+                    </tr>
+                    <tr>
+                        <td>11/30/2021</td>
+                        <td>19:30</td>
+                        <td>Squashbaan 3</td>
+                    </tr>
+                </table>
             </div>
         </section>
 
