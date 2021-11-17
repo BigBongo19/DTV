@@ -18,4 +18,8 @@ class AdminController extends Controller
     public function edit(){
         return view('admin.edit');
     }
+
+    public function add(){
+        return view('admin.add');
+    }
 }
