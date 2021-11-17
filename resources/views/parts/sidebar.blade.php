@@ -5,17 +5,16 @@
           <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
           </li>
-          <li class="nav-item d-none d-sm-inline-block">
-            <a href="index3.html" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
-          </li>
         </ul>
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
           <!-- Notifications Dropdown Menu -->
+          <li class="nav-item">
+            <a class="nav-link" href="/" role="button">
+              <i class="fas fa-home"></i>
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
               <i class="fas fa-expand-arrows-alt"></i>
@@ -56,7 +55,7 @@
       </div>
 
       <!-- SidebarSearch Form -->
-      <div class="form-inline">
+      {{-- <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
           <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
@@ -65,7 +64,7 @@
             </button>
           </div>
         </div>
-      </div>
+      </div> --}}
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -73,36 +72,34 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Starter Pages
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
             <ul class="nav nav-treeview">
+            <li class="nav-header">MAIN</li>
               <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Active Page</p>
+                <a href="/admin/home" class="nav-link {{ (request()->is('admin/home')) ? 'active' : '' }}">
+                  <i class="fa fa-home nav-icon"></i>
+                  <p>Home</p>
+                </a>
+              </li>
+              <li class="nav-header">MANAGE</li>
+              <li class="nav-item">
+                <a href="/admin/users" class="nav-link  {{ (request()->is('admin/users')) ? 'active' : '' }}">
+                  <i class="far fa-user nav-icon"></i>
+                  <p>Users</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inactive Page</p>
+                <a href="/admin/tournaments" class="nav-link  {{ (request()->is('admin/tournaments')) ? 'active' : '' }}">
+                  <i class="fa fa-trophy nav-icon"></i>
+                  <p>Tournaments</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/reservations" class="nav-link  {{ (request()->is('admin/reservations')) ? 'active' : '' }}">
+                  <i class="fa fa-calendar-check nav-icon"></i>
+                  <p>Reservations</p>
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
           </li>
         </ul>
       </nav>
