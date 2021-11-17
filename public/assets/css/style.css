@@ -191,6 +191,7 @@ main .container .account-details .account-options .payInfo .payHistory table {
 main .container .account-details .profile-reservations table {
     margin: 25px 0;
     width: 100%;
+}
 h1, h2, h3, h4, h5, h6 {
     font-family: "Nunito", sans-serif;
 }
@@ -304,7 +305,7 @@ section {
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
     [data-aos-delay] {
-        transition-delay: 0 !important;
+        transition-delay: 0s !important;
     }
 }
 /*--------------------------------------------------------------
@@ -355,8 +356,7 @@ section {
 .navbar li {
     position: relative;
 }
-.navbar a,
-.navbar a:focus {
+
 .navbar a, .navbar a:focus {
     display: flex;
     align-items: center;
@@ -369,8 +369,7 @@ section {
     white-space: nowrap;
     transition: 0.3s;
 }
-.navbar a i,
-.navbar a:focus i {
+
 .navbar a i, .navbar a:focus i {
     font-size: 12px;
     line-height: 0;
@@ -382,8 +381,7 @@ section {
 .navbar li:hover > a {
     color: #4154f1;
 }
-.navbar .getstarted,
-.navbar .getstarted:focus {
+
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
     color: #4154f1;
 }

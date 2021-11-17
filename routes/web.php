@@ -31,6 +31,8 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
 Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
 Route::get('/admin/users/edit', 'AdminController@edit')->name('adminedit');
+Route::get('/admin/reservations', 'AdminController@reservations')->name('adminReservations');
+
 
 // Redirects
 Route::redirect('/admin', '/admin/home');
