@@ -16,8 +16,7 @@
 
     <!-- Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|
-        Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
@@ -70,17 +69,17 @@
     </section><!-- End Breadcrumbs -->
 
     <section class="inner-page">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up" data-aos-delay="200">
+        <div class="container tourney">
+            <div class="section-header" data-aos="fade-up">
                 <h1><b>Inschrijven</b></h1>
             </div>
             <div class="d-flex justify-content-center">
-                <ul class="list-group features flex-column col-8 tourney">
+                <ul class="list-group features flex-column col-8">
                     <!-- example -->
                     @for($i = 1; $i <= 10; $i++)
-                        <li class="list-group-item flex-row hover-zoom" data-href="toernooi?id={{$i}}" data-aos="fade-up"
-                            data-aos-delay="{{$i * 100}}}">
-                            <div class="container feature-box d-grid">
+                        <li class="list-group-item flex-row" data-href="toernooi?id={{$i}}" data-aos="fade-up"
+                            data-aos-delay="{{$i * 100}}">
+                            <div class="container feature-box d-grid hover-zoom">
                                 <div class="row">
                                     <h3 class="col-12 col-md-6 col-lg-8 text-center text-md-start align-center">Toernooi naam {{$i}}</h3>
                                     <div class="col-12 col-md-6 col-lg-4 row">

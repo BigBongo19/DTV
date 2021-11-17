@@ -58,9 +58,9 @@
 
             <ol>
                 <li><a href="/">Home</a></li>
-                <li>Tournooien</li>
+                <li>Toernooi</li>
             </ol>
-            <h2>Tournooi: {{"Toernooi naam"}}</h2>
+            <h2>Toernooi: {{"Toernooi naam"}}</h2>
 
         </div>
     </section><!-- End Breadcrumbs -->
@@ -73,7 +73,7 @@
 
 
 
-            <div class="description d-flex justify-content row mt-5" data-aos="fade-up" data-aos-delay="300">
+            <div class="description d-flex justify-content row mt-5" data-aos="fade-up" data-aos-delay="100">
                 <p class="col-12 col-lg-8">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
                     molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
@@ -102,10 +102,10 @@
 
             <div class="participants mt-5">
                 <div class="justify-content-center">
-                    <div class="section-header" data-aos="fade-up" data-aos-delay="400">
+                    <div class="section-header" data-aos="fade-up" data-aos-delay="300">
                         <h3>Deelnemers:</h3>
                     </div>
-                    <div class="features" data-aos="fade-up" data-aos-delay="500">
+                    <div class="features" data-aos="fade-up" data-aos-delay="400">
                         <div class="feature-box">
                             <table class="table">
                                 <thead>
