@@ -18,7 +18,8 @@ Route::get('/', 'IndexController@index')->name('index');
 // Authenticated users only
 Route::middleware(['auth'])->group(function () {
     Route::get('/reserveren', 'ReserveController@index')->name('index');
-    Route::get('/tournooien', 'TournamentController@index')->name('index');
+    Route::get('/toernooien', 'TournamentController@index')->name('index');
+    Route::get('/toernooi', 'TournamentDetailController@index')->name('index');
 });
 
 // Auth Routes
