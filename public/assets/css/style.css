@@ -4,24 +4,20 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 :root {
     scroll-behavior: smooth;
 }
-
 body {
     font-family: "Open Sans", sans-serif;
     color: #444444;
 }
-
 a {
     color: #4154f1;
     text-decoration: none;
 }
-
 a:hover {
     color: #717ff5;
     text-decoration: none;
@@ -195,8 +191,9 @@ main .container .account-details .account-options .payInfo .payHistory table {
 main .container .account-details .profile-reservations table {
     margin: 25px 0;
     width: 100%;
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Nunito", sans-serif;
 }
-
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
@@ -204,7 +201,6 @@ section {
     padding: 60px 0;
     overflow: hidden;
 }
-
 .section-header {
     text-align: center;
     padding-bottom: 40px;
@@ -231,7 +227,6 @@ section {
         line-height: 32px;
     }
 }
-
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
@@ -275,7 +270,6 @@ section {
     color: #8894f6;
     content: "/";
 }
-
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -305,7 +299,6 @@ section {
     visibility: visible;
     opacity: 1;
 }
-
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -364,6 +357,7 @@ section {
 }
 .navbar a,
 .navbar a:focus {
+.navbar a, .navbar a:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -377,6 +371,7 @@ section {
 }
 .navbar a i,
 .navbar a:focus i {
+.navbar a i, .navbar a:focus i {
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
@@ -389,14 +384,17 @@ section {
 }
 .navbar .getstarted,
 .navbar .getstarted:focus {
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+    color: #4154f1;
+}
+.navbar .getstarted, .navbar .getstarted:focus {
     background: #4154f1;
     padding: 8px 20px;
     margin-left: 30px;
     border-radius: 4px;
     color: #fff;
 }
-.navbar .getstarted:hover,
-.navbar .getstarted:focus:hover {
+.navbar .getstarted:hover, .navbar .getstarted:focus:hover {
     color: #fff;
     background: #5969f3;
 }
@@ -427,9 +425,7 @@ section {
 .navbar .dropdown ul a i {
     font-size: 12px;
 }
-.navbar .dropdown ul a:hover,
-.navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover > a {
+.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
     color: #4154f1;
 }
 .navbar .dropdown:hover > ul {
@@ -456,7 +452,6 @@ section {
         left: -100%;
     }
 }
-
 /**
 * Mobile Navigation
 */
@@ -471,12 +466,10 @@ section {
 .mobile-nav-toggle.bi-x {
     color: #fff;
 }
-
 @media (max-width: 991px) {
     .mobile-nav-toggle {
         display: block;
     }
-
     .navbar ul {
         display: none;
     }
@@ -509,19 +502,15 @@ section {
     overflow-y: auto;
     transition: 0.3s;
 }
-.navbar-mobile a,
-.navbar-mobile a:focus {
+.navbar-mobile a, .navbar-mobile a:focus {
     padding: 10px 20px;
     font-size: 15px;
     color: #012970;
 }
-.navbar-mobile a:hover,
-.navbar-mobile .active,
-.navbar-mobile li:hover > a {
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
     color: #4154f1;
 }
-.navbar-mobile .getstarted,
-.navbar-mobile .getstarted:focus {
+.navbar-mobile .getstarted, .navbar-mobile .getstarted:focus {
     margin: 15px;
 }
 .navbar-mobile .dropdown ul {
@@ -544,15 +533,12 @@ section {
 .navbar-mobile .dropdown ul a i {
     font-size: 12px;
 }
-.navbar-mobile .dropdown ul a:hover,
-.navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover > a {
+.navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
     color: #4154f1;
 }
 .navbar-mobile .dropdown > .dropdown-active {
     display: block;
 }
-
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -632,7 +618,6 @@ section {
         width: 100%;
     }
 }
-
 /*--------------------------------------------------------------
 # Index Page
 --------------------------------------------------------------*/
@@ -681,7 +666,6 @@ section {
 .about .btn-read-more:hover i {
     transform: translateX(5px);
 }
-
 /*--------------------------------------------------------------
 # Values
 --------------------------------------------------------------*/
@@ -709,7 +693,6 @@ section {
 .values .box:hover img {
     transform: scale(1);
 }
-
 /*--------------------------------------------------------------
 # Counts
 --------------------------------------------------------------*/
@@ -742,7 +725,6 @@ section {
     font-family: "Nunito", sans-serif;
     font-size: 14px;
 }
-
 /*--------------------------------------------------------------
 # Features
 --------------------------------------------------------------*/
@@ -849,7 +831,6 @@ section {
     font-size: 15px;
     color: #848484;
 }
-
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
@@ -966,15 +947,12 @@ section {
 .services .service-box.pink:hover {
     background: #f51f9c;
 }
-.services .service-box:hover h3,
-.services .service-box:hover p,
-.services .service-box:hover .read-more {
+.services .service-box:hover h3, .services .service-box:hover p, .services .service-box:hover .read-more {
     color: #fff;
 }
 .services .service-box:hover .icon {
     background: #fff;
 }
-
 /*--------------------------------------------------------------
 # Pricing
 --------------------------------------------------------------*/
@@ -1061,7 +1039,6 @@ section {
     background: #4154f1;
     color: #fff;
 }
-
 /*--------------------------------------------------------------
 # F.A.Q
 --------------------------------------------------------------*/
@@ -1088,7 +1065,6 @@ section {
     padding: 0 0 25px 0;
     border: 0;
 }
-
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
@@ -1114,8 +1090,7 @@ section {
     border-radius: 50px;
     border: 1px solid #fff;
 }
-.portfolio #portfolio-flters li:hover,
-.portfolio #portfolio-flters li.filter-active {
+.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
     color: #4154f1;
     border-color: #4154f1;
 }
@@ -1242,7 +1217,6 @@ section {
     bottom: 15px;
     right: 15px;
 }
-
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
@@ -1296,7 +1270,6 @@ section {
 .portfolio-details .portfolio-description p {
     padding: 0;
 }
-
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
@@ -1371,7 +1344,6 @@ section {
         transform: scale(1.12);
     }
 }
-
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
@@ -1456,7 +1428,6 @@ section {
     right: 8px;
     opacity: 1;
 }
-
 /*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
@@ -1481,7 +1452,6 @@ section {
 .clients .clients-slider .swiper-pagination .swiper-pagination-bullet-active {
     background-color: #4154f1;
 }
-
 /*--------------------------------------------------------------
 # Recent Blog Posts
 --------------------------------------------------------------*/
@@ -1537,7 +1507,6 @@ section {
 .recent-blog-posts .post-box:hover .post-img img {
     transform: rotate(6deg) scale(1.2);
 }
-
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
@@ -1605,15 +1574,13 @@ section {
     -webkit-animation: animate-loading 1s linear infinite;
     animation: animate-loading 1s linear infinite;
 }
-.contact .php-email-form input,
-.contact .php-email-form textarea {
+.contact .php-email-form input, .contact .php-email-form textarea {
     border-radius: 0;
     box-shadow: none;
     font-size: 14px;
     border-radius: 0;
 }
-.contact .php-email-form input:focus,
-.contact .php-email-form textarea:focus {
+.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
     border-color: #4154f1;
 }
 .contact .php-email-form input {
@@ -1622,7 +1589,7 @@ section {
 .contact .php-email-form textarea {
     padding: 12px 15px;
 }
-.contact .php-email-form button[type="submit"] {
+.contact .php-email-form button[type=submit] {
     background: #4154f1;
     border: 0;
     padding: 10px 30px;
@@ -1630,7 +1597,7 @@ section {
     transition: 0.4s;
     border-radius: 4px;
 }
-.contact .php-email-form button[type="submit"]:hover {
+.contact .php-email-form button[type=submit]:hover {
     background: #5969f3;
 }
 @-webkit-keyframes animate-loading {
@@ -1649,7 +1616,6 @@ section {
         transform: rotate(360deg);
     }
 }
-
 /*--------------------------------------------------------------
 # Blog
 --------------------------------------------------------------*/
@@ -1936,12 +1902,10 @@ section {
     align-items: center;
     justify-content: center;
 }
-.blog .blog-pagination li.active,
-.blog .blog-pagination li:hover {
+.blog .blog-pagination li.active, .blog .blog-pagination li:hover {
     background: #4154f1;
 }
-.blog .blog-pagination li.active a,
-.blog .blog-pagination li:hover a {
+.blog .blog-pagination li.active a, .blog .blog-pagination li:hover a {
     color: #fff;
 }
 .blog .sidebar {
@@ -1966,7 +1930,7 @@ section {
     padding: 3px 10px;
     position: relative;
 }
-.blog .sidebar .search-form form input[type="text"] {
+.blog .sidebar .search-form form input[type=text] {
     border: 0;
     padding: 4px;
     border-radius: 4px;
@@ -2068,7 +2032,6 @@ section {
     color: #a5c5fe;
     font-size: 14px;
 }
-
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -2098,12 +2061,12 @@ section {
     border-radius: 4px;
     border: 1px solid #e1ecff;
 }
-.footer .footer-newsletter form input[type="email"] {
+.footer .footer-newsletter form input[type=email] {
     border: 0;
     padding: 8px;
     width: calc(100% - 140px);
 }
-.footer .footer-newsletter form input[type="submit"] {
+.footer .footer-newsletter form input[type=submit] {
     position: absolute;
     top: 0;
     right: 0;
@@ -2118,7 +2081,7 @@ section {
     transition: 0.3s;
     border-radius: 4px;
 }
-.footer .footer-newsletter form input[type="submit"]:hover {
+.footer .footer-newsletter form input[type=submit]:hover {
     background: #5969f3;
 }
 .footer .footer-top {
@@ -2221,4 +2184,34 @@ section {
     text-align: center;
     font-size: 13px;
     color: #012970;
+}
+/*--------------------------------------------------------------
+# Custom
+--------------------------------------------------------------*/
+.tourney .list-group-item {
+    border: none !important;
+    position: relative;
+}
+.hover-zoom {
+    z-index: auto;
+    transition-duration: 200ms;
+}
+.hover-zoom:hover {
+    transform: scale(1.05) !important;
+    cursor: pointer;
+}
+.tourney button {
+    background: #4154f1;
+    border: 0;
+    padding: 10px 30px;
+    color: #fff;
+    border-radius: 4px;
+}
+.tourney h3 {
+    margin-bottom: 25px !important;
+}
+.tourney hr {
+    opacity: 0.05;
+    width: 80%;
+    margin: 16px auto
 }
