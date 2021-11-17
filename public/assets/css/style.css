@@ -22,7 +22,6 @@ a:hover {
     color: #717ff5;
     text-decoration: none;
 }
-
 h1,
 h2,
 h3,
@@ -31,17 +30,14 @@ h5,
 h6 {
     font-family: "Nunito", sans-serif;
 }
-
-main .account{
+main .account {
     padding-top: 100px;
 }
-
 main .container > h1 {
     margin: 50px 0;
     position: relative;
     font-weight: bold;
 }
-
 main .container > h1::after {
     content: "";
     position: absolute;
@@ -52,7 +48,6 @@ main .container > h1::after {
     background: #d11944aa;
     z-index: -1;
 }
-
 main .container .account-details,
 main .container .account-details-change {
     display: grid;
@@ -60,16 +55,13 @@ main .container .account-details-change {
     grid-template-columns: 300px 1fr 1fr;
     min-height: 100vh;
 }
-
 main .container .account-details-change {
     grid-template-columns: 300px 1fr;
 }
-
 main .container .account-details h1,
 main .container .account-details-change h1 {
     font-weight: bolder;
 }
-
 main .container .account-details .list,
 main .container .account-details-change .list {
     height: 25%;
@@ -78,7 +70,6 @@ main .container .account-details-change .list {
     justify-content: space-evenly;
     flex-direction: column;
 }
-
 main .container .account-details .list .list-item,
 main .container .account-details-change .list .list-item {
     background: rgba(65, 83, 241, 0.2);
@@ -88,7 +79,6 @@ main .container .account-details-change .list .list-item {
     transition: background 0.2s;
     cursor: pointer;
 }
-
 main .container .account-details .list .list-item a,
 main .container .account-details-change .list .list-item a {
     display: block;
@@ -96,21 +86,17 @@ main .container .account-details-change .list .list-item a {
     font-size: 14px;
     width: 100%;
 }
-
 main .container .account-details .list .list-item:hover,
 main .container .account-details-change .list .list-item:hover {
     background: rgba(65, 83, 241, 0.5);
 }
-
 main .container .account-details .account-options h1 {
     font-weight: bolder;
 }
-
 main .container .account-details .account-options .profile-update > h3,
 main .container .account-details-change .account-options .profile-update > h3 {
     margin: 30px 0;
 }
-
 main .container .account-details .account-options .profile-update .avatar,
 main .container .account-details-change .account-options .profile-update .avatar {
     width: 300px;
@@ -118,34 +104,28 @@ main .container .account-details-change .account-options .profile-update .avatar
     justify-content: space-between;
     align-items: center;
 }
-
 main .container .account-details .account-options .profile-update .avatar a,
 main .container .account-details-change .account-options .profile-update .avatar a {
     font-size: 16px;
     font-weight: bolder;
 }
-
 main .container .account-details .account-options .profile-update .avatar img,
 main .container .account-details-change .account-options .profile-update .avatar img {
     width: 100px;
     height: 100px;
     border-radius: 150px;
 }
-
 main .container .account-details .account-options .profile-update form,
 main .container .account-details-change .account-options .profile-update form {
     padding: 25px 0;
     width: 100%;
 }
-
 main .container .account-details .account-options .profile-update form .row {
     margin: 5px 0;
 }
-
 main .container .account-details-change .account-options .profile-update form .row {
     margin: 25px 0;
 }
-
 main .container .account-details-change .account-options .profile-update form .delete .col,
 main .container .account-details-change .account-options .profile-update form .change_pass .col {
     display: flex;
@@ -154,43 +134,37 @@ main .container .account-details-change .account-options .profile-update form .c
     min-width: 500px;
     margin-top: 25px;
 }
-
 main .container .account-details-change .account-options .profile-update form .change_pass button,
 main .container .account-details-change .account-options .profile-update form .delete button {
     height: 35px;
 }
-
 main .container .account-details .account-options .profile-update form label,
 main .container .account-details-change .account-options .profile-update form label {
     font-weight: bold;
 }
-
 main .container .account-details .account-options .profile-update form input,
 main .container .account-details-change .account-options .profile-update form input {
     width: 100%;
     border-radius: 10px;
 }
-
 main .container .account-details .account-options .payInfo {
     display: flex;
     width: 700px;
     justify-content: space-between;
 }
-
 main .container .account-details .account-options .payInfo .payPreference,
 main .container .account-details .account-options .payInfo .payHistory {
     margin: 20px 0;
     width: 100%;
     padding: 20px;
 }
-
 main .container .account-details .account-options .payInfo .payHistory table {
     width: 100%;
 }
-
 main .container .account-details .profile-reservations table {
     margin: 25px 0;
     width: 100%;
+}
 h1, h2, h3, h4, h5, h6 {
     font-family: "Nunito", sans-serif;
 }
@@ -304,7 +278,7 @@ section {
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
     [data-aos-delay] {
-        transition-delay: 0 !important;
+        transition-delay: 0s !important;
     }
 }
 /*--------------------------------------------------------------
@@ -335,7 +309,6 @@ section {
     font-family: "Nunito", sans-serif;
     margin-top: 3px;
 }
-
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -355,8 +328,6 @@ section {
 .navbar li {
     position: relative;
 }
-.navbar a,
-.navbar a:focus {
 .navbar a, .navbar a:focus {
     display: flex;
     align-items: center;
@@ -369,8 +340,6 @@ section {
     white-space: nowrap;
     transition: 0.3s;
 }
-.navbar a i,
-.navbar a:focus i {
 .navbar a i, .navbar a:focus i {
     font-size: 12px;
     line-height: 0;
@@ -382,8 +351,6 @@ section {
 .navbar li:hover > a {
     color: #4154f1;
 }
-.navbar .getstarted,
-.navbar .getstarted:focus {
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
     color: #4154f1;
 }
