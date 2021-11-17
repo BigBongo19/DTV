@@ -30,6 +30,9 @@ Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
 Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
 Route::get('/admin/edit', 'AdminController@edit')->name('adminedit');
 
+// Redirects
+Route::redirect('/admin', '/admin/home');
+
 
 // Auth Routes
 Auth::routes();
