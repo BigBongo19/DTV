@@ -11,6 +11,18 @@
 :root {
     scroll-behavior: smooth;
 }
+.card-header{
+    position: relative;
+}
+
+.add-btn{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
 
 body {
     font-family: "Open Sans", sans-serif;
