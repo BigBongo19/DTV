@@ -121,6 +121,24 @@
                 </div>
             </div>
         </section>
+
+        <div class="modal fade" tabindex="-1" id="modalDelete" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Weet je het zeker?</h5>
+                </div>
+                <div class="modal-body">
+                  <p>Als je je account verwijderd, verdwijnen ook <b>ALLE</b> gegevens op uw account.</p>
+                  <p>Wilt u doorgaan?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nee</button>
+                  <button type="button" class="btn btn-danger">Ja, verwijder mijn account</button>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
 
 
