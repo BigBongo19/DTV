@@ -25,5 +25,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/payments', 'ProfileController@payment')->name('paymentIndex');
 });
 
+// Admin only
+Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
+
+
 // Auth Routes
 Auth::routes();
