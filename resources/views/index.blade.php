@@ -24,6 +24,7 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -76,14 +77,14 @@
 
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="content">
-              <h3>Who We Are</h3>
-              <h2>Expedita voluptas omnis cupiditate totam eveniet nobis sint iste. Dolores est repellat corrupti reprehenderit.</h2>
+              <h3>Wij wij zijn</h3>
+              <h2>Wij zijn een klein groepje enthousiaste mensen die graag nieuwe leden willen laten tennissen.</h2>
               <p>
-                Quisquam vel ut sint cum eos hic dolores aperiam. Sed deserunt et. Inventore et et dolor consequatur itaque ut voluptate sed et. Magnam nam ipsum tenetur suscipit voluptatum nam et est corrupti.
+                Naast Tennis geven wij ook groepslessen voor Squash liefhebbers. Kom gerust langs en neem een kijkje, en meld je aan bij een van onze medewerkers.
               </p>
               <div class="text-center text-lg-start">
                 <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                  <span>Read More</span>
+                  <span>Bekijk meer</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
               </div>
@@ -117,7 +118,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
-              <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+              <i class="bi bi-mortarboard-fill" style="color: #ee6c20;"></i>
               <div>
                 <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
                 <p>Gespeelde toernooien</p>
@@ -127,20 +128,20 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
-              <i class="bi bi-headset" style="color: #15be56;"></i>
+                <i class="bi bi-people-fill" style="color: #15be56"></i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-                <p>Hours Of Support</p>
+                <span data-purecounter-start="0" data-purecounter-end="243" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Nieuwe leden</p>
               </div>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
-              <i class="bi bi-people" style="color: #bb0852;"></i>
+              <i class="bi bi-instagram" style="color: #bb0852;"></i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-                <p>Hard Workers</p>
+                <span data-purecounter-start="0" data-purecounter-end="40000" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Volgers op onze Instagram</p>
               </div>
             </div>
           </div>
@@ -156,74 +157,74 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h2>Pricing</h2>
-          <p>Check our Pricing</p>
+          <h2>Financieel</h2>
+          <p>Bekijk onze tarieven</p>
         </header>
 
         <div class="row gy-4" data-aos="fade-left">
 
           <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
             <div class="box">
-              <h3 style="color: #07d5c0;">Free Plan</h3>
-              <div class="price"><sup>$</sup>0<span> / mo</span></div>
+              <h3 style="color: #07d5c0;">Starter pakket</h3>
+              <div class="price"><sup>€</sup>5.99<span> / m</span></div>
               <img src="assets/img/pricing-free.png" class="img-fluid" alt="">
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                <li>Een ledenpas</li>
+                <li>Gratis gebruik van douches</li>
+                <li>Groot aanbod aan tennisbanen</li>
+                <li class="na">50% korting op drankjes aan de bar</li>
+                <li class="na">50% korting op groepslessen</li>
               </ul>
-              <a href="#" class="btn-buy">Buy Now</a>
+              <a href="#" class="btn-buy">Koop nu</a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="box">
-              <span class="featured">Featured</span>
-              <h3 style="color: #65c600;">Starter Plan</h3>
-              <div class="price"><sup>$</sup>19<span> / mo</span></div>
+              <span class="featured">Beste prijs</span>
+              <h3 style="color: #65c600;">Advanced pakket</h3>
+              <div class="price"><sup>€</sup>20<span> / m</span></div>
               <img src="assets/img/pricing-starter.png" class="img-fluid" alt="">
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                <li>Een ledenpas</li>
+                <li>Gratis gebruik van douches</li>
+                <li>Groot aanbod aan tennisbanen</li>
+                <li>50% korting op drankjes aan de bar</li>
+                <li class="na">50% korting op groepslessen</li>
               </ul>
-              <a href="#" class="btn-buy">Buy Now</a>
+              <a href="#" class="btn-buy">Koop nu</a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
             <div class="box">
-              <h3 style="color: #ff901c;">Business Plan</h3>
-              <div class="price"><sup>$</sup>29<span> / mo</span></div>
+              <h3 style="color: #ff901c;">Premium pakket</h3>
+              <div class="price"><sup>€</sup>30<span> / m</span></div>
               <img src="assets/img/pricing-business.png" class="img-fluid" alt="">
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
+                <li>Een ledenpas</li>
+                <li>Gratis gebruik van douches</li>
+                <li>Groot aanbod aan tennisbanen</li>
+                <li>50% korting op drankjes aan de bar</li>
+                <li>50% korting op groepslessen</li>
               </ul>
-              <a href="#" class="btn-buy">Buy Now</a>
+              <a href="#" class="btn-buy">Koop nu</a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="box">
-              <h3 style="color: #ff0071;">Ultimate Plan</h3>
-              <div class="price"><sup>$</sup>49<span> / mo</span></div>
+              <h3 style="color: #ff0071;">All inclusive pakket</h3>
+              <div class="price"><sup>€</sup>49.99<span> / m</span></div>
               <img src="assets/img/pricing-ultimate.png" class="img-fluid" alt="">
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
+                <li>Een ledenpas</li>
+                <li>Gratis gebruik van douches</li>
+                <li>Groot aanbod aan tennisbanen</li>
+                <li>Gratis drankjes aan de bar</li>
+                <li>Gratis groepslessen</li>
               </ul>
-              <a href="#" class="btn-buy">Buy Now</a>
+              <a href="#" class="btn-buy">Koop nu</a>
             </div>
           </div>
 
@@ -240,7 +241,7 @@
 
         <header class="section-header">
           <h2>Contact</h2>
-          <p>Contact Us</p>
+          <p>Stel ons je vraag!</p>
         </header>
 
         <div class="row gy-4">
@@ -251,29 +252,29 @@
               <div class="col-md-6">
                 <div class="info-box">
                   <i class="bi bi-geo-alt"></i>
-                  <h3>Address</h3>
-                  <p>A108 Adam Street,<br>New York, NY 535022</p>
+                  <h3>Adres</h3>
+                  <p>Beverstraat 22,<br>Doetinchem, 6908 AA</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box">
                   <i class="bi bi-telephone"></i>
-                  <h3>Call Us</h3>
-                  <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                  <h3>Bel ons</h3>
+                  <p>+31 06 29121953</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box">
                   <i class="bi bi-envelope"></i>
-                  <h3>Email Us</h3>
-                  <p>info@example.com<br>contact@example.com</p>
+                  <h3>Email</h3>
+                  <p>contact@dtv.nl<br>service@dtv.nl</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box">
                   <i class="bi bi-clock"></i>
-                  <h3>Open Hours</h3>
-                  <p>Monday - Friday<br>9:00AM - 05:00PM</p>
+                  <h3>Openeningstijden</h3>
+                  <p>Maandag - Vrijdag<br>10:00 - 21:00</p>
                 </div>
               </div>
             </div>
@@ -285,27 +286,27 @@
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                  <input type="text" name="name" class="form-control" placeholder="Uw naam" required>
                 </div>
 
                 <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="email" placeholder="Uw Email" required>
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                  <input type="text" class="form-control" name="subject" placeholder="Onderwerp" required>
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                  <textarea class="form-control" name="message" rows="6" placeholder="Bericht" required></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
+                  <div class="loading">laden...</div>
                   <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <div class="sent-message">Uw bericht is verstuurd, Hartelijk dank!</div>
 
-                  <button type="submit">Send Message</button>
+                  <button type="submit">Versturen</button>
                 </div>
 
               </div>
