@@ -30,14 +30,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
     Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
     Route::get('/admin/users/edit', 'AdminController@edit')->name('adminEdit');
-
     Route::get('/admin/tournaments', 'AdminController@add')->name('adminAdd');
+    Route::get('/admin/reservations', 'AdminController@reservations')->name('adminReservations');
 });
-
-// Admin only
-Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
-Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
-Route::get('/admin/add', 'AdminController@add')->name('adminAdd');
 
 // Redirects
 Route::redirect('/admin', '/admin/home');
