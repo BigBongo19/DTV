@@ -84,7 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <td>john.doe@gmail.com</td>
                       <td>false</td>
                       <td>
-                        <a style="background-color: #f2d61f; border-color: #f2d61f" href="admin/bewerk" type="submit" class="btn btn-primary">bewerk user</a>
+                        <a style="background-color: #f2d61f; border-color: #f2d61f" href="users/edit" type="submit" class="btn btn-primary">bewerk user</a>
                         <a style="background-color: red; border-color: red;" type="submit" class="btn btn-primary">verwijder user</a>
                       </td>
                     </tr>
