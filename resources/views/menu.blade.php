@@ -185,8 +185,7 @@
       <?php
         for($x = 0; $x <= 4; $x++){
           ?>
-          <div class="col-lg-3 col-md-6 eten" data-aos="zoom-in" data-aos-delay="100">
-
+        <div class="col-lg-3 col-md-6 eten" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
             <img id="card_image_list" src="images/perfect-hot-dog.jpg">
