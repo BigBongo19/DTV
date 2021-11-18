@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,11 +28,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/toernooi', 'TournamentDetailController@index')->name('index');
 
     // Admin only
-    Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
-    Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
-    Route::get('/admin/users/edit', 'AdminController@edit')->name('adminEdit');
-    Route::get('/admin/tournaments', 'AdminController@add')->name('adminAdd');
-    Route::get('/admin/reservations', 'AdminController@reservations')->name('adminReservations');
+    Route::middleware(['admin'])->group(function () {
+        Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
+        Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
+        Route::get('/admin/users/edit', 'AdminController@edit')->name('adminEdit');
+        Route::get('/admin/tournaments', 'AdminController@add')->name('adminAdd');
+        Route::get('/admin/reservations', 'AdminController@reservations')->name('adminReservations');
+    });
+
+
 });
 
 // Redirects
