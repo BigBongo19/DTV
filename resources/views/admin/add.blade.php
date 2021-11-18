@@ -476,15 +476,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <td>U</td>
                         </tr>
                         </tbody>
-                        <tfoot>
-                        <tr>
-                          <th>Rendering engine</th>
-                          <th>Browser</th>
-                          <th>Platform(s)</th>
-                          <th>Engine version</th>
-                          <th>CSS grade</th>
-                        </tr>
-                        </tfoot>
                       </table>
                     </div>
                     <!-- /.card-body -->
