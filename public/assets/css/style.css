@@ -230,6 +230,55 @@ section {
         font-size: 28px;
         line-height: 32px;
     }
+
+    main .container .account-details, main .container .account-details-change {
+        grid-template-columns: 100%;
+    }
+
+    main .container .account-details-change .account-options .profile-update form .row {
+        display: unset;
+    }
+
+    main .container .account-details-change .account-options .profile-update form .delete .col,
+    main .container .account-details-change .account-options .profile-update form .change_pass .col {
+        display: unset;
+    }
+
+    main .container .account-details-change .account-options .profile-update form .change_pass button,
+    main .container .account-details-change .account-options .profile-update form .delete button {
+        margin: 10px 0;
+    }
+
+    main .container .account-details .list,
+    main .container .account-details-change .list {
+        height: unset;
+        align-items: center;
+        padding: 50px 0;
+        justify-content: unset;
+    }
+
+    main .container .account-details .list .list-item,
+    main .container .account-details-change .list .list-item {
+        max-width: unset;
+        width: 200px;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .account-details, .account-options{
+        text-align: center;
+    }
+
+    main .container .account-details .account-options .profile-update .avatar{
+        width: unset;
+        justify-content: center;
+    }
+
+    main .container .account-details .account-options .payInfo{
+        display: unset;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /*--------------------------------------------------------------
