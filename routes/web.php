@@ -19,16 +19,26 @@ Route::get('/menu', 'MenuController@index')->name('menu');
 // Authenticated users only
 Route::middleware(['auth'])->group(function () {
     Route::get('/reserveren', 'ReserveController@index')->name('reserveIndex');
-    Route::get('/tournooien', 'TournamentController@index')->name('tournamentIndex');
     Route::get('/profile', 'ProfileController@index')->name('profileIndex');
     Route::get('/edit-profile', 'ProfileController@edit')->name('editIndex');
     Route::get('/payments', 'ProfileController@payment')->name('paymentIndex');
+    Route::get('/reserveren', 'ReserveController@index')->name('index');
+    Route::get('/toernooien', 'TournamentController@index')->name('index');
+    Route::get('/toernooi', 'TournamentDetailController@index')->name('index');
+
+    // Admin only
+    Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
+    Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
+    Route::get('/admin/users/edit', 'AdminController@edit')->name('adminEdit');
+
+    Route::get('/admin/tournaments', 'AdminController@add')->name('adminAdd');
 });
 
 // Admin only
 Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
 Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
 Route::get('/admin/add', 'AdminController@add')->name('adminAdd');
+
 // Redirects
 Route::redirect('/admin', '/admin/home');
 

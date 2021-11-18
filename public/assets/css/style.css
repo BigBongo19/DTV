@@ -4,7 +4,6 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -28,17 +27,14 @@ body {
     font-family: "Open Sans", sans-serif;
     color: #444444;
 }
-
 a {
     color: #4154f1;
     text-decoration: none;
 }
-
 a:hover {
     color: #717ff5;
     text-decoration: none;
 }
-
 h1,
 h2,
 h3,
@@ -47,17 +43,14 @@ h5,
 h6 {
     font-family: "Nunito", sans-serif;
 }
-
 main .account {
     padding-top: 100px;
 }
-
 main .container > h1 {
     margin: 50px 0;
     position: relative;
     font-weight: bold;
 }
-
 main .container > h1::after {
     content: "";
     position: absolute;
@@ -68,7 +61,6 @@ main .container > h1::after {
     background: #d11944aa;
     z-index: -1;
 }
-
 main .container .account-details,
 main .container .account-details-change {
     display: grid;
@@ -76,16 +68,13 @@ main .container .account-details-change {
     grid-template-columns: 300px 1fr 1fr;
     min-height: 100vh;
 }
-
 main .container .account-details-change {
     grid-template-columns: 300px 1fr;
 }
-
 main .container .account-details h1,
 main .container .account-details-change h1 {
     font-weight: bolder;
 }
-
 main .container .account-details .list,
 main .container .account-details-change .list {
     height: 25%;
@@ -94,7 +83,6 @@ main .container .account-details-change .list {
     justify-content: space-evenly;
     flex-direction: column;
 }
-
 main .container .account-details .list .list-item,
 main .container .account-details-change .list .list-item {
     background: rgba(65, 83, 241, 0.2);
@@ -104,7 +92,6 @@ main .container .account-details-change .list .list-item {
     transition: background 0.2s;
     cursor: pointer;
 }
-
 main .container .account-details .list .list-item a,
 main .container .account-details-change .list .list-item a {
     display: block;
@@ -112,21 +99,17 @@ main .container .account-details-change .list .list-item a {
     font-size: 14px;
     width: 100%;
 }
-
 main .container .account-details .list .list-item:hover,
 main .container .account-details-change .list .list-item:hover {
     background: rgba(65, 83, 241, 0.5);
 }
-
 main .container .account-details .account-options h1 {
     font-weight: bolder;
 }
-
 main .container .account-details .account-options .profile-update > h3,
 main .container .account-details-change .account-options .profile-update > h3 {
     margin: 30px 0;
 }
-
 main .container .account-details .account-options .profile-update .avatar,
 main .container .account-details-change .account-options .profile-update .avatar {
     width: 300px;
@@ -134,34 +117,28 @@ main .container .account-details-change .account-options .profile-update .avatar
     justify-content: space-between;
     align-items: center;
 }
-
 main .container .account-details .account-options .profile-update .avatar a,
 main .container .account-details-change .account-options .profile-update .avatar a {
     font-size: 16px;
     font-weight: bolder;
 }
-
 main .container .account-details .account-options .profile-update .avatar img,
 main .container .account-details-change .account-options .profile-update .avatar img {
     width: 100px;
     height: 100px;
     border-radius: 150px;
 }
-
 main .container .account-details .account-options .profile-update form,
 main .container .account-details-change .account-options .profile-update form {
     padding: 25px 0;
     width: 100%;
 }
-
 main .container .account-details .account-options .profile-update form .row {
     margin: 5px 0;
 }
-
 main .container .account-details-change .account-options .profile-update form .row {
     margin: 25px 0;
 }
-
 main .container .account-details-change .account-options .profile-update form .delete .col,
 main .container .account-details-change .account-options .profile-update form .change_pass .col {
     display: flex;
@@ -170,45 +147,40 @@ main .container .account-details-change .account-options .profile-update form .c
     min-width: 500px;
     margin-top: 25px;
 }
-
 main .container .account-details-change .account-options .profile-update form .change_pass button,
 main .container .account-details-change .account-options .profile-update form .delete button {
     height: 35px;
 }
-
 main .container .account-details .account-options .profile-update form label,
 main .container .account-details-change .account-options .profile-update form label {
     font-weight: bold;
 }
-
 main .container .account-details .account-options .profile-update form input,
 main .container .account-details-change .account-options .profile-update form input {
     width: 100%;
     border-radius: 10px;
 }
-
 main .container .account-details .account-options .payInfo {
     display: flex;
     width: 700px;
     justify-content: space-between;
 }
-
 main .container .account-details .account-options .payInfo .payPreference,
 main .container .account-details .account-options .payInfo .payHistory {
     margin: 20px 0;
     width: 100%;
     padding: 20px;
 }
-
 main .container .account-details .account-options .payInfo .payHistory table {
     width: 100%;
 }
-
 main .container .account-details .profile-reservations table {
     margin: 25px 0;
     width: 100%;
 }
-
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Nunito", sans-serif;
+}
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
@@ -216,7 +188,6 @@ section {
     padding: 60px 0;
     overflow: hidden;
 }
-
 .section-header {
     text-align: center;
     padding-bottom: 40px;
@@ -242,8 +213,56 @@ section {
         font-size: 28px;
         line-height: 32px;
     }
-}
 
+    main .container .account-details, main .container .account-details-change {
+        grid-template-columns: 100%;
+    }
+
+    main .container .account-details-change .account-options .profile-update form .row {
+        display: unset;
+    }
+
+    main .container .account-details-change .account-options .profile-update form .delete .col,
+    main .container .account-details-change .account-options .profile-update form .change_pass .col {
+        display: unset;
+    }
+
+    main .container .account-details-change .account-options .profile-update form .change_pass button,
+    main .container .account-details-change .account-options .profile-update form .delete button {
+        margin: 10px 0;
+    }
+
+    main .container .account-details .list,
+    main .container .account-details-change .list {
+        height: unset;
+        align-items: center;
+        padding: 50px 0;
+        justify-content: unset;
+    }
+
+    main .container .account-details .list .list-item,
+    main .container .account-details-change .list .list-item {
+        max-width: unset;
+        width: 200px;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .account-details, .account-options{
+        text-align: center;
+    }
+
+    main .container .account-details .account-options .profile-update .avatar{
+        width: unset;
+        justify-content: center;
+    }
+
+    main .container .account-details .account-options .payInfo{
+        display: unset;
+        width: 100%;
+        text-align: center;
+    }
+}
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
@@ -287,7 +306,6 @@ section {
     color: #8894f6;
     content: "/";
 }
-
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -317,13 +335,12 @@ section {
     visibility: visible;
     opacity: 1;
 }
-
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
     [data-aos-delay] {
-        transition-delay: 0 !important;
+        transition-delay: 0s !important;
     }
 }
 /*--------------------------------------------------------------
@@ -354,7 +371,6 @@ section {
     font-family: "Nunito", sans-serif;
     margin-top: 3px;
 }
-
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -374,8 +390,7 @@ section {
 .navbar li {
     position: relative;
 }
-.navbar a,
-.navbar a:focus {
+.navbar a, .navbar a:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -387,8 +402,7 @@ section {
     white-space: nowrap;
     transition: 0.3s;
 }
-.navbar a i,
-.navbar a:focus i {
+.navbar a i, .navbar a:focus i {
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
@@ -399,16 +413,17 @@ section {
 .navbar li:hover > a {
     color: #4154f1;
 }
-.navbar .getstarted,
-.navbar .getstarted:focus {
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+    color: #4154f1;
+}
+.navbar .getstarted, .navbar .getstarted:focus {
     background: #4154f1;
     padding: 8px 20px;
     margin-left: 30px;
     border-radius: 4px;
     color: #fff;
 }
-.navbar .getstarted:hover,
-.navbar .getstarted:focus:hover {
+.navbar .getstarted:hover, .navbar .getstarted:focus:hover {
     color: #fff;
     background: #5969f3;
 }
@@ -439,9 +454,7 @@ section {
 .navbar .dropdown ul a i {
     font-size: 12px;
 }
-.navbar .dropdown ul a:hover,
-.navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover > a {
+.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
     color: #4154f1;
 }
 .navbar .dropdown:hover > ul {
@@ -468,7 +481,6 @@ section {
         left: -100%;
     }
 }
-
 /**
 * Mobile Navigation
 */
@@ -483,12 +495,10 @@ section {
 .mobile-nav-toggle.bi-x {
     color: #fff;
 }
-
 @media (max-width: 991px) {
     .mobile-nav-toggle {
         display: block;
     }
-
     .navbar ul {
         display: none;
     }
@@ -521,19 +531,15 @@ section {
     overflow-y: auto;
     transition: 0.3s;
 }
-.navbar-mobile a,
-.navbar-mobile a:focus {
+.navbar-mobile a, .navbar-mobile a:focus {
     padding: 10px 20px;
     font-size: 15px;
     color: #012970;
 }
-.navbar-mobile a:hover,
-.navbar-mobile .active,
-.navbar-mobile li:hover > a {
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
     color: #4154f1;
 }
-.navbar-mobile .getstarted,
-.navbar-mobile .getstarted:focus {
+.navbar-mobile .getstarted, .navbar-mobile .getstarted:focus {
     margin: 15px;
 }
 .navbar-mobile .dropdown ul {
@@ -556,15 +562,12 @@ section {
 .navbar-mobile .dropdown ul a i {
     font-size: 12px;
 }
-.navbar-mobile .dropdown ul a:hover,
-.navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover > a {
+.navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
     color: #4154f1;
 }
 .navbar-mobile .dropdown > .dropdown-active {
     display: block;
 }
-
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -644,7 +647,6 @@ section {
         width: 100%;
     }
 }
-
 /*--------------------------------------------------------------
 # Index Page
 --------------------------------------------------------------*/
@@ -693,7 +695,6 @@ section {
 .about .btn-read-more:hover i {
     transform: translateX(5px);
 }
-
 /*--------------------------------------------------------------
 # Values
 --------------------------------------------------------------*/
@@ -721,7 +722,6 @@ section {
 .values .box:hover img {
     transform: scale(1);
 }
-
 /*--------------------------------------------------------------
 # Counts
 --------------------------------------------------------------*/
@@ -754,7 +754,6 @@ section {
     font-family: "Nunito", sans-serif;
     font-size: 14px;
 }
-
 /*--------------------------------------------------------------
 # Features
 --------------------------------------------------------------*/
@@ -861,7 +860,6 @@ section {
     font-size: 15px;
     color: #848484;
 }
-
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
@@ -978,15 +976,12 @@ section {
 .services .service-box.pink:hover {
     background: #f51f9c;
 }
-.services .service-box:hover h3,
-.services .service-box:hover p,
-.services .service-box:hover .read-more {
+.services .service-box:hover h3, .services .service-box:hover p, .services .service-box:hover .read-more {
     color: #fff;
 }
 .services .service-box:hover .icon {
     background: #fff;
 }
-
 /*--------------------------------------------------------------
 # Pricing
 --------------------------------------------------------------*/
@@ -1073,7 +1068,6 @@ section {
     background: #4154f1;
     color: #fff;
 }
-
 /*--------------------------------------------------------------
 # F.A.Q
 --------------------------------------------------------------*/
@@ -1100,7 +1094,6 @@ section {
     padding: 0 0 25px 0;
     border: 0;
 }
-
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
@@ -1126,8 +1119,7 @@ section {
     border-radius: 50px;
     border: 1px solid #fff;
 }
-.portfolio #portfolio-flters li:hover,
-.portfolio #portfolio-flters li.filter-active {
+.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
     color: #4154f1;
     border-color: #4154f1;
 }
@@ -1254,7 +1246,6 @@ section {
     bottom: 15px;
     right: 15px;
 }
-
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
@@ -1308,7 +1299,6 @@ section {
 .portfolio-details .portfolio-description p {
     padding: 0;
 }
-
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
@@ -1383,7 +1373,6 @@ section {
         transform: scale(1.12);
     }
 }
-
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
@@ -1468,7 +1457,6 @@ section {
     right: 8px;
     opacity: 1;
 }
-
 /*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
@@ -1493,7 +1481,6 @@ section {
 .clients .clients-slider .swiper-pagination .swiper-pagination-bullet-active {
     background-color: #4154f1;
 }
-
 /*--------------------------------------------------------------
 # Recent Blog Posts
 --------------------------------------------------------------*/
@@ -1549,7 +1536,6 @@ section {
 .recent-blog-posts .post-box:hover .post-img img {
     transform: rotate(6deg) scale(1.2);
 }
-
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
@@ -1617,15 +1603,13 @@ section {
     -webkit-animation: animate-loading 1s linear infinite;
     animation: animate-loading 1s linear infinite;
 }
-.contact .php-email-form input,
-.contact .php-email-form textarea {
+.contact .php-email-form input, .contact .php-email-form textarea {
     border-radius: 0;
     box-shadow: none;
     font-size: 14px;
     border-radius: 0;
 }
-.contact .php-email-form input:focus,
-.contact .php-email-form textarea:focus {
+.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
     border-color: #4154f1;
 }
 .contact .php-email-form input {
@@ -1634,7 +1618,7 @@ section {
 .contact .php-email-form textarea {
     padding: 12px 15px;
 }
-.contact .php-email-form button[type="submit"] {
+.contact .php-email-form button[type=submit] {
     background: #4154f1;
     border: 0;
     padding: 10px 30px;
@@ -1642,7 +1626,7 @@ section {
     transition: 0.4s;
     border-radius: 4px;
 }
-.contact .php-email-form button[type="submit"]:hover {
+.contact .php-email-form button[type=submit]:hover {
     background: #5969f3;
 }
 @-webkit-keyframes animate-loading {
@@ -1661,7 +1645,6 @@ section {
         transform: rotate(360deg);
     }
 }
-
 /*--------------------------------------------------------------
 # Blog
 --------------------------------------------------------------*/
@@ -1948,12 +1931,10 @@ section {
     align-items: center;
     justify-content: center;
 }
-.blog .blog-pagination li.active,
-.blog .blog-pagination li:hover {
+.blog .blog-pagination li.active, .blog .blog-pagination li:hover {
     background: #4154f1;
 }
-.blog .blog-pagination li.active a,
-.blog .blog-pagination li:hover a {
+.blog .blog-pagination li.active a, .blog .blog-pagination li:hover a {
     color: #fff;
 }
 .blog .sidebar {
@@ -1978,7 +1959,7 @@ section {
     padding: 3px 10px;
     position: relative;
 }
-.blog .sidebar .search-form form input[type="text"] {
+.blog .sidebar .search-form form input[type=text] {
     border: 0;
     padding: 4px;
     border-radius: 4px;
@@ -2080,7 +2061,6 @@ section {
     color: #a5c5fe;
     font-size: 14px;
 }
-
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -2110,12 +2090,12 @@ section {
     border-radius: 4px;
     border: 1px solid #e1ecff;
 }
-.footer .footer-newsletter form input[type="email"] {
+.footer .footer-newsletter form input[type=email] {
     border: 0;
     padding: 8px;
     width: calc(100% - 140px);
 }
-.footer .footer-newsletter form input[type="submit"] {
+.footer .footer-newsletter form input[type=submit] {
     position: absolute;
     top: 0;
     right: 0;
@@ -2130,7 +2110,7 @@ section {
     transition: 0.3s;
     border-radius: 4px;
 }
-.footer .footer-newsletter form input[type="submit"]:hover {
+.footer .footer-newsletter form input[type=submit]:hover {
     background: #5969f3;
 }
 .footer .footer-top {
@@ -2233,4 +2213,34 @@ section {
     text-align: center;
     font-size: 13px;
     color: #012970;
+}
+/*--------------------------------------------------------------
+# Custom
+--------------------------------------------------------------*/
+.tourney .list-group-item {
+    border: none !important;
+    position: relative;
+}
+.hover-zoom {
+    z-index: auto;
+    transition-duration: 200ms;
+}
+.hover-zoom:hover {
+    transform: scale(1.05) !important;
+    cursor: pointer;
+}
+.tourney button {
+    background: #4154f1;
+    border: 0;
+    padding: 10px 30px;
+    color: #fff;
+    border-radius: 4px;
+}
+.tourney h3 {
+    margin-bottom: 25px !important;
+}
+.tourney hr {
+    opacity: 0.05;
+    width: 80%;
+    margin: 16px auto
 }
