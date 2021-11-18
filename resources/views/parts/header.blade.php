@@ -35,6 +35,9 @@
           @if (Auth::check())
             <li class="dropdown"><a href="#"><span><i class="lni lni-user"></i> Account</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
+              @if (Auth::user()->is_admin == 1)
+                <li><a href="/admin ">Admin</a></li>
+              @endif
               <li><a href="/profile ">Profiel</a></li>
             <li><a href="{{ route('logout') }}"
                 onclick="event.preventDefault();
