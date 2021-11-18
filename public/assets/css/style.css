@@ -10,6 +10,19 @@
 :root {
     scroll-behavior: smooth;
 }
+.card-header{
+    position: relative;
+}
+
+.add-btn{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
 body {
     font-family: "Open Sans", sans-serif;
     color: #444444;
@@ -22,7 +35,6 @@ a:hover {
     color: #717ff5;
     text-decoration: none;
 }
-
 h1,
 h2,
 h3,
@@ -31,17 +43,14 @@ h5,
 h6 {
     font-family: "Nunito", sans-serif;
 }
-
-main .account{
+main .account {
     padding-top: 100px;
 }
-
 main .container > h1 {
     margin: 50px 0;
     position: relative;
     font-weight: bold;
 }
-
 main .container > h1::after {
     content: "";
     position: absolute;
@@ -52,7 +61,6 @@ main .container > h1::after {
     background: #d11944aa;
     z-index: -1;
 }
-
 main .container .account-details,
 main .container .account-details-change {
     display: grid;
@@ -60,16 +68,13 @@ main .container .account-details-change {
     grid-template-columns: 300px 1fr 1fr;
     min-height: 100vh;
 }
-
 main .container .account-details-change {
     grid-template-columns: 300px 1fr;
 }
-
 main .container .account-details h1,
 main .container .account-details-change h1 {
     font-weight: bolder;
 }
-
 main .container .account-details .list,
 main .container .account-details-change .list {
     height: 25%;
@@ -78,7 +83,6 @@ main .container .account-details-change .list {
     justify-content: space-evenly;
     flex-direction: column;
 }
-
 main .container .account-details .list .list-item,
 main .container .account-details-change .list .list-item {
     background: rgba(65, 83, 241, 0.2);
@@ -88,7 +92,6 @@ main .container .account-details-change .list .list-item {
     transition: background 0.2s;
     cursor: pointer;
 }
-
 main .container .account-details .list .list-item a,
 main .container .account-details-change .list .list-item a {
     display: block;
@@ -96,21 +99,17 @@ main .container .account-details-change .list .list-item a {
     font-size: 14px;
     width: 100%;
 }
-
 main .container .account-details .list .list-item:hover,
 main .container .account-details-change .list .list-item:hover {
     background: rgba(65, 83, 241, 0.5);
 }
-
 main .container .account-details .account-options h1 {
     font-weight: bolder;
 }
-
 main .container .account-details .account-options .profile-update > h3,
 main .container .account-details-change .account-options .profile-update > h3 {
     margin: 30px 0;
 }
-
 main .container .account-details .account-options .profile-update .avatar,
 main .container .account-details-change .account-options .profile-update .avatar {
     width: 300px;
@@ -118,34 +117,28 @@ main .container .account-details-change .account-options .profile-update .avatar
     justify-content: space-between;
     align-items: center;
 }
-
 main .container .account-details .account-options .profile-update .avatar a,
 main .container .account-details-change .account-options .profile-update .avatar a {
     font-size: 16px;
     font-weight: bolder;
 }
-
 main .container .account-details .account-options .profile-update .avatar img,
 main .container .account-details-change .account-options .profile-update .avatar img {
     width: 100px;
     height: 100px;
     border-radius: 150px;
 }
-
 main .container .account-details .account-options .profile-update form,
 main .container .account-details-change .account-options .profile-update form {
     padding: 25px 0;
     width: 100%;
 }
-
 main .container .account-details .account-options .profile-update form .row {
     margin: 5px 0;
 }
-
 main .container .account-details-change .account-options .profile-update form .row {
     margin: 25px 0;
 }
-
 main .container .account-details-change .account-options .profile-update form .delete .col,
 main .container .account-details-change .account-options .profile-update form .change_pass .col {
     display: flex;
@@ -154,40 +147,33 @@ main .container .account-details-change .account-options .profile-update form .c
     min-width: 500px;
     margin-top: 25px;
 }
-
 main .container .account-details-change .account-options .profile-update form .change_pass button,
 main .container .account-details-change .account-options .profile-update form .delete button {
     height: 35px;
 }
-
 main .container .account-details .account-options .profile-update form label,
 main .container .account-details-change .account-options .profile-update form label {
     font-weight: bold;
 }
-
 main .container .account-details .account-options .profile-update form input,
 main .container .account-details-change .account-options .profile-update form input {
     width: 100%;
     border-radius: 10px;
 }
-
 main .container .account-details .account-options .payInfo {
     display: flex;
     width: 700px;
     justify-content: space-between;
 }
-
 main .container .account-details .account-options .payInfo .payPreference,
 main .container .account-details .account-options .payInfo .payHistory {
     margin: 20px 0;
     width: 100%;
     padding: 20px;
 }
-
 main .container .account-details .account-options .payInfo .payHistory table {
     width: 100%;
 }
-
 main .container .account-details .profile-reservations table {
     margin: 25px 0;
     width: 100%;
@@ -226,6 +212,55 @@ section {
     .section-header p {
         font-size: 28px;
         line-height: 32px;
+    }
+
+    main .container .account-details, main .container .account-details-change {
+        grid-template-columns: 100%;
+    }
+
+    main .container .account-details-change .account-options .profile-update form .row {
+        display: unset;
+    }
+
+    main .container .account-details-change .account-options .profile-update form .delete .col,
+    main .container .account-details-change .account-options .profile-update form .change_pass .col {
+        display: unset;
+    }
+
+    main .container .account-details-change .account-options .profile-update form .change_pass button,
+    main .container .account-details-change .account-options .profile-update form .delete button {
+        margin: 10px 0;
+    }
+
+    main .container .account-details .list,
+    main .container .account-details-change .list {
+        height: unset;
+        align-items: center;
+        padding: 50px 0;
+        justify-content: unset;
+    }
+
+    main .container .account-details .list .list-item,
+    main .container .account-details-change .list .list-item {
+        max-width: unset;
+        width: 200px;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .account-details, .account-options{
+        text-align: center;
+    }
+
+    main .container .account-details .account-options .profile-update .avatar{
+        width: unset;
+        justify-content: center;
+    }
+
+    main .container .account-details .account-options .payInfo{
+        display: unset;
+        width: 100%;
+        text-align: center;
     }
 }
 /*--------------------------------------------------------------
@@ -336,7 +371,6 @@ section {
     font-family: "Nunito", sans-serif;
     margin-top: 3px;
 }
-
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/

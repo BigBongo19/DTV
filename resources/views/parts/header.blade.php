@@ -11,9 +11,9 @@
           <li><a class="nav-link  {{ (request()->is('/')) ? 'active' : '' }}" href="/">Home</a></li>
           @if (Auth::check())
           <li><a class="nav-link  {{ (request()->is('reserveren')) ? 'active' : '' }}" href="/reserveren">Baan reserveren</a></li>
-          <li><a class="nav-link {{ (request()->is('tournooien')) ? 'active' : '' }}" href="/toernooien">Toernooien</a></li>
+          <li><a class="nav-link {{ (request()->is('toernooi')) || (request()->is('toernooien')) ? 'active' : '' }}" href="/toernooien">Toernooien</a></li>
           @endif
-          <li><a class="nav-link {{ (request()->is('menu')) ? 'active' : '' }}" href="/menu">Menu kaart</a></li>
+          <li><a class="nav-link {{ (request()->is('menu'))  ? 'active' : '' }}" href="/menu">Menu kaart</a></li>
           {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>

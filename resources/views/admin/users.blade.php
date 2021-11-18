@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Starter</title>
+  <title>DTV Admin | Users</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -84,7 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <td>john.doe@gmail.com</td>
                       <td>false</td>
                       <td>
-                        <a style="background-color: #f2d61f; border-color: #f2d61f" href="admin/bewerk" type="submit" class="btn btn-primary">bewerk user</a>
+                        <a style="background-color: #f2d61f; border-color: #f2d61f" href="users/edit" type="submit" class="btn btn-primary">bewerk user</a>
                         <a style="background-color: red; border-color: red;" type="submit" class="btn btn-primary">verwijder user</a>
                       </td>
                     </tr>

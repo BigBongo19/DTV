@@ -11,15 +11,23 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
-    public function users(){
+    public function users()
+    {
         return view('admin.users');
     }
 
-    public function edit(){
+    public function edit()
+    {
         return view('admin.edit');
     }
 
-    public function reservations(){
+    public function reservations()
+    {
         return view('admin.reservations');
+    }
+  
+    public function add()
+    {
+        return view('admin.add');
     }
 }
