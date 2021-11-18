@@ -119,6 +119,11 @@
             flex-direction: column;
             margin: 0%;
         }
+
+        .eten .drinken{
+            display: flex;
+            align-items: center;
+        }
     }
 
   </style>
@@ -180,7 +185,7 @@
       <?php
         for($x = 0; $x <= 4; $x++){
           ?>
-          <div class="col-lg-3 col-md-6 eten d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-3 col-md-6 eten" data-aos="zoom-in" data-aos-delay="100">
 
         <div id="list_item_card_border" class="hover-zoom">
           <div>
@@ -192,7 +197,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6 drinken d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+      <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
             <img id="card_image_list" src="images/perfect-hot-dog.jpg">
