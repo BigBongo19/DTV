@@ -34,6 +34,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/tournaments', 'AdminController@add')->name('adminAdd');
 });
 
+// Admin only
+Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
+Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
+Route::get('/admin/add', 'AdminController@add')->name('adminAdd');
 
 // Redirects
 Route::redirect('/admin', '/admin/home');
