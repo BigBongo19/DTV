@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('last_name');
+            $table->string('phone_number')->nullable();
             $table->string('profile_img_url')->nullable();
             $table->boolean('is_admin')->default('0');
             $table->boolean('is_member')->default('0');

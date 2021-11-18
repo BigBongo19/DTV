@@ -70,7 +70,7 @@
 
                             <div class="col">
                                 <label for="inputName" class="form-label">Achternaam:</label>
-                                <p></p>
+                                <p>{{$user->last_name}}</p>
                             </div>
                         </div>
 
