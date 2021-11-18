@@ -10,11 +10,11 @@
 :root {
     scroll-behavior: smooth;
 }
-.card-header{
+.card-header {
     position: relative;
 }
 
-.add-btn{
+.add-btn {
     position: absolute;
     top: 0;
     right: 20px;
@@ -390,6 +390,7 @@ section {
 .navbar li {
     position: relative;
 }
+
 .navbar a, .navbar a:focus {
     display: flex;
     align-items: center;
@@ -402,6 +403,7 @@ section {
     white-space: nowrap;
     transition: 0.3s;
 }
+
 .navbar a i, .navbar a:focus i {
     font-size: 12px;
     line-height: 0;
@@ -413,6 +415,7 @@ section {
 .navbar li:hover > a {
     color: #4154f1;
 }
+
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
     color: #4154f1;
 }
