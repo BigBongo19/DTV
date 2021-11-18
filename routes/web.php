@@ -30,6 +30,7 @@ Route::middleware(['auth'])->group(function () {
 // Admin only
 Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
 Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
+Route::get('/admin/users/edit', 'AdminController@edit')->name('adminEdit');
 
 Route::get('/admin/add', 'AdminController@add')->name('adminAdd');
 // Redirects
