@@ -43,6 +43,13 @@
 							<i class="fa fa-user" aria-hidden="true"></i>
 						</span>
 					</div>
+                    <div class="wrap-input100 validate-input" data-validate = "Achternaam is verplicht">
+						<input class="input100" id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}"  autocomplete="last_name" placeholder="Achternaam" data-validate = "Je moet een achternaam invullen">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Email is verplicht">
 						<input class="input100" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" placeholder="Email" data-validate = "Je moet een Email invullen">
 						<span class="focus-input100"></span>
