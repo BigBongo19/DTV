@@ -61,11 +61,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <table id="example1" class="table table-bordered table-striped">
                         <thead>
                         <tr>
-                          <th>Rendering engine</th>
-                          <th>Browser</th>
-                          <th>Platform(s)</th>
-                          <th>Engine version</th>
-                          <th>CSS grade</th>
+                          <th>Klantnummer</th>
+                          <th>Naam</th>
+                          <th>Toernooi</th>
+                          <th>Aangemeld</th>
+                          <th>Datum</th>
                         </tr>
                         </thead>
                         <tbody>

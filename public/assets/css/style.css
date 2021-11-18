@@ -10,11 +10,11 @@
 :root {
     scroll-behavior: smooth;
 }
-.card-header{
+.card-header {
     position: relative;
 }
 
-.add-btn{
+.add-btn {
     position: absolute;
     top: 0;
     right: 20px;
