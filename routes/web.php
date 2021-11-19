@@ -21,7 +21,9 @@ Route::get('/menu', 'MenuController@index')->name('menu');
 Route::middleware(['auth'])->group(function () {
     Route::get('/reserveren', 'ReserveController@index')->name('reserveIndex');
     Route::get('/profile', 'ProfileController@index')->name('profileIndex');
-    Route::get('/edit-profile', 'ProfileController@edit')->name('editIndex');
+    Route::get('/edit-profile', 'ProfileController@editIndex')->name('editProfile');
+    Route::post('/edit-profile/submit', 'ProfileController@edit');
+    Route::post('/edit-profile/submitpassword', 'ProfileController@editPassword');
     Route::get('/payments', 'ProfileController@payment')->name('paymentIndex');
     Route::get('/reserveren', 'ReserveController@index')->name('index');
     Route::get('/toernooien', 'TournamentController@index')->name('index');

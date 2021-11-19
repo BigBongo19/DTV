@@ -63,19 +63,20 @@
                         <a href="#" class="link-primary">Upload</a>
                         <a href="#" class="link-secondary">Remove</a>
                     </div>
-                    <form action="#">
+                    <form action="/edit-profile/submit" method="POST">
+                        @csrf
                         <div class="row">
                             <div class="col">
                                 <label for="inputNickname" class="form-label">Voornaam:</label>
-                                <input type="email" class="form-control" id="inputNickname"
-                                    aria-describedby="nicknameHelp" name="nickname" value="{{$user->name}}">
+                                <input type="text" class="form-control" id="inputNickname"
+                                    aria-describedby="nicknameHelp" name="name" value="{{$user->name}}">
                                 <div id="nicknameHelp" class="form-text">Deze naam is zichtbaar voor iedereen</div>
                             </div>
 
                             <div class="col">
                                 <label for="inputName" class="form-label">Achternaam:</label>
                                 <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp"
-                                    name="name" value="{{$user->last_name}}">
+                                    name="last_name" value="{{$user->last_name}}">
                                 <div id="nameHelp" class="form-text">Hoe wil je worden genoemd?</div>
                             </div>
                         </div>
@@ -98,32 +99,33 @@
                         <div class="row">
                             <div class="col">
                                 <label for="inputEmail" class="form-label">Geslacht</label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option value="" disabled selected hidden>Selecteer uw geslacht</option>
-                                    <option value="1">Man</option>
-                                    <option value="2">Vrouw</option>
-                                    <option value="3">Overig</option>
+                                <select name="gender" class="form-select" aria-label="Default select example">
+                                    <option value="null" disabled selected hidden>Selecteer uw geslacht</option>
+                                    <option value="1" @if ($user->gender == 1) selected @endif>Man</option>
+                                    <option value="2" @if ($user->gender == 2) selected @endif>Vrouw</option>
+                                    <option value="3" @if ($user->gender == 3) selected @endif>Overig</option>
                                   </select>
                                 <div id="emailHelp" class="form-text">Algemene info</div>
                             </div>
 
                             <div class="col">
                                 <label for="inputEmail" class="form-label">Actie</label><br>
-                                <button type="button" class="btn btn-primary">Opslaan</button>
+                                <input type="submit" class="btn btn-primary" value="Opslaan">
                             </div>
                         </div>
 
                         <div class="row change_pass">
                             <div class="col">
                                 <div class="text">
-                                    <label for="inputEmail" class="form-label">Wachtwoord aanpassen</label>
-                                    <div id="emailHelp" class="form-text">Hier kunt u uw wachtwoord aanpassen</div>
+                                    <label for="inputEmail" class="form-label">Wachtwoord wijzigen</label>
+                                    <div id="emailHelp" class="form-text">Als u uw account verwijderd, verwijderd u ook
+                                        al uw gegevens</div>
                                 </div>
-                                <button type="button" class="btn btn-secondary">Wijzig wachtwoord</button>
+                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalDelete">Aanpassen</button>
                             </div>
                         </div>
 
-                        <div class="row delete">
+                        {{-- <div class="row delete">
                             <div class="col">
                                 <div class="text">
                                     <label for="inputEmail" class="form-label">Account Verwijderen</label>
@@ -132,7 +134,7 @@
                                 </div>
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDelete">Verwijderen</button>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </form>
                 </div>
@@ -143,15 +145,33 @@
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Weet je het zeker?</h5>
+                  <h5 class="modal-title">Wachtwoord wijzigen</h5>
                 </div>
                 <div class="modal-body">
-                  <p>Als je je account verwijderd, verdwijnen ook <b>ALLE</b> gegevens op uw account.</p>
-                  <p>Wilt u doorgaan?</p>
+                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="/edit-profile/submitpassword" method="post">
+                        @csrf
+
+
+                                   <div class="form-group">
+                                       <input type="password" class="form-control col-md-7 col-xs-12"  placeholder="Enter old password" name="oldpassword">
+                                   </div>
+
+                                   <div class="form-group">
+                                       <input type="password" placeholder="Enter new password" class="form-control col-md-7 col-xs-12" name="newpassword">
+                                   </div>
+
+                                   <div class="form-group">
+                                       <input type="password" class="form-control col-md-7 col-xs-12"placeholder="Enter password confirmation"  name="password_confirmation">
+                                   </div>
+
+
+
+
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nee</button>
-                  <button type="button" class="btn btn-danger">Ja, verwijder mijn account</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+
+                </form>
                 </div>
               </div>
             </div>
@@ -165,5 +185,54 @@
   @include('parts.footer')
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+<script>
+  @if(Session::has('message'))
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-bottom-center",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+  		toastr.success("{{ session('message') }}");
+  @endif
+  @if(Session::has('warning'))
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-bottom-center",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+  		toastr.warning("{{ session('warning') }}");
+  @endif
+
+</script>
+
+
 
 </html>
