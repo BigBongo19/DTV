@@ -83,12 +83,12 @@
               <li class="nav-header">MANAGE</li>
               <li class="nav-item">
                 <a href="/admin/users" class="nav-link  {{ (request()->is('admin/users')) ? 'active' : '' }}">
-                  <i class="far fa-user nav-icon"></i>
+                    <i class="fas fa-user nav-icon"></i>
                   <p>Users</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/tournaments" class="nav-link  {{ (request()->is('admin/tournaments')) ? 'active' : '' }}">
+                <a href="/admin/toernooiList" class="nav-link  {{ (request()->is('admin/tournaments')) ? 'active' : '' }}">
                   <i class="fa fa-trophy nav-icon"></i>
                   <p>Tournaments</p>
                 </a>

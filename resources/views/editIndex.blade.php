@@ -43,7 +43,7 @@
 
   <main id="main">
 
-      <div class="container account" data-aos="fade-up">
+      <div class="container account">
         <h1>Instellingen</h1>
 
         <section class="account-details-change">
@@ -66,16 +66,16 @@
                     <form action="#">
                         <div class="row">
                             <div class="col">
-                                <label for="inputNickname" class="form-label">Gebruikersnaam:</label>
+                                <label for="inputNickname" class="form-label">Voornaam:</label>
                                 <input type="email" class="form-control" id="inputNickname"
-                                    aria-describedby="nicknameHelp" name="nickname">
+                                    aria-describedby="nicknameHelp" name="nickname" value="{{$user->name}}">
                                 <div id="nicknameHelp" class="form-text">Deze naam is zichtbaar voor iedereen</div>
                             </div>
 
                             <div class="col">
-                                <label for="inputName" class="form-label">Volledige naam:</label>
+                                <label for="inputName" class="form-label">Achternaam:</label>
                                 <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp"
-                                    name="name">
+                                    name="name" value="{{$user->last_name}}">
                                 <div id="nameHelp" class="form-text">Hoe wil je worden genoemd?</div>
                             </div>
                         </div>
@@ -84,14 +84,14 @@
                             <div class="col">
                                 <label for="inputEmail" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
-                                    name="email">
+                                    name="email" value="{{$user->email}}">
                                 <div id="emailHelp" class="form-text">Om in te loggen</div>
                             </div>
 
                             <div class="col">
                                 <label for="inputPhone" class="form-label">Telefoonnummer</label>
                                 <input type="tel" class="form-control" id="inputPhone" aria-describedby="phoneHelp"
-                                    name="phone">
+                                    name="phone" value="{{$user->phone_number}}">
                                 <div id="phoneHelp" class="form-text">Zodat wij u kunnen bereiken</div>
                             </div>
                         </div>

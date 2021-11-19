@@ -43,7 +43,7 @@
 
   <main id="main">
     <!-- ======= About Section ======= -->
-    <div class="container account" data-aos="fade-up">
+    <div class="container account">
         <h1>Instellingen</h1>
 
         <section class="account-details">
@@ -70,7 +70,7 @@
 
                             <div class="col">
                                 <label for="inputName" class="form-label">Achternaam:</label>
-                                <p></p>
+                                <p>{{$user->last_name}}</p>
                             </div>
                         </div>
 

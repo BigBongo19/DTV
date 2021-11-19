@@ -109,6 +109,11 @@
       transition: 500ms;
       cursor: pointer;
     }
+    #item-soort-titel{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
     @media only screen and (max-width: 768px) {
         #random_item_card_border{
             display: none;
@@ -182,21 +187,11 @@
       ?>
     </div>
     <div id="item_list">
+        <h1 id="item-soort-titel" class="eten">warm eten</h1>
       <?php
-        for($x = 0; $x <= 4; $x++){
+        for($x = 0; $x <= 3; $x++){
           ?>
         <div class="col-lg-3 col-md-6 eten" data-aos="zoom-in" data-aos-delay="100">
-        <div id="list_item_card_border" class="hover-zoom">
-          <div>
-            <img id="card_image_list" src="images/perfect-hot-dog.jpg">
-          </div>
-          <div class="card_text">
-            <p>willekeurig item</p>
-            <p>$0.00</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
             <img id="card_image_list" src="images/perfect-hot-dog.jpg">
@@ -210,6 +205,99 @@
           <?php
         }
       ?>
+      <h1 id="item-soort-titel" class="drinken">koud eten</h1>
+      <?php
+        for($x = 0; $x <= 3; $x++){
+          ?>
+        <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
+        <div id="list_item_card_border" class="hover-zoom">
+          <div>
+            <img id="card_image_list" src="images/perfect-hot-dog.jpg">
+          </div>
+          <div class="card_text">
+            <p>willekeurig item</p>
+            <p>$0.00</p>
+          </div>
+        </div>
+      </div>
+          <?php
+        }
+      ?>
+      <h1 id="item-soort-titel" class="eten">snacks</h1>
+      <?php
+        for($x = 0; $x <= 3; $x++){
+          ?>
+        <div class="col-lg-3 col-md-6 eten" data-aos="zoom-in" data-aos-delay="100">
+        <div id="list_item_card_border" class="hover-zoom">
+          <div>
+            <img id="card_image_list" src="images/perfect-hot-dog.jpg">
+          </div>
+          <div class="card_text">
+            <p>willekeurig item</p>
+            <p>$0.00</p>
+          </div>
+        </div>
+      </div>
+          <?php
+        }
+      ?>
+      <h1 id="item-soort-titel" class="drinken">water</h1>
+      <?php
+        for($x = 0; $x <= 3; $x++){
+          ?>
+        <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
+        <div id="list_item_card_border" class="hover-zoom">
+          <div>
+            <img id="card_image_list" src="images/perfect-hot-dog.jpg">
+          </div>
+          <div class="card_text">
+            <p>willekeurig item</p>
+            <p>$0.00</p>
+          </div>
+        </div>
+      </div>
+          <?php
+        }
+      ?>
+
+<h1 id="item-soort-titel" class="eten">fris drank</h1>
+      <?php
+        for($x = 0; $x <= 3; $x++){
+          ?>
+        <div class="col-lg-3 col-md-6 eten" data-aos="zoom-in" data-aos-delay="100">
+        <div id="list_item_card_border" class="hover-zoom">
+          <div>
+            <img id="card_image_list" src="images/perfect-hot-dog.jpg">
+          </div>
+          <div class="card_text">
+            <p>willekeurig item</p>
+            <p>$0.00</p>
+          </div>
+        </div>
+      </div>
+          <?php
+        }
+      ?>
+      <h1 id="item-soort-titel" class="drinken">alcoholistische dranken</h1>
+      <?php
+        for($x = 0; $x <= 3; $x++){
+          ?>
+        <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
+        <div id="list_item_card_border" class="hover-zoom">
+          <div>
+            <img id="card_image_list" src="images/perfect-hot-dog.jpg">
+          </div>
+          <div class="card_text">
+            <p>willekeurig item</p>
+            <p>$0.00</p>
+          </div>
+        </div>
+      </div>
+          <?php
+        }
+      ?>
+
+
     </div>
   </div>
   <!-- ======= Footer ======= -->

@@ -43,7 +43,7 @@
 
     <main id="main">
 
-        <div class="container account" data-aos="fade-up">
+        <div class="container account">
             <h1>Instellingen</h1>
 
             <section class="account-details">
