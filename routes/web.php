@@ -33,10 +33,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
         Route::get('/admin/users/edit', 'AdminController@edit')->name('adminEdit');
         Route::get('/admin/tournaments', 'AdminController@add')->name('adminAdd');
-        Route::get('/admin/reservations', 'AdminController@reservations')->name('adminReservations');
+        Route::get('/admin/reservations', 'ReservationsController@index')->name('adminReservations');
     });
-
-
 });
 
 // Redirects

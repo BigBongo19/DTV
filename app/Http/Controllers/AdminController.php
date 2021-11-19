@@ -25,9 +25,4 @@ class AdminController extends Controller
     {
         return view('admin.add');
     }
-
-    public function reservations()
-    {
-        return view('admin.reservations');
-    }
 }
