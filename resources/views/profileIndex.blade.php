@@ -43,8 +43,18 @@
 
   <main id="main">
     <!-- ======= About Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>Mijn account</li>
+          </ol>
+          <h2>Mijn account</h2>
+        </div>
+      </section>
     <div class="container account">
-        <h1>Instellingen</h1>
+
 
         <section class="account-details">
             <div class="list">
@@ -54,7 +64,6 @@
             </div>
 
             <div class="account-options">
-                <h1>Account</h1>
 
                 <div class="profile-update">
                     <h3>Profielfoto</h3>
