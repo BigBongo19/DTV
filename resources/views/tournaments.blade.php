@@ -76,7 +76,7 @@
             <div class="d-flex justify-content-center">
                 <ul class="list-group features flex-column col-8">
                     <!-- example -->
-                    @for($i = 1; $i <= 10; $i++)
+                    @foreach($tournaments as $tournament)
                         <li class="list-group-item flex-row" data-href="toernooi?id={{$i}}" data-aos="fade-up"
                             data-aos-delay="{{$i * 100}}">
                             <div class="container feature-box d-grid hover-zoom">
