@@ -42,6 +42,16 @@
     <!-- End Header -->
 
   <main id="main">
+    <section class="breadcrumbs">
+        <div class="container">
+
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>Mijn account</li>
+          </ol>
+          <h2>Mijn account</h2>
+        </div>
+      </section>
 
       <div class="container account">
         <h1>Instellingen</h1>
