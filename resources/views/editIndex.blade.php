@@ -95,6 +95,23 @@
                                 <div id="phoneHelp" class="form-text">Zodat wij u kunnen bereiken</div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="inputEmail" class="form-label">Geslacht</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option value="" disabled selected hidden>Selecteer uw geslacht</option>
+                                    <option value="1">Man</option>
+                                    <option value="2">Vrouw</option>
+                                    <option value="3">Overig</option>
+                                  </select>
+                                <div id="emailHelp" class="form-text">Algemene info</div>
+                            </div>
+
+                            <div class="col">
+                                <label for="inputEmail" class="form-label">Actie</label><br>
+                                <button type="button" class="btn btn-primary">Opslaan</button>
+                            </div>
+                        </div>
 
                         <div class="row change_pass">
                             <div class="col">
