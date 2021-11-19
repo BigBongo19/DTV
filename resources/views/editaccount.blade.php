@@ -47,14 +47,13 @@
 
           <ol>
             <li><a href="/">Home</a></li>
-            <li>Mijn account</li>
+            <li>Account aanpassen</li>
           </ol>
-          <h2>Mijn account</h2>
+          <h2>Account aanpassen</h2>
         </div>
       </section>
 
       <div class="container account">
-        <h1>Instellingen</h1>
 
         <section class="account-details-change">
             <div class="list">
@@ -64,7 +63,6 @@
             </div>
 
             <div class="account-options">
-                <h1>Account aanpassen</h1>
 
                 <div class="profile-update">
                     <h3>Profielfoto</h3>
