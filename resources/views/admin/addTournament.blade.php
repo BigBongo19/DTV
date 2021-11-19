@@ -49,14 +49,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-        <form action="#" class="">
+        <form action="#" method="POST" style="max-width: 1200px">
+            @csrf
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="titleTournament" placeholder="toernament titel">
+                <input type="text" class="form-control" id="titleTournament" placeholder="toernament titel" name="titleTournament">
                 <label for="titleTournament">Titel</label>
             </div>
 
             <div class="form-floating mb-3">
-                <select class="form-select" id="baanSelect" aria-label="Floating label select example">
+                <select class="form-select" id="baanSelect" aria-label="Floating label select example" name="selectLane">
                   <option selected>Selecteer een baan</option>
                   <option value="baan1">baan 1</option>
                   <option value="baan2">baan 2</option>
@@ -66,10 +67,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
 
             <div class="mb-3">
-                <label for="dateTournament" class="form-label">Datum + tijd</label>
-                <input type="datetime-local" class="form-control" id="dateTournament" aria-describedby="emailHelp">
-                <div id="dateHelp" class="form-text">Wanneer wordt het toernooi gehouden?</div>
+                <label for="dateTournament" class="form-label">Wanneer begint het toernooi?</label>
+                <input type="datetime-local" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentStart">
+                <div id="dateHelp" class="form-text">Datum + tijd</div>
             </div>
+
+            <div class="mb-3">
+                <label for="dateTournament" class="form-label">Wanneer eindigt het toernooi?</label>
+                <input type="datetime-local" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentEnd">
+                <div id="dateHelp" class="form-text">Datum + tijd</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="inputDesc" class="form-label">Beschrijving</label>
+                <textarea class="form-control" id="inputDesc" rows="5" name="descTournament"></textarea>
+              </div>
 
             <button type="submit" class="btn btn-success addTournament">Toevoegen</button>
         </form>

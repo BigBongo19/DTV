@@ -34,13 +34,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
         Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
         Route::get('/admin/users/edit', 'AdminController@edit')->name('adminEdit');
-      
-        Route::get('/admin/tournaments', 'AdminController@add')->name('adminAdd');
-        Route::get('/admin/reservations', 'ReservationsController@index')->name('adminReservations');
-        //Route::get('/admin/reservations', 'AdminController@reservations')->name('adminReservations');
-
-        Route::get('/admin/toernooiList', 'AdminController@toernooiOverview')->name('adminToernooiOverview');
-        Route::get('/admin/addToernooi', 'AdminController@addToernooi')->name('adminAddToernooi');
+        Route::get('/admin/tournamentList', 'AdminController@tournamentOverview')->name('adminTournamentOverview');
+        Route::get('/admin/addTournament', 'AdminController@addTournament')->name('adminAddTournament');
+        Route::post('/admin/addTournament', 'AdminController@submitTournament');
+        Route::get('/admin/reservations', 'AdminController@reservations')->name('adminReservations');
     });
 });
 
