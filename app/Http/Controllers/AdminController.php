@@ -21,9 +21,14 @@ class AdminController extends Controller
         return view('admin.edit');
     }
 
-    public function add()
+    public function toernooiOverview()
     {
-        return view('admin.add');
+        return view('admin.toernooiList');
+    }
+
+    public function addToernooi()
+    {
+        return view('admin.addToernooi');
     }
 
     public function reservations()
