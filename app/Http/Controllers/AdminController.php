@@ -41,6 +41,7 @@ class AdminController extends Controller
     public function submitTournament(Request $request){
         $tournament = new Tournament;
         $tournament->title = $request->titleTournament;
+        $tournament->lane = $request->selectLane;
         $tournament->max_participants = 32;
         $tournament->start_date = $request->dateTournamentStart;
         $tournament->end_date = $request->dateTournamentEnd;
