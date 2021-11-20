@@ -67,7 +67,7 @@
                 <div class="account-options">
 
                     <div class="profile-update">
-                        <h3>Profielfoto</h3>
+                        <h3>Profielfoto:</h3>
                         <div class="avatar">
                             <img src="assets/img/team/team-1.jpg" alt="team 1">
                             <a href="#" class="link-primary">Upload</a>
@@ -129,12 +129,10 @@
                                 <div class="col">
                                     <div class="text">
                                         <label for="inputEmail" class="form-label">Wachtwoord wijzigen</label>
-                                        <div id="emailHelp" class="form-text">Als u uw account verwijderd,
-                                            verwijderd u ook
-                                            al uw gegevens</div>
+                                        <div id="emailHelp" class="form-text">Wij raden aan om minimaal 10 tekens te gebruiken.</div>
                                     </div>
                                     <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#modalDelete">Aanpassen</button>
+                                        data-bs-target="#modalDelete">Wijzigen</button>
                                 </div>
                             </div>
 
@@ -160,6 +158,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Wachtwoord wijzigen</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"

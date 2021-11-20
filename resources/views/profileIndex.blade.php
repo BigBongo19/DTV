@@ -64,9 +64,10 @@
             </div>
 
             <div class="account-options">
+                <h1>Algemene informatie</h1>
 
                 <div class="profile-update">
-                    <h3>Profielfoto</h3>
+                    <h3>Profielfoto:</h3>
                     <div class="avatar">
                         <img src="assets/img/team/team-1.jpg" alt="team 1">
                     </div>
