@@ -18,8 +18,8 @@ class CreateTournamentsTable extends Migration
             $table->string('title');
             $table->string('lane');
             $table->integer('max_participants');
-            $table->dateTime('start_date');
-            $table->dateTime('end_date');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->string('img_path')->nullable();
             $table->longText('description');
             $table->timestamps();
