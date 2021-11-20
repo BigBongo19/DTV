@@ -76,27 +76,26 @@
             <div class="d-flex justify-content-center">
                 <ul class="list-group features flex-column col-8">
                     <!-- example -->
-                    @for($i = 1; $i <= 10; $i++)
-                        <li class="list-group-item flex-row" data-href="toernooi?id={{$i}}" data-aos="fade-up"
-                            data-aos-delay="{{$i * 100}}">
+                    @foreach($tournaments as $tournament)
+                        <li class="list-group-item flex-row" style="box-shadow:  10px 10px 25px black">
                             <div class="container feature-box d-grid hover-zoom">
                                 <div class="row">
-                                    <h3 class="col-12 col-md-6 col-lg-8 text-center text-md-start align-center">Toernooi naam {{$i}}</h3>
+                                    <h3 class="col-12 col-md-6 col-lg-8 text-center text-md-start align-center">{{$tournament->title}}</h3>
                                     <div class="col-12 col-md-6 col-lg-4 row">
                                         <button class="col-10 col-md-12 align-self-center" style="margin: 0 auto" type="submit">Inschrijven</button>
                                     </div>
                                 </div>
                                 <div>
                                     <hr>
-                                    <p class="col-12 col-md-6 col-lg-4">Datum: {{rand(0, 30)}}-{{rand(0, 12)}}-{{rand(2010, 2030)}}</p>
+                                    <p class="col-12 col-md-6 col-lg-4">Toernooi begint op: {{$tournament->start_date}}</p>
+                                    <p class="col-12 col-md-6 col-lg-4">Wordt gehouden op: {{$tournament->lane}}</p>
                                 </div>
                                 <div class="row">
                                     <p class="col-12 col-md-6 col-lg-8">plekken: {{rand(0, 32)}}/32</p>
-                                    <p class="col-12 col-md-6 col-lg-4">entree prijs: ${{rand(1, 20)}}</p>
                                 </div>
                             </div>
                         </li>
-                    @endfor
+                    @endforeach
                 </ul>
             </div>
         </div>
