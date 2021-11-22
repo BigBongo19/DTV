@@ -54,7 +54,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="card">
                     <div class="card-header">
                       <h3 class="card-title">DataTable with default features</h3>
-                      <a class="add-btn btn btn-success">Maak een nieuw toernooi aan</a>
+                      <a href="addTournament" class="add-btn btn btn-success">Maak een nieuw toernooi aan</a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">

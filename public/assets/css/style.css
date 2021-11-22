@@ -11,16 +11,23 @@
     scroll-behavior: smooth;
 }
 .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     position: relative;
 }
 
 .add-btn {
     position: absolute;
-    top: 0;
-    right: 20px;
+    right: 15px;
     border-radius: 0.25rem;
     cursor: pointer;
     transition: 0.2s;
+}
+
+.addTournament{
+    float: right;
 }
 
 body {
@@ -43,9 +50,7 @@ h5,
 h6 {
     font-family: "Nunito", sans-serif;
 }
-main .account {
-    padding-top: 100px;
-}
+
 main .container > h1 {
     margin: 50px 0;
     position: relative;

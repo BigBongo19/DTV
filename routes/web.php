@@ -21,10 +21,12 @@ Route::get('/menu', 'MenuController@index')->name('menu');
 Route::middleware(['auth'])->group(function () {
     Route::get('/reserveren', 'ReserveController@index')->name('reserveIndex');
     Route::get('/profile', 'ProfileController@index')->name('profileIndex');
-    Route::get('/edit-profile', 'ProfileController@edit')->name('editIndex');
+    Route::get('/edit-profile', 'ProfileController@editIndex')->name('editProfile');
+    Route::post('/edit-profile/submit', 'ProfileController@edit');
+    Route::post('/edit-profile/submitpassword', 'ProfileController@editPassword');
     Route::get('/payments', 'ProfileController@payment')->name('paymentIndex');
     Route::get('/reserveren', 'ReserveController@index')->name('index');
-    Route::get('/toernooien', 'TournamentController@index')->name('index');
+    Route::get('/toernooien', 'TournamentController@getTournaments')->name('index');
     Route::get('/toernooi', 'TournamentDetailController@index')->name('index');
 
     // Admin only
@@ -32,11 +34,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
         Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
         Route::get('/admin/users/edit', 'AdminController@edit')->name('adminEdit');
-        Route::get('/admin/tournaments', 'AdminController@add')->name('adminAdd');
+        Route::get('/admin/tournamentList', 'AdminController@tournamentOverview')->name('adminTournamentOverview');
+        Route::get('/admin/addTournament', 'AdminController@addTournament')->name('adminAddTournament');
+        Route::post('/admin/addTournament', 'AdminController@submitTournament');
         Route::get('/admin/reservations', 'AdminController@reservations')->name('adminReservations');
     });
-
-
 });
 
 // Redirects
