@@ -81,12 +81,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <td>{{$user->email}}</td>
                               <td>{{$user->is_admin}}</td>
                               <td id="forms-input">
-                                <form id="form" method="get">
-                                <input type="hidden" name="id" value="id" value="{{$user->id}}">
-                                <button style="background-color: #f2d61f; border-color: #f2d61f" name="edit" id="edit" type="submit" class="btn btn-primary">bewerk user</button>
+                                <form action="users/edit" id="form" method="get">
+                                <input type="hidden" name="edit_id" value="{{$user->id}}">
+                                <button style="background-color: #f2d61f; border-color: #f2d61f" id="edit" type="submit" class="btn btn-primary">bewerk user</button>
                                 </form>
-                                <form id="form" method="get">
-                                <input type="hidden" name="id" value="id" value="{{$user->id}}">
+                                <form for id="form" method="get">
+                                <input type="hidden" name="id" value="{{$user->id}}">
                                 <button style="background-color: red; border-color: red;" name="delete" id="delete" type="submit" class="btn btn-primary">verwijder user</button>
                                 </form>
                               </td>
