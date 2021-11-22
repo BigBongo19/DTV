@@ -83,11 +83,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <td id="forms-input">
                                 <form action="users/edit" id="form" method="get">
                                 <input type="hidden" name="edit_id" value="{{$user->id}}">
-                                <button style="background-color: #f2d61f; border-color: #f2d61f" id="edit" type="submit" class="btn btn-primary">bewerk user</button>
+                                <button style="background-color: #f2d61f; border-color: #f2d61f" id="edit" type="submit" class="btn btn-primary">
+                                <i class="fas fa-pen"></i>
+                                </button>
                                 </form>
                                 <form for id="form" method="get">
                                 <input type="hidden" name="id" value="{{$user->id}}">
-                                <button style="background-color: red; border-color: red;" name="delete" id="delete" type="submit" class="btn btn-primary">verwijder user</button>
+                                <button style="background-color: red; border-color: red;" name="delete" id="delete" type="submit" class="btn btn-primary">
+                                  <i class="fas fa-trash"></i>
+                                </button>
                                 </form>
                               </td>
                             </tr>
