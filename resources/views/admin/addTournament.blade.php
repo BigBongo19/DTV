@@ -68,13 +68,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <div class="mb-3">
                 <label for="dateTournament" class="form-label">Wanneer begint het toernooi?</label>
-                <input type="date" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentStart">
+                <input type="datetime-local" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentStart">
                 <div id="dateHelp" class="form-text">Datum + tijd</div>
             </div>
 
             <div class="mb-3">
                 <label for="dateTournament" class="form-label">Wanneer eindigt het toernooi?</label>
-                <input type="date" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentEnd">
+                <input type="datetime-local" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentEnd">
                 <div id="dateHelp" class="form-text">Datum + tijd</div>
             </div>
 
