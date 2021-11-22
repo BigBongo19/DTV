@@ -23,7 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     #forms-input{
         display: flex;
     }
-    #form{
+    #edit{
         margin-right: 10px;
     }
 </style>
@@ -81,20 +81,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <td>{{$user->email}}</td>
                               <td>{{$user->is_admin}}</td>
                               <td id="forms-input">
-                                <form action="users/edit" id="form" method="get">
-                                <input type="hidden" name="edit_id" value="{{$user->id}}">
-                                <button style="background-color: #f2d61f; border-color: #f2d61f" id="edit" type="submit" class="btn btn-primary">
+                                <a name="edit_id" href="/admin/users/edit/{{$user->id}}" style="background-color: #f2d61f; border-color: #f2d61f" id="edit" class="btn btn-primary">
                                 <i class="fas fa-pen"></i>
-                                </button>
-                                </form>
-                                <form for id="form" method="get">
-                                <input type="hidden" name="id" value="{{$user->id}}">
-                                <button style="background-color: red; border-color: red;" name="delete" id="delete" type="submit" class="btn btn-primary">
+                                </a>
+                                <button type="button" data-toggle="modal" data-target="#exampleModal" style="background-color: red; border-color: red;" id="delete" type="submit" class="btn btn-primary">
                                   <i class="fas fa-trash"></i>
                                 </button>
-                                </form>
                               </td>
                             </tr>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">user verwijderen</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    weet jij zeker dat je deze user wilt verwijderen?
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">terug</button>
+                                    <form action="/admin/users" method="POST">
+                                        @csrf
+                                    <button value="{{$user->id}}" style="background-color: red; border-color: red;" type="submit" class="btn btn-primary">verwijder user</button>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                             @endforeach
                           </tbody>
                       </table>

@@ -23,9 +23,18 @@ class AdminController extends Controller
         ]);
     }
 
-    public function edit()
+    public function deleteUser($id){
+        $user = User::find($id);
+        $user->delete();
+    }
+
+    public function edit($id)
     {
-        return view('admin.edit');
+        $user = User::where("id", $id)->first();
+
+        return view('admin.edit', [
+            'user' => $user
+        ]);
     }
 
     public function tournamentOverview()
