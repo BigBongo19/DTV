@@ -56,10 +56,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="mb-3">
                 <label for="titleTournament">
                     @if($errors->first('titleTournament'))
-                    @foreach ($errors->get('descTournament') as $descError)
-                    <i class="fas fa-exclamation-circle" style="color: red"></i>
-                    @endforeach
-                @endif
+                        @foreach ($errors->get('descTournament') as $descError)
+                        <i class="fas fa-exclamation-circle" style="color: red"></i>
+                        @endforeach
+                    @endif
                     Titel</label>
                 <input type="text" class="form-control" id="titleTournament" placeholder="toernament titel" name="titleTournament" value="{{$tournament->title}}">
             </div>
@@ -67,10 +67,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="mb-3">
                 <label for="baanSelect">
                     @if($errors->first('selectLane'))
-                    @foreach ($errors->get('selectLane') as $descError)
-                    <i class="fas fa-exclamation-circle" style="color: red"></i>
-                    @endforeach
-                @endif
+                        @foreach ($errors->get('selectLane') as $descError)
+                        <i class="fas fa-exclamation-circle" style="color: red"></i>
+                        @endforeach
+                    @endif
                     Op welke baan wordt het toernament gehouden?</label>
                 <select class="form-control form-select" id="baanSelect" name="selectLane">
                   <option selected value="{{$tournament->lane}}">{{$tournament->lane}}</option>
@@ -83,10 +83,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="mb-3">
                 <label for="dateTournament" class="form-label">
                     @if($errors->first('dateTournamentStart'))
-                    @foreach ($errors->get('dateTournamentStart') as $descError)
-                    <i class="fas fa-exclamation-circle" style="color: red"></i>
-                    @endforeach
-                @endif
+                        @foreach ($errors->get('dateTournamentStart') as $descError)
+                        <i class="fas fa-exclamation-circle" style="color: red"></i>
+                        @endforeach
+                    @endif
                     Wanneer begint het toernooi?</label>
                 <input type="datetime-local" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentStart" value="{{$startdate}}">
                 <div id="dateHelp" class="form-text">Datum + tijd</div>
