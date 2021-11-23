@@ -16,11 +16,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link href="/assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <link href="/assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -84,7 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <td>{{ $tournament->description }}</td>
                                                     <td>{{ $tournament->lane }}</td>
                                                     <td>{{ $tournament->max_participants }}</td>
-                                                    <td><a href="editTournament/{{ $tournament->id }}">Wijzig</a></td>
+                                                    <td><a href="editTournament/{{ $tournament->id }}" class="iconLink"><i class="fas fa-edit"></i></a><a href="#" class="iconLink"><i class="fas fa-trash"></i></a></td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
