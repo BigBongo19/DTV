@@ -36,6 +36,14 @@ class AdminController extends Controller
             'user' => $user
         ]);
     }
+    public function editsave($id)
+    {
+        $user = User::where("id", $id)->first();
+
+        return view('admin.edit', [
+            'user' => $user
+        ]);
+    }
 
     public function tournamentOverview()
     {

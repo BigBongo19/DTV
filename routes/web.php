@@ -35,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
         Route::post('/admin/users', 'AdminController@deleteUser');
         Route::get('/admin/users/edit/{id}', 'AdminController@edit')->name('adminEdit');
+        Route::post('/admin/users/edit/{id}', 'AdminController@editsave');
         Route::get('/admin/tournamentList', 'AdminController@tournamentOverview')->name('adminTournamentOverview');
         Route::get('/admin/addTournament', 'AdminController@addTournament')->name('adminAddTournament');
         Route::post('/admin/addTournament', 'AdminController@submitTournament');
