@@ -72,26 +72,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="card-header">
                 <h3 class="card-title">edit user</h3>
             </div>
-        <form>
+        <form method="POST">
+            @csrf
             <div class="card-body">
                 <div class="row">
               <div id="form-input" class="row-6">
                 <label for="voornaaminput">voornaam</label>
-                <input type="firstname" class="form-control" id="voornaaminput" placeholder="voornaam" value="{{$user->name}}">
+                <input name="name" type="firstname" class="form-control" id="voornaaminput" placeholder="voornaam" value="{{$user->name}}">
               </div>
               <div id="form-input" class="row-6">
                 <label for="achternaaminput">achternaam</label>
-                <input type="lastname" class="form-control" id="achternaaminput" placeholder="achternaam" value="{{$user->last_name}}">
+                <input name="achternaam" type="lastname" class="form-control" id="achternaaminput" placeholder="achternaam" value="{{$user->last_name}}">
               </div>
             </div>
             <div class="row">
               <div id="form-input" class="row-6">
                 <label for="emailinput">Email</label>
-                <input type="email" class="form-control" id="emailinput" placeholder="email" value="{{$user->email}}">
+                <input name="email" type="email" class="form-control" id="emailinput" placeholder="email" value="{{$user->email}}">
               </div>
               <div id="form-input" class="row-6">
                 <label for="passwordinput">wachtwoord</label>
-                <input type="password" class="form-control" id="passwordinput" placeholder="wachtwoord" value="{{$user->password}}">
+                <input name="password" type="password" class="form-control" id="passwordinput" placeholder="wachtwoord" value="{{$user->password}}">
               </div>
             </div>
               <div class="row">
@@ -99,7 +100,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <label for="exampleInputFile">profiel foto</label>
                 <div class="input-group">
                   <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="profielfotoinput" value="{{$user->img_path}}">
+                    <input name="file" type="file" class="custom-file-input" id="profielfotoinput" value="{{$user->img_path}}">
                     <label class="custom-file-label" for="profielfotoinput">kies een afbeelding</label>
                   </div>
                   <div class="input-group-append">
@@ -109,7 +110,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <div id="form-input" class="row-6">
                 <label for="phonenumberinput">telefoonnummer</label>
-                <input type="phonenumber" class="form-control" id="phonenumberinput" placeholder="telefoon nummer" value="{{$user->phone_number}}">
+                <input name="phonenumber" type="phonenumber" class="form-control" id="phonenumberinput" placeholder="telefoon nummer" value="{{$user->phone_number}}">
               </div>
             </div>
             <div class="row">
@@ -124,7 +125,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <?php
                     }
                 ?>
-                type="radio" class="form-check-input" id="radio1" name="gender">
+                type="radio" class="form-check-input" id="radio1" value="0" name="geslacht">
                 <label class="form-check-label" for="radio1">man</label><br>
                 <input
                 <?php
@@ -134,7 +135,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <?php
                     }
                 ?>
-                type="radio" class="form-check-input" id="radio2" name="gender">
+                type="radio" class="form-check-input" id="radio2" value="1" name="geslacht">
                 <label class="form-check-label" for="radio2">vrouw</label>
               </div><br>
             </div>
@@ -149,7 +150,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <?php
                     }
                 ?>
-                type="checkbox" class="form-check-input" id="admincheck">
+                type="checkbox" class="form-check-input" id="admincheck" value="1" name="admin">
                 <label class="form-check-label" for="admincheck">admin</label>
               </div>
               </div>
