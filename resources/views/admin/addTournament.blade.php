@@ -51,35 +51,72 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <form method="POST" style="max-width: 1200px">
             @csrf
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="titleTournament" placeholder="toernament titel" name="titleTournament">
-                <label for="titleTournament">Titel</label>
+            <div class="mb-3">
+                <label for="titleTournament">
+                    @if($errors->first('titleTournament'))
+                        @foreach ($errors->get('descTournament') as $descError)
+                        <i class="fas fa-exclamation-circle" style="color: red"></i>
+                        @endforeach
+                    @endif
+                    Titel
+                </label>
+                <input type="text" class="form-control" id="titleTournament" name="titleTournament">
+
             </div>
 
-            <div class="form-floating mb-3">
+            <div class="mb-3">
+                <label for="baanSelect">
+                    @if($errors->first('selectLane'))
+                        @foreach ($errors->get('selectLane') as $descError)
+                        <i class="fas fa-exclamation-circle" style="color: red"></i>
+                        @endforeach
+                    @endif
+                    Op welke baan wordt het toernooi gehouden?
+                </label>
                 <select class="form-select" id="baanSelect" aria-label="Floating label select example" name="selectLane">
                   <option selected>Selecteer een baan</option>
                   <option value="baan1">baan 1</option>
                   <option value="baan2">baan 2</option>
                   <option value="baan3">baan 3</option>
                 </select>
-                <label for="baanSelect">Op welke baan wordt het toernament gehouden?</label>
+
             </div>
 
             <div class="mb-3">
-                <label for="dateTournament" class="form-label">Wanneer begint het toernooi?</label>
+                <label for="dateTournament" class="form-label">
+                    @if($errors->first('dateTournamentStart'))
+                        @foreach ($errors->get('dateTournamentStart') as $descError)
+                        <i class="fas fa-exclamation-circle" style="color: red"></i>
+                        @endforeach
+                    @endif
+                    Wanneer begint het toernooi?
+                </label>
                 <input type="datetime-local" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentStart">
                 <div id="dateHelp" class="form-text">Datum + tijd</div>
             </div>
 
             <div class="mb-3">
-                <label for="dateTournament" class="form-label">Wanneer eindigt het toernooi?</label>
+                <label for="dateTournament" class="form-label">
+                    @if($errors->first('dateTournamentEnd'))
+                        @foreach ($errors->get('dateTournamentEnd') as $descError)
+                        <i class="fas fa-exclamation-circle" style="color: red"></i>
+                        @endforeach
+                    @endif
+                    Wanneer eindigt het toernooi?
+                </label>
                 <input type="datetime-local" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentEnd">
                 <div id="dateHelp" class="form-text">Datum + tijd</div>
             </div>
 
             <div class="mb-3">
-                <label for="inputDesc" class="form-label">Beschrijving</label>
+                <label for="inputDesc" class="form-label">
+                    @if($errors->first('descTournament'))
+                        @foreach ($errors->get('descTournament') as $descError)
+                        <i class="fas fa-exclamation-circle" style="color: red"></i>
+                        @endforeach
+                    @endif
+                    Beschrijving
+                </label>
                 <textarea class="form-control" id="inputDesc" rows="5" name="descTournament"></textarea>
               </div>
 
