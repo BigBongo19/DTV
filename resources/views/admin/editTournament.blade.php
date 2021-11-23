@@ -54,12 +54,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
             @csrf
            <Input type="hidden" value="{{$tournament->id}}" name="id">
             <div class="mb-3">
-                <label for="titleTournament">Titel</label>
+                <label for="titleTournament">
+                    @if($errors->first('titleTournament'))
+                    @foreach ($errors->get('descTournament') as $descError)
+                    <i class="fas fa-exclamation-circle" style="color: red"></i>
+                    @endforeach
+                @endif
+                    Titel</label>
                 <input type="text" class="form-control" id="titleTournament" placeholder="toernament titel" name="titleTournament" value="{{$tournament->title}}">
             </div>
 
             <div class="mb-3">
-                <label for="baanSelect">Op welke baan wordt het toernament gehouden?</label>
+                <label for="baanSelect">
+                    @if($errors->first('selectLane'))
+                    @foreach ($errors->get('selectLane') as $descError)
+                    <i class="fas fa-exclamation-circle" style="color: red"></i>
+                    @endforeach
+                @endif
+                    Op welke baan wordt het toernament gehouden?</label>
                 <select class="form-control form-select" id="baanSelect" name="selectLane">
                   <option selected value="{{$tournament->lane}}">{{$tournament->lane}}</option>
                   <option value="baan1">baan 1</option>
@@ -69,20 +81,40 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
 
             <div class="mb-3">
-                <label for="dateTournament" class="form-label">Wanneer begint het toernooi?</label>
+                <label for="dateTournament" class="form-label">
+                    @if($errors->first('dateTournamentStart'))
+                    @foreach ($errors->get('dateTournamentStart') as $descError)
+                    <i class="fas fa-exclamation-circle" style="color: red"></i>
+                    @endforeach
+                @endif
+                    Wanneer begint het toernooi?</label>
                 <input type="datetime-local" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentStart" value="{{$startdate}}">
                 <div id="dateHelp" class="form-text">Datum + tijd</div>
             </div>
 
             <div class="mb-3">
-                <label for="dateTournament" class="form-label">Wanneer eindigt het toernooi?</label>
+                <label for="dateTournament" class="form-label">
+                    @if($errors->first('dateTournamentEnd'))
+                    @foreach ($errors->get('dateTournamentEnd') as $descError)
+                    <i class="fas fa-exclamation-circle" style="color: red"></i>
+                    @endforeach
+                @endif
+                    Wanneer eindigt het toernooi?</label>
                 <input type="datetime-local" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentEnd" value="{{$enddate}}">
                 <div id="dateHelp" class="form-text">Datum + tijd</div>
             </div>
 
             <div class="mb-3">
-                <label for="inputDesc" class="form-label">Beschrijving</label>
+                <label for="inputDesc" class="form-label">
+                    @if($errors->first('descTournament'))
+                    @foreach ($errors->get('descTournament') as $descError)
+                    <i class="fas fa-exclamation-circle" style="color: red"></i>
+                    @endforeach
+                @endif
+                    Beschrijving
+                </label>
                 <textarea class="form-control" id="inputDesc" rows="5" name="descTournament">{{$tournament->description}}</textarea>
+
               </div>
 
             <button type="submit" class="btn btn-success addTournament">Wijzigen</button>

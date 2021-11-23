@@ -237,7 +237,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <td>{{ $tournament->max_participants }}</td>
                                                 <td>
                                                     <a href="editTournament/{{ $tournament->id }}" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
-                                                    <a href="#" class="mr-2 ml-2"><i class="fas fa-trash" style="color: red"></i></a>
+                                                    <a href="/admin/deleteTournament/{{ $tournament->id }}" class="mr-2 ml-2"><i class="fas fa-trash" style="color: red"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach

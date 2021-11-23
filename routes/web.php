@@ -38,6 +38,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/admin/addTournament', 'TournamentController@submitTournament');
         Route::get('/admin/editTournament/{id}', 'TournamentController@getTournamentById');
         Route::post('/admin/editTournament/{id}', 'TournamentController@editTournament');
+        Route::get('/admin/deleteTournament/{id}', 'TournamentController@deleteTournament');
         Route::get('/admin/reservations', 'AdminController@reservations')->name('adminReservations');
     });
 });
