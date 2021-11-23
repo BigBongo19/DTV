@@ -19,7 +19,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -33,12 +33,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Toernooi toevoegen</h1>
+            <h1 class="m-0">Wijzig toernooi</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/admin/home">Home</a></li>
-              <li class="breadcrumb-item active">Toernooi toevoegen</li>
+              <li class="breadcrumb-item active">Wijzig toernooi</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -49,41 +49,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
+         <h3 class="mt-3 mb-4">Momenteel wijzig je: <b>{{$tournaments->title}}</b></h3>
         <form method="POST" style="max-width: 1200px">
             @csrf
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="titleTournament" placeholder="toernament titel" name="titleTournament">
+           <Input type="hidden" value="{{$tournaments->id}}" name="id">
+            <div class="mb-3">
                 <label for="titleTournament">Titel</label>
+                <input type="text" class="form-control" id="titleTournament" placeholder="toernament titel" name="titleTournament" value="{{$tournaments->title}}">
             </div>
 
-            <div class="form-floating mb-3">
-                <select class="form-select" id="baanSelect" aria-label="Floating label select example" name="selectLane">
-                  <option selected>Selecteer een baan</option>
+            <div class="mb-3">
+                <label for="baanSelect">Op welke baan wordt het toernament gehouden?</label>
+                <select class="form-control form-select" id="baanSelect" name="selectLane">
+                  <option selected value="{{$tournaments->lane}}">{{$tournaments->lane}}</option>
                   <option value="baan1">baan 1</option>
                   <option value="baan2">baan 2</option>
                   <option value="baan3">baan 3</option>
                 </select>
-                <label for="baanSelect">Op welke baan wordt het toernament gehouden?</label>
             </div>
 
             <div class="mb-3">
                 <label for="dateTournament" class="form-label">Wanneer begint het toernooi?</label>
-                <input type="datetime-local" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentStart">
+                <input type="date" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentStart" value="{{$tournaments->start_date}}">
                 <div id="dateHelp" class="form-text">Datum + tijd</div>
             </div>
 
             <div class="mb-3">
                 <label for="dateTournament" class="form-label">Wanneer eindigt het toernooi?</label>
-                <input type="datetime-local" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentEnd">
+                <input type="date" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentEnd" value="{{$tournaments->end_date}}">
                 <div id="dateHelp" class="form-text">Datum + tijd</div>
             </div>
 
             <div class="mb-3">
                 <label for="inputDesc" class="form-label">Beschrijving</label>
-                <textarea class="form-control" id="inputDesc" rows="5" name="descTournament"></textarea>
+                <textarea class="form-control" id="inputDesc" rows="5" name="descTournament">{{$tournaments->description}}</textarea>
               </div>
 
-            <button type="submit" class="btn btn-success addTournament">Toevoegen</button>
+            <button type="submit" class="btn btn-success addTournament">Wijzigen</button>
         </form>
       </div><!-- /.container-fluid -->
     </div>
