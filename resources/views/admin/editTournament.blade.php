@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DTV Admin | Tournaments</title>
+  <title>DTV Admin | tournament</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,7 +19,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-  
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -49,19 +49,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-         <h3 class="mt-3 mb-4">Momenteel wijzig je: <b>{{$tournaments->title}}</b></h3>
+         <h3 class="mt-3 mb-4">Momenteel wijzig je: <b>{{$tournament->title}}</b></h3>
         <form method="POST" style="max-width: 1200px">
             @csrf
-           <Input type="hidden" value="{{$tournaments->id}}" name="id">
+           <Input type="hidden" value="{{$tournament->id}}" name="id">
             <div class="mb-3">
                 <label for="titleTournament">Titel</label>
-                <input type="text" class="form-control" id="titleTournament" placeholder="toernament titel" name="titleTournament" value="{{$tournaments->title}}">
+                <input type="text" class="form-control" id="titleTournament" placeholder="toernament titel" name="titleTournament" value="{{$tournament->title}}">
             </div>
 
             <div class="mb-3">
                 <label for="baanSelect">Op welke baan wordt het toernament gehouden?</label>
                 <select class="form-control form-select" id="baanSelect" name="selectLane">
-                  <option selected value="{{$tournaments->lane}}">{{$tournaments->lane}}</option>
+                  <option selected value="{{$tournament->lane}}">{{$tournament->lane}}</option>
                   <option value="baan1">baan 1</option>
                   <option value="baan2">baan 2</option>
                   <option value="baan3">baan 3</option>
@@ -70,19 +70,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <div class="mb-3">
                 <label for="dateTournament" class="form-label">Wanneer begint het toernooi?</label>
-                <input type="date" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentStart" value="{{$tournaments->start_date}}">
+                <input type="datetime-local" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentStart" value="{{$startdate}}">
                 <div id="dateHelp" class="form-text">Datum + tijd</div>
             </div>
 
             <div class="mb-3">
                 <label for="dateTournament" class="form-label">Wanneer eindigt het toernooi?</label>
-                <input type="date" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentEnd" value="{{$tournaments->end_date}}">
+                <input type="datetime-local" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="dateTournamentEnd" value="{{$enddate}}">
                 <div id="dateHelp" class="form-text">Datum + tijd</div>
             </div>
 
             <div class="mb-3">
                 <label for="inputDesc" class="form-label">Beschrijving</label>
-                <textarea class="form-control" id="inputDesc" rows="5" name="descTournament">{{$tournaments->description}}</textarea>
+                <textarea class="form-control" id="inputDesc" rows="5" name="descTournament">{{$tournament->description}}</textarea>
               </div>
 
             <button type="submit" class="btn btn-success addTournament">Wijzigen</button>

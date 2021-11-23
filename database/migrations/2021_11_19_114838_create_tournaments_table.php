@@ -22,6 +22,7 @@ class CreateTournamentsTable extends Migration
             $table->dateTime('end_date');
             $table->string('img_path')->nullable();
             $table->longText('description');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
