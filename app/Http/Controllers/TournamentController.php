@@ -14,6 +14,14 @@ class TournamentController extends Controller
     }
 
     public function submitTournament(Request $request){
+        $request->validate([
+            'titleTournament' => 'required|max:50',
+            'selectLane' => 'required',
+            'dateTournamentStart' => 'required',
+            'dateTournamentEnd' => 'required',
+            'descTournament' => 'required'
+        ]);
+
         $tournament = new Tournament;
         $tournament->title = $request->titleTournament;
         $tournament->lane = $request->selectLane;
@@ -47,7 +55,7 @@ class TournamentController extends Controller
     }
 
     public function editTournament(Request $request){
-        $validated = $request->validate([
+        $request->validate([
             'titleTournament' => 'required|max:50',
             'selectLane' => 'required',
             'dateTournamentStart' => 'required',
