@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\Tournament;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Session;
 
 class TournamentController extends Controller
 {
@@ -19,7 +18,7 @@ class TournamentController extends Controller
             'selectLane' => 'required',
             'dateTournamentStart' => 'required',
             'dateTournamentEnd' => 'required',
-            'descTournament' => 'required'
+            'descTournament' => 'required|max:200'
         ]);
 
         $tournament = new Tournament;
@@ -31,7 +30,7 @@ class TournamentController extends Controller
         $tournament->description = $request->descTournament;
 
         $tournament->save();
-        return redirect('/admin/tournamentList');
+        return redirect('/admin/tournamentList')->with('message','Het toernooi is aangemaakt!');
     }
 
     public function getTournaments(){
@@ -60,7 +59,7 @@ class TournamentController extends Controller
             'selectLane' => 'required',
             'dateTournamentStart' => 'required',
             'dateTournamentEnd' => 'required',
-            'descTournament' => 'required'
+            'descTournament' => 'required|max:200'
         ]);
         $tournament = Tournament::find($request->id);
         $tournament->title = $request->titleTournament;
@@ -76,6 +75,6 @@ class TournamentController extends Controller
 
     public function deleteTournament($id){
         Tournament::find($id)->delete();
-        return redirect('/admin/tournamentList')->with('message','Toernooi is verwijderd.');
+        return redirect('/admin/tournamentList')->with('message','Toernooi is verwijderd!');
     }
 }

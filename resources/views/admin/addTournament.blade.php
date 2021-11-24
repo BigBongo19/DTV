@@ -52,23 +52,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <form method="POST" style="max-width: 1200px">
             @csrf
             <div class="mb-3">
-                <label for="titleTournament">
+                <label for="inputTitle">
                     @if($errors->first('titleTournament'))
-                        @foreach ($errors->get('descTournament') as $descError)
-                        <i class="fas fa-exclamation-circle" style="color: red"></i>
+                        @foreach ($errors->get('titleTournament') as $titleError)
+                            <i class="fas fa-exclamation-circle" style="color: red"></i>
                         @endforeach
                     @endif
                     Titel
                 </label>
-                <input type="text" class="form-control" id="titleTournament" name="titleTournament">
+                <input type="text" class="form-control" id="inputTitle" name="titleTournament">
 
             </div>
 
             <div class="mb-3">
                 <label for="baanSelect">
                     @if($errors->first('selectLane'))
-                        @foreach ($errors->get('selectLane') as $descError)
-                        <i class="fas fa-exclamation-circle" style="color: red"></i>
+                        @foreach ($errors->get('selectLane') as $laneError)
+                            <i class="fas fa-exclamation-circle" style="color: red"></i>
                         @endforeach
                     @endif
                     Op welke baan wordt het toernooi gehouden?
@@ -85,8 +85,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="mb-3">
                 <label for="dateTournament" class="form-label">
                     @if($errors->first('dateTournamentStart'))
-                        @foreach ($errors->get('dateTournamentStart') as $descError)
-                        <i class="fas fa-exclamation-circle" style="color: red"></i>
+                        @foreach ($errors->get('dateTournamentStart') as $dateStartError)
+                            <i class="fas fa-exclamation-circle" style="color: red"></i>
                         @endforeach
                     @endif
                     Wanneer begint het toernooi?
@@ -98,8 +98,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="mb-3">
                 <label for="dateTournament" class="form-label">
                     @if($errors->first('dateTournamentEnd'))
-                        @foreach ($errors->get('dateTournamentEnd') as $descError)
-                        <i class="fas fa-exclamation-circle" style="color: red"></i>
+                        @foreach ($errors->get('dateTournamentEnd') as $dateEndError)
+                            <i class="fas fa-exclamation-circle" style="color: red"></i>
                         @endforeach
                     @endif
                     Wanneer eindigt het toernooi?
@@ -112,7 +112,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <label for="inputDesc" class="form-label">
                     @if($errors->first('descTournament'))
                         @foreach ($errors->get('descTournament') as $descError)
-                        <i class="fas fa-exclamation-circle" style="color: red"></i>
+                            <i class="fas fa-exclamation-circle" style="color: red"></i>
                         @endforeach
                     @endif
                     Beschrijving
