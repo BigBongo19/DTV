@@ -42,7 +42,7 @@
 						Inloggen op DTV
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<div class="wrap-input100 validate-input" data-validate = "Gebruik een geldig email adres: ex@abc.xyz">
 						<input class="input100" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" placeholder="Email" data-validate = "Je moet een Email invullen">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
@@ -55,7 +55,7 @@
                     </span>
                     @enderror
 
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+					<div class="wrap-input100 validate-input" data-validate = "Wachtwoord is verplicht">
 						<input class="input100" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="current-password" placeholder="Wachtwoord" data-validate = "Je moet een wachtwoord invullen">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
