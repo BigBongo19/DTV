@@ -54,7 +54,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="mb-3">
                 <label for="titleTournament">
                     @if($errors->first('titleTournament'))
-                        @foreach ($errors->get('descTournament') as $descError)
+                        @foreach ($errors->get('descTournament') as $error)
                         <i class="fas fa-exclamation-circle" style="color: red"></i>
                         @endforeach
                     @endif
@@ -67,7 +67,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="mb-3">
                 <label for="baanSelect">
                     @if($errors->first('selectLane'))
-                        @foreach ($errors->get('selectLane') as $descError)
+                        @foreach ($errors->get('selectLane') as $error)
                         <i class="fas fa-exclamation-circle" style="color: red"></i>
                         @endforeach
                     @endif
@@ -85,7 +85,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="mb-3">
                 <label for="dateTournament" class="form-label">
                     @if($errors->first('dateTournamentStart'))
-                        @foreach ($errors->get('dateTournamentStart') as $descError)
+                        @foreach ($errors->get('dateTournamentStart') as $error)
                         <i class="fas fa-exclamation-circle" style="color: red"></i>
                         @endforeach
                     @endif
@@ -98,7 +98,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="mb-3">
                 <label for="dateTournament" class="form-label">
                     @if($errors->first('dateTournamentEnd'))
-                        @foreach ($errors->get('dateTournamentEnd') as $descError)
+                        @foreach ($errors->get('dateTournamentEnd') as $error)
                         <i class="fas fa-exclamation-circle" style="color: red"></i>
                         @endforeach
                     @endif
@@ -111,7 +111,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="mb-3">
                 <label for="inputDesc" class="form-label">
                     @if($errors->first('descTournament'))
-                        @foreach ($errors->get('descTournament') as $descError)
+                        @foreach ($errors->get('descTournament') as $error)
                         <i class="fas fa-exclamation-circle" style="color: red"></i>
                         @endforeach
                     @endif
