@@ -6,6 +6,7 @@ use App\Tournament;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Menu;
 
 class AdminController extends Controller
 {
@@ -51,7 +52,7 @@ class AdminController extends Controller
         }else{
             $user->is_admin = 0;
         }
-        
+
         $user->save();
         return back();
     }
@@ -69,6 +70,32 @@ class AdminController extends Controller
     public function reservations()
     {
         return view('admin.reservations');
+    }
+
+    public function menuIndex()
+    {
+        return view('admin.menuBewerken');
+    }
+
+    public function menuToevoegen()
+    {
+        return view('admin.menuToevoegen');
+    }
+
+    public function saveMenu(Request $request){
+        $menu = new Menu;
+        $menu->name = $request->itemNaam;
+        $menu->price = $request->priceInput;
+        $menu->type = $request->typeInput;
+        $menu->img_path = $request->file;
+        if(isset($request->enabled)){
+            $menu->enabled = $request->enabled;
+        }else{
+            $menu->enabled = 0;
+        }
+
+        $menu->save();
+        return back();
     }
 
 
