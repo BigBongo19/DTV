@@ -94,12 +94,6 @@ class AdminController extends Controller
             $menu->enabled = 0;
         }
 
-        if(isset($request->aanbieding)){
-            $menu->sale = $request->aanbieding;
-        }else{
-            $menu->sale = 0;
-        }
-        
         $menu->save();
         return back();
     }
