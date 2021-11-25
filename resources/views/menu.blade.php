@@ -189,115 +189,119 @@
     <div id="item_list">
         <h1 id="item-soort-titel" class="eten">warm eten</h1>
       <?php
-        for($x = 0; $x <= 3; $x++){
+        foreach ($items as $item) {
+            if ($item->type == 0) {
           ?>
         <div class="col-lg-3 col-md-6 eten" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
-            <img id="card_image_list" src="images/perfect-hot-dog.jpg">
+            <img id="card_image_list" src="images/{{$item->img_path}}">
           </div>
           <div class="card_text">
-            <p>willekeurig item</p>
-            <p>$0.00</p>
+            <p>{{$item->name}}</p>
+            <p>€{{number_format($item->price,2)}}</p>
           </div>
         </div>
       </div>
           <?php
-        }
+        }}
       ?>
       <h1 id="item-soort-titel" class="drinken">koud eten</h1>
       <?php
-        for($x = 0; $x <= 3; $x++){
+        foreach ($items as $item) {
+            if ($item->type == 1) {
           ?>
         <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
-            <img id="card_image_list" src="images/perfect-hot-dog.jpg">
+            <img id="card_image_list" src="images/{{$item->img_path}}">
           </div>
           <div class="card_text">
-            <p>willekeurig item</p>
-            <p>$0.00</p>
+            <p>{{$item->name}}</p>
+            <p>€{{number_format($item->price,2)}}</p>
           </div>
         </div>
       </div>
           <?php
-        }
+        }}
       ?>
-      <h1 id="item-soort-titel" class="eten">snacks</h1>
+      <h1 id="item-soort-titel" class="drinken">snacks</h1>
       <?php
-        for($x = 0; $x <= 3; $x++){
+        foreach ($items as $item) {
+            if ($item->type == 2) {
           ?>
-        <div class="col-lg-3 col-md-6 eten" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
-            <img id="card_image_list" src="images/perfect-hot-dog.jpg">
+            <img id="card_image_list" src="images/{{$item->img_path}}">
           </div>
           <div class="card_text">
-            <p>willekeurig item</p>
-            <p>$0.00</p>
+            <p>{{$item->name}}</p>
+            <p>€{{number_format($item->price,2)}}</p>
           </div>
         </div>
       </div>
           <?php
-        }
+        }}
       ?>
       <h1 id="item-soort-titel" class="drinken">water</h1>
       <?php
-        for($x = 0; $x <= 3; $x++){
+        foreach ($items as $item) {
+            if ($item->type == 3) {
           ?>
         <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
-            <img id="card_image_list" src="images/perfect-hot-dog.jpg">
+            <img id="card_image_list" src="images/{{$item->img_path}}">
           </div>
           <div class="card_text">
-            <p>willekeurig item</p>
-            <p>$0.00</p>
+            <p>{{$item->name}}</p>
+            <p>€{{number_format($item->price,2)}}</p>
           </div>
         </div>
       </div>
           <?php
-        }
+        }}
       ?>
 
-<h1 id="item-soort-titel" class="eten">fris drank</h1>
+<h1 id="item-soort-titel" class="drinken">fris drank</h1>
       <?php
-        for($x = 0; $x <= 3; $x++){
-          ?>
-        <div class="col-lg-3 col-md-6 eten" data-aos="zoom-in" data-aos-delay="100">
-        <div id="list_item_card_border" class="hover-zoom">
-          <div>
-            <img id="card_image_list" src="images/perfect-hot-dog.jpg">
-          </div>
-          <div class="card_text">
-            <p>willekeurig item</p>
-            <p>$0.00</p>
-          </div>
-        </div>
-      </div>
-          <?php
-        }
-      ?>
-      <h1 id="item-soort-titel" class="drinken">alcoholistische dranken</h1>
-      <?php
-        for($x = 0; $x <= 3; $x++){
+        foreach ($items as $item) {
+            if ($item->type == 4) {
           ?>
         <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
-            <img id="card_image_list" src="images/perfect-hot-dog.jpg">
+            <img id="card_image_list" src="images/{{$item->img_path}}">
           </div>
           <div class="card_text">
-            <p>willekeurig item</p>
-            <p>$0.00</p>
+            <p>{{$item->name}}</p>
+            <p>€{{number_format($item->price,2)}}</p>
           </div>
         </div>
       </div>
           <?php
-        }
+        }}
       ?>
-
-
+<h1 id="item-soort-titel" class="drinken">alcoholische dranken</h1>
+<?php
+  foreach ($items as $item) {
+    if ($item->type == 5) {
+    ?>
+  <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
+  <div id="list_item_card_border" class="hover-zoom">
+    <div>
+      <img id="card_image_list" src="images/{{$item->img_path}}">
+    </div>
+    <div class="card_text">
+      <p>{{$item->name}}</p>
+      <p>€{{number_format($item->price,2)}}</p>
+    </div>
+  </div>
+</div>
+    <?php
+  }}
+?>
     </div>
   </div>
   <!-- ======= Footer ======= -->
