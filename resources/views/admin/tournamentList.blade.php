@@ -77,7 +77,14 @@
                                                 <td>{{ $tournament->max_participants }}</td>
                                                 <td>
                                                     <a href="editTournament/{{ $tournament->id }}" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
-                                                    <a href="/admin/deleteTournament/{{ $tournament->id }}" class="mr-2 ml-2"><i class="fas fa-trash" style="color: red"></i></a>
+
+                                                    <form method="POST" action="/admin/deleteTournament/{{ $tournament->id }}" accept-charset="UTF-8" style="display: inline;"><input name="_method" type="hidden">@csrf
+
+                                                        <span onclick="deleteEntity(this)"><i class="fas fa-trash" style="color: red"></i>
+                                                        </span>
+
+                                                </button>
+                                                        </form>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -149,6 +156,27 @@
                 "responsive": true,
             });
         });
+        window.deleteEntity = function (element, message = "Weet je zeker dat je dit wil verwijderen?") {
+            Swal.fire({
+  title: 'Weet je het zeker?',
+  text: "Je kan dit niet terugdraaien!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Ja, verwijderen'
+}).then((result) => {
+  if (result.isConfirmed) {
+
+    Swal.fire(
+      'Verwijderd!',
+      'Het is verwijderd.',
+      'success'
+    )
+    $(element).closest('form').submit();
+  }
+})
+};
     </script>
 </body>
 
