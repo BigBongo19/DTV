@@ -78,13 +78,10 @@
                                                 <td>
                                                     <a href="editTournament/{{ $tournament->id }}" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
 
-                                                    <form method="POST" action="/admin/deleteTournament/{{ $tournament->id }}" accept-charset="UTF-8" style="display: inline;"><input name="_method" type="hidden">@csrf
-
-                                                        <span onclick="deleteEntity(this)"><i class="fas fa-trash" style="color: red"></i>
-                                                        </span>
-
-                                                </button>
-                                                        </form>
+                                                    <form method="POST" action="/admin/deleteTournament/{{ $tournament->id }}" accept-charset="UTF-8" style="display: inline;"><input name="_method" type="hidden">
+                                                        @csrf
+                                                        <span onclick="deleteEntity(this)"><i class="fas fa-trash" style="color: red"></i></span>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach
