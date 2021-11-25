@@ -76,27 +76,29 @@
             <div class="d-flex justify-content-center">
                 <ul class="list-group features flex-column col-8">
                     <!-- example -->
+                    @php($i = 0)
                     @foreach($tournaments as $tournament)
-                        <li class="list-group-item flex-row" data-href="toernooi?id={{$i}}" data-aos="fade-up"
-                            data-aos-delay="{{$i * 100}}">
+                        @php($participants = $participant_list[$i])
+                        <li class="list-group-item flex-row" data-href="toernooi/{{$tournament->id}}" data-aos="fade-up" data-aos-delay="{{$i * 100}}">
                             <div class="container feature-box d-grid hover-zoom">
                                 <div class="row">
-                                    <h3 class="col-12 col-md-6 col-lg-8 text-center text-md-start align-center">Toernooi naam {{$i}}</h3>
+                                    <h3 class="col-12 col-md-6 col-lg-8 text-center text-md-start align-center">{{$tournament->title}}</h3>
                                     <div class="col-12 col-md-6 col-lg-4 row">
                                         <button class="col-10 col-md-12 align-self-center" style="margin: 0 auto" type="submit">Inschrijven</button>
                                     </div>
                                 </div>
                                 <div>
                                     <hr>
-                                    <p class="col-12 col-md-6 col-lg-4">Datum: {{rand(0, 30)}}-{{rand(0, 12)}}-{{rand(2010, 2030)}}</p>
+                                    <p class="col-12 col-md-6 col-lg-4">Datum: {{date('d-m-Y', strtotime($tournament->start_date))}}</p>
                                 </div>
                                 <div class="row">
-                                    <p class="col-12 col-md-6 col-lg-8">plekken: {{rand(0, 32)}}/32</p>
-                                    <p class="col-12 col-md-6 col-lg-4">entree prijs: ${{rand(1, 20)}}</p>
+                                    <p class="col-12 col-md-6 col-lg-8">plekken bezet: {{$participants}}/{{$tournament->max_participants}}</p>
+                                    <p class="col-12 col-md-6 col-lg-4"><span style="text-decoration: line-through;">entree prijs: €</span></p>
                                 </div>
                             </div>
                         </li>
-                    @endfor
+                        @php($i++)
+                    @endforeach
                 </ul>
             </div>
         </div>

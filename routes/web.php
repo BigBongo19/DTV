@@ -25,14 +25,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/payments', 'ProfileController@payment')->name('paymentIndex');
     Route::get('/reserveren', 'ReserveController@index')->name('index');
     Route::get('/toernooien', 'TournamentController@index')->name('index');
-    Route::get('/toernooi', 'TournamentDetailController@index')->name('index');
-
+    Route::get('/toernooi/{Tournament}', 'TournamentDetailController@index')->name('index');
+    Route::post('/toernooi/{Tournament}', 'TournamentDetailController@submitTournamentRegistration');
     // Admin only
     Route::middleware(['admin'])->group(function () {
         Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
         Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
         Route::get('/admin/users/edit', 'AdminController@edit')->name('adminEdit');
-      
+
         Route::get('/admin/tournaments', 'AdminController@add')->name('adminAdd');
         Route::get('/admin/reservations', 'ReservationsController@index')->name('adminReservations');
         //Route::get('/admin/reservations', 'AdminController@reservations')->name('adminReservations');
