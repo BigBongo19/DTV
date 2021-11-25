@@ -164,35 +164,42 @@
     </div>
     <div id="random_item">
       <div id="random_item_title">
-          <a href="#" onclick="eten()" id="random_item_title_section">eten</a>
-          <a href="#" onclick="drinken()" id="random_item_title_section">drinken</a>
-          <a href="#" onclick="alles()" id="random_item_title_section">alles</a>
+          <a href="#" onclick="warm_eten_selector()" id="random_item_title_section">warm eten</a>
+          <a href="#" onclick="koud_eten_selector()" id="random_item_title_section">koud eten</a>
+          <a href="#" onclick="snacks_selector()" id="random_item_title_section">snacks</a>
+          <a href="#" onclick="water_selector()" id="random_item_title_section">water</a>
+          <a href="#" onclick="fris_drank_selector()" id="random_item_title_section">fris drank</a>
+          <a href="#" onclick="alcohol_selector()" id="random_item_title_section">alcoholische dranken</a>
+          <a href="#" onclick="alles_selector()" id="random_item_title_section">alles</a>
       </div>
       <?php
-        for($x = 0; $x <= 1; $x++){
-          ?>
-        <div class="hover-zoom">
-        <div id="random_item_card_border" class="col-lg-3 col-md-6">
-          <div>
-            <img id="card_image" src="images/perfect-hot-dog.jpg">
-          </div>
-          <div class="card_text">
-            <p>willekeurig item</p>
-            <p>$0.00</p>
-          </div>
-        </div>
-        </div>
-        <?php
+      foreach ($items as $item){
+          if ($item->sale == 1) {
+              ?>
+              <div class="hover-zoom">
+                <div id="random_item_card_border" class="col-lg-3 col-md-6">
+                  <div>
+                    <img id="card_image" src="images/{{$item->img_path}}">
+                  </div>
+                  <div class="card_text">
+                    <p>{{$item->name}}</p>
+                    <p>€{{number_format($item->price,2)}}</p>
+                  </div>
+                </div>
+                </div>
+              <?php
+          }
         }
       ?>
     </div>
     <div id="item_list">
-        <h1 id="item-soort-titel" class="eten">warm eten</h1>
+        <div class="warm_eten">
+        <h1 id="item-soort-titel">warm eten</h1>
       <?php
         foreach ($items as $item) {
             if ($item->type == 0) {
           ?>
-        <div class="col-lg-3 col-md-6 eten" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
             <img id="card_image_list" src="images/{{$item->img_path}}">
@@ -206,12 +213,14 @@
           <?php
         }}
       ?>
-      <h1 id="item-soort-titel" class="drinken">koud eten</h1>
+        </div>
+        <div class="koud_eten">
+      <h1 id="item-soort-titel" >koud eten</h1>
       <?php
         foreach ($items as $item) {
             if ($item->type == 1) {
           ?>
-        <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
             <img id="card_image_list" src="images/{{$item->img_path}}">
@@ -225,12 +234,14 @@
           <?php
         }}
       ?>
-      <h1 id="item-soort-titel" class="drinken">snacks</h1>
+        </div>
+        <div class="snacks">
+      <h1 id="item-soort-titel">snacks</h1>
       <?php
         foreach ($items as $item) {
             if ($item->type == 2) {
           ?>
-        <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
             <img id="card_image_list" src="images/{{$item->img_path}}">
@@ -244,12 +255,14 @@
           <?php
         }}
       ?>
-      <h1 id="item-soort-titel" class="drinken">water</h1>
+        </div>
+        <div class="water">
+      <h1 id="item-soort-titel">water</h1>
       <?php
         foreach ($items as $item) {
             if ($item->type == 3) {
           ?>
-        <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
             <img id="card_image_list" src="images/{{$item->img_path}}">
@@ -263,13 +276,14 @@
           <?php
         }}
       ?>
-
-<h1 id="item-soort-titel" class="drinken">fris drank</h1>
+        </div>
+        <div class="fris_drank">
+<h1 id="item-soort-titel">fris drank</h1>
       <?php
         foreach ($items as $item) {
             if ($item->type == 4) {
           ?>
-        <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
             <img id="card_image_list" src="images/{{$item->img_path}}">
@@ -283,12 +297,14 @@
           <?php
         }}
       ?>
-<h1 id="item-soort-titel" class="drinken">alcoholische dranken</h1>
+        </div>
+        <div class="alcohol">
+<h1 id="item-soort-titel">alcoholische dranken</h1>
 <?php
   foreach ($items as $item) {
     if ($item->type == 5) {
     ?>
-  <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
+  <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
   <div id="list_item_card_border" class="hover-zoom">
     <div>
       <img id="card_image_list" src="images/{{$item->img_path}}">
@@ -302,6 +318,7 @@
     <?php
   }}
 ?>
+        </div>
     </div>
   </div>
   <!-- ======= Footer ======= -->
@@ -310,26 +327,110 @@
 </body>
 
 <script>
-    let etens = document.querySelectorAll('.eten');
-    let drinkens = document.querySelectorAll('.drinken');
+    let warm_etens = document.querySelectorAll('.warm_eten');
+    let koud_etens = document.querySelectorAll('.koud_eten');
+    let snacks = document.querySelectorAll('.snacks');
+    let waters = document.querySelectorAll('.water');
+    let fris_dranks = document.querySelectorAll('.fris_drank');
+    let alcohols = document.querySelectorAll('.alcohol');
 
-      function eten(){
-        etens.forEach(eten => {
-        eten.style.display = "inline"});
-        drinkens.forEach(drinken => {
-        drinken.style.display = "none"});
+      function warm_eten_selector(){
+        warm_etens.forEach(warm_eten => {
+        warm_eten.style.display = "inline"});
+        koud_etens.forEach(koud_eten => {
+        koud_eten.style.display = "none"});
+        snacks.forEach(snack => {
+        snack.style.display = "none"});
+        waters.forEach(water => {
+        water.style.display = "none"});
+        fris_dranks.forEach(fris_drank => {
+        fris_drank.style.display = "none"});
+        alcohols.forEach(alcohol => {
+        alcohol.style.display = "none"});
       }
-      function drinken(){
-        etens.forEach(eten => {
-        eten.style.display = "none"});
-        drinkens.forEach(drinken => {
-        drinken.style.display = "inline"});
+      function koud_eten_selector(){
+        warm_etens.forEach(warm_eten => {
+        warm_eten.style.display = "none"});
+        koud_etens.forEach(koud_eten => {
+        koud_eten.style.display = "inline"});
+        snacks.forEach(snack => {
+        snack.style.display = "none"});
+        waters.forEach(water => {
+        water.style.display = "none"});
+        fris_dranks.forEach(fris_drank => {
+        fris_drank.style.display = "none"});
+        alcohols.forEach(alcohol => {
+        alcohol.style.display = "none"});
       }
-      function alles(){
-        etens.forEach(eten => {
-        eten.style.display = "inline"});
-        drinkens.forEach(drinken => {
-        drinken.style.display = "inline"});
+      function snacks_selector(){
+        warm_etens.forEach(warm_eten => {
+        warm_eten.style.display = "none"});
+        koud_etens.forEach(koud_eten => {
+        koud_eten.style.display = "none"});
+        snacks.forEach(snack => {
+        snack.style.display = "inline"});
+        waters.forEach(water => {
+        water.style.display = "none"});
+        fris_dranks.forEach(fris_drank => {
+        fris_drank.style.display = "none"});
+        alcohols.forEach(alcohol => {
+        alcohol.style.display = "none"});
+      }
+      function water_selector(){
+        warm_etens.forEach(warm_eten => {
+        warm_eten.style.display = "none"});
+        koud_etens.forEach(koud_eten => {
+        koud_eten.style.display = "none"});
+        snacks.forEach(snack => {
+        snack.style.display = "none"});
+        waters.forEach(water => {
+        water.style.display = "inline"});
+        fris_dranks.forEach(fris_drank => {
+        fris_drank.style.display = "none"});
+        alcohols.forEach(alcohol => {
+        alcohol.style.display = "none"});
+      }
+      function fris_drank_selector(){
+        warm_etens.forEach(warm_eten => {
+        warm_eten.style.display = "none"});
+        koud_etens.forEach(koud_eten => {
+        koud_eten.style.display = "none"});
+        snacks.forEach(snack => {
+        snack.style.display = "none"});
+        waters.forEach(water => {
+        water.style.display = "none"});
+        fris_dranks.forEach(fris_drank => {
+        fris_drank.style.display = "inline"});
+        alcohols.forEach(alcohol => {
+        alcohol.style.display = "none"});
+      }
+      function alcohol_selector(){
+        warm_etens.forEach(warm_eten => {
+        warm_eten.style.display = "none"});
+        koud_etens.forEach(koud_eten => {
+        koud_eten.style.display = "none"});
+        snacks.forEach(snack => {
+        snack.style.display = "none"});
+        waters.forEach(water => {
+        water.style.display = "none"});
+        fris_dranks.forEach(fris_drank => {
+        fris_drank.style.display = "none"});
+        alcohols.forEach(alcohol => {
+        alcohol.style.display = "inline"});
+      }
+      function alles_selector(){
+        warm_etens.forEach(warm_eten => {
+        warm_eten.style.display = "inline"});
+        koud_etens.forEach(koud_eten => {
+        koud_eten.style.display = "inline"});
+        snacks.forEach(snack => {
+        snack.style.display = "inline"});
+        waters.forEach(water => {
+        water.style.display = "inline"});
+        fris_dranks.forEach(fris_drank => {
+        fris_drank.style.display = "inline"});
+        alcohols.forEach(alcohol => {
+        alcohol.style.display = "inline"});
       }
     </script>
 

@@ -29,6 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       #button-input{
           width: 20%;
           margin-right: 5px;
+          margin-right: 10px;
       }
       #align-buttons{
           display: flex;
@@ -88,7 +89,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="row">
               <div id="form-input" class="row-6">
                 <label for="typeInput">type</label>
-                <input name="typeInput" type="typeInput" class="form-control" id="typeInput" placeholder="type">
+                <select name="typeInput" class="form-control" id="typeInput" placeholder="type">
+                    <option value="0">warm eten</option>
+                    <option value="1">koud eten</option>
+                    <option value="2">snacks</option>
+                    <option value="3">water</option>
+                    <option value="4">fris drank</option>
+                    <option value="5">alcoholische dranken</option>
+                </select>
               </div>
               <div id="form-input"  class="row-6">
                 <label for="exampleInputFile">menu item foto</label>
@@ -103,14 +111,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div>
               </div>
             </div>
-            <div id="button-input admin-button">
+            <div class="row">
+            <div id="form-input" class="row-6">
                 <label>op de kaart</label>
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="enabled" value="1" name="enabled">
                   <label class="form-check-label" for="admincheck">op de kaart</label>
                 </div>
                 </div>
+            <div id="form-input" class="row-6">
+                <label>aanbieding</label>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="enabled" value="1" name="aanbieding">
+                  <label class="form-check-label" for="admincheck">in de aanbieding</label>
+                </div>
+                </div>
             </div>
+        </div>
+        </div>
             <!-- /.card-body -->
 
             <div class="card-footer">

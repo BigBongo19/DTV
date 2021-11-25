@@ -20,6 +20,7 @@ class CreateMenuItemsTable extends Migration
             $table->integer('type');
             $table->boolean('enabled');
             $table->string('img_path');
+            $table->integer('sale');
             $table->timestamps();
         });
     }
