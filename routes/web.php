@@ -40,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/admin/editTournament/{id}', 'TournamentController@editTournament');
         Route::post('/admin/deleteTournament/{id}', 'TournamentController@deleteTournament');
         Route::get('/admin/reservations', 'AdminController@reservations')->name('adminReservations');
+        Route::get('/admin/menu', 'AdminController@menu')->name('adminMenu');
     });
 });
 

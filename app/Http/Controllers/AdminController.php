@@ -38,5 +38,9 @@ class AdminController extends Controller
         return view('admin.reservations');
     }
 
-    
+    public function menu(){
+        return view('admin.menu');
+    }
+
+
 }
