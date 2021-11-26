@@ -22,7 +22,7 @@ class TournamentController extends Controller
         return view('tournaments', ['tournaments' => $tournaments, 'participant_list' => $participant_list]);
     }
 
-    public function getTournamentById($id)
+    public function getTournamentWithRegistrations($id)
     {
         $tournament = Tournament::find($id);
         if (!$tournament) {
@@ -66,7 +66,7 @@ class TournamentController extends Controller
         }
 
         $registrations = TournamentRegistration::where('tournament_id', '=', $id)->get();
-        if(count($registrations) >= $tournament->max_participants) {
+        if (count($registrations) >= $tournament->max_participants) {
             return redirect()->back()->with('error', "Dit toernooi zit vol.");
         }
 
@@ -83,7 +83,8 @@ class TournamentController extends Controller
         return redirect('/toernooi/' . $id)->with('message', "U bent registreerd voor dit toernooi.");
     }
 
-    public function submitTournament(Request $request){
+    public function submitTournament(Request $request)
+    {
         $request->validate([
             'titleTournament' => 'required|max:50',
             'selectLane' => 'required',
@@ -101,30 +102,34 @@ class TournamentController extends Controller
         $tournament->description = $request->descTournament;
 
         $tournament->save();
-        return redirect('/admin/tournamentList')->with('message','Het toernooi is aangemaakt!');
+        return redirect('/admin/tournamentList')->with('message', 'Het toernooi is aangemaakt!');
     }
 
-    public function getTournaments(){
+    public function getTournaments()
+    {
         $tournaments = Tournament::all();
 
         return view('tournaments', ['tournaments' => $tournaments]);
     }
 
-    public function getTournamentsAdmin(){
+    public function getTournamentsAdmin()
+    {
         $tournaments = Tournament::all();
 
         return view('admin.tournamentList', ['tournaments' => $tournaments]);
     }
 
-    public function getTournamentById(Request $request, $id){
+    public function getTournamentById(Request $request, $id)
+    {
         $tournament = Tournament::find($id);
-        $startdate  = Carbon::parse($tournament->start_date)->format('Y-m-d\TH:i');
-        $enddate    = Carbon::parse($tournament->end_date)->format('Y-m-d\TH:i');
+        $startdate = Carbon::parse($tournament->start_date)->format('Y-m-d\TH:i');
+        $enddate = Carbon::parse($tournament->end_date)->format('Y-m-d\TH:i');
         // dd(Session::all());
         return view('admin.editTournament', compact('startdate', 'enddate', 'tournament'));
     }
 
-    public function editTournament(Request $request){
+    public function editTournament(Request $request)
+    {
         $request->validate([
             'titleTournament' => 'required|max:50',
             'selectLane' => 'required',
@@ -141,11 +146,12 @@ class TournamentController extends Controller
         $tournament->description = $request->descTournament;
 
         $tournament->save();
-        return redirect('/admin/tournamentList')->with('message','Gegevens opgeslagen!');
+        return redirect('/admin/tournamentList')->with('message', 'Gegevens opgeslagen!');
     }
 
-    public function deleteTournament($id){
+    public function deleteTournament($id)
+    {
         Tournament::find($id)->delete();
-        return redirect('/admin/tournamentList')->with('message','Toernooi is verwijderd!');
+        return redirect('/admin/tournamentList')->with('message', 'Toernooi is verwijderd!');
     }
 }
