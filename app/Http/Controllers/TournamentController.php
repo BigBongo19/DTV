@@ -53,15 +53,7 @@ class TournamentController extends Controller
         return view('admin.editTournament', compact('startdate', 'enddate', 'tournament'));
     }
 
-    public function getTournamentByDate(Request $request){
-        $date = $request->datePicker;
-        $tournaments = Tournament::where('end_date', '<=', $date)->get();
-        dd($tournaments);
-
-        $tournaments = Tournament::find($date);
-        return view('reserve-date', compact('tournaments', 'date'));
-
-    }
+    
 
     public function editTournament(Request $request){
         $request->validate([
