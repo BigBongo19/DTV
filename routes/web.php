@@ -21,12 +21,18 @@ Route::get('/menu', 'MenuController@index')->name('menu');
 Route::middleware(['auth'])->group(function () {
     Route::get('/reserveren', 'ReserveController@index')->name('reserveIndex');
     Route::get('/profile', 'ProfileController@index')->name('profileIndex');
+    Route::post('/profile/upload','ProfileController@upload');
+    Route::get('/profile/remove_image','ProfileController@removeImage');
     Route::get('/edit-profile', 'ProfileController@editIndex')->name('editProfile');
     Route::post('/edit-profile/submit', 'ProfileController@edit');
     Route::post('/edit-profile/submitpassword', 'ProfileController@editPassword');
     Route::get('/payments', 'ProfileController@payment')->name('paymentIndex');
-    Route::get('/toernooien', 'TournamentController@getTournaments')->name('index');
-    Route::get('/toernooi', 'TournamentDetailController@index')->name('index');
+
+    Route::get('/reserveren', 'ReserveController@index')->name('index');
+    Route::get('/toernooien', 'TournamentController@index')->name('index');
+    Route::get('/toernooi/{Tournament}', 'TournamentController@getTournamentWithRegistrations')->name('index');
+    Route::post('/toernooi/{Tournament}', 'TournamentController@submitTournamentRegistration');
+    Route::get('/menu', 'MenuController@index')->name('index');
 
     // Admin only
     Route::middleware(['admin'])->group(function () {
@@ -44,7 +50,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/reservations', 'AdminController@reservations')->name('adminReservations');
         Route::get('/admin/menu', 'AdminController@menuIndex')->name('menuIndex');
         Route::get('/admin/menu/toevoegen', 'AdminController@menuToevoegen')->name('menuToevoegen');
-        Route::post('/admin/menu/toevoegen', 'AdminController@saveMenu');
+        Route::post('/admin/menu/toevoegen', 'MenuController@saveMenu');
     });
 });
 

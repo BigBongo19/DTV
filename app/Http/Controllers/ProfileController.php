@@ -6,6 +6,8 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ProfileController extends Controller
 {
@@ -73,5 +75,36 @@ class ProfileController extends Controller
 
     public function payment() {
         return view('paymentIndex');
+    }
+
+    public function upload(Request $request)
+    {
+
+        if(!$request->file('image') == null){
+            $request->validate([
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+
+            $user = User::find(Auth::user()->id);
+
+            if(isset($user->img_path)){
+                Storage::disk('public')->delete($user->img_path);
+            }
+
+            $path = Storage::disk('public')->put('avatars', $request->file('image'));
+            $user->img_path = $path;
+            $user->save();
+            return redirect()->back()->with('message','Uw profielfoto is aangepast');
+        }
+        else{
+            return redirect()->back()->with('error','Er is iets fout gegaan');
+        }
+    }
+    public function removeImage(){
+        $user = User::find(Auth::user()->id);
+        Storage::disk('public')->delete($user->img_path);
+        $user->img_path = NULL;
+        $user->save();
+        return redirect()->back()->with('message','Uw profielfoto is verwijderd');
     }
 }

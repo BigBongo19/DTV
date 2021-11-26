@@ -74,7 +74,7 @@ class AdminController extends Controller
 
     public function menuIndex()
     {
-        return view('admin.menuBewerken');
+        return view('admin.menu');
     }
 
     public function menuToevoegen()
@@ -82,21 +82,7 @@ class AdminController extends Controller
         return view('admin.menuToevoegen');
     }
 
-    public function saveMenu(Request $request){
-        $menu = new Menu;
-        $menu->name = $request->itemNaam;
-        $menu->price = $request->priceInput;
-        $menu->type = $request->typeInput;
-        $menu->img_path = $request->file;
-        if(isset($request->enabled)){
-            $menu->enabled = $request->enabled;
-        }else{
-            $menu->enabled = 0;
-        }
-
-        $menu->save();
-        return back();
-    }
+    
 
 
 }
