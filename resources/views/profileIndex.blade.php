@@ -60,7 +60,6 @@
             <div class="list">
                 <div class="list-item"><a href="/profile">Account</a></div>
                 <div class="list-item"><a href="/edit-profile">Aanpassen</a></div>
-                <div class="list-item"><a href="/payments">Betalingen</a></div>
             </div>
 
             <div class="account-options">
