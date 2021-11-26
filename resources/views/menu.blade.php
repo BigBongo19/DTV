@@ -86,20 +86,6 @@
       border-radius: 5px;
     }
 
-    #card_image_list{
-      width: 95%;
-      height: 75%;
-      margin: 5px;
-      border-radius: 5px;
-    }
-
-    #card_image{
-      width: 95%;
-      height: 75%;
-      margin: 10px;
-      border-radius: 5px;
-    }
-
     .hover-zoom {
       transition: 500ms;
       z-index: auto;
@@ -179,7 +165,7 @@
               <div class="hover-zoom">
                 <div id="random_item_card_border" class="col-lg-3 col-md-6">
                   <div>
-                    <img id="card_image" src="images/{{$item->img_path}}">
+                    <img class="img-fluid" alt="Responsive image" id="card_image" src="images/{{$item->img_path}}">
                   </div>
                   <div class="card_text">
                     <p>{{$item->name}}</p>
@@ -202,7 +188,7 @@
         <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
-            <img id="card_image_list" src="images/{{$item->img_path}}">
+            <img id="card_image_list" src="images/{{$item->img_path}}" class="img-fluid" alt="Responsive image">
           </div>
           <div class="card_text">
             <p>{{$item->name}}</p>
@@ -223,7 +209,7 @@
         <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
-            <img id="card_image_list" src="images/{{$item->img_path}}">
+            <img class="img-fluid" alt="Responsive image" id="card_image_list" src="images/{{$item->img_path}}">
           </div>
           <div class="card_text">
             <p>{{$item->name}}</p>
@@ -244,7 +230,7 @@
         <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
-            <img id="card_image_list" src="images/{{$item->img_path}}">
+            <img class="img-fluid" alt="Responsive image" id="card_image_list" src="images/{{$item->img_path}}">
           </div>
           <div class="card_text">
             <p>{{$item->name}}</p>
@@ -265,7 +251,7 @@
         <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
-            <img id="card_image_list" src="images/{{$item->img_path}}">
+            <img class="img-fluid" alt="Responsive image" id="card_image_list" src="images/{{$item->img_path}}">
           </div>
           <div class="card_text">
             <p>{{$item->name}}</p>
@@ -286,7 +272,7 @@
         <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
         <div id="list_item_card_border" class="hover-zoom">
           <div>
-            <img id="card_image_list" src="images/{{$item->img_path}}">
+            <img class="img-fluid" alt="Responsive image" id="card_image_list image_small" src="images/{{$item->img_path}}">
           </div>
           <div class="card_text">
             <p>{{$item->name}}</p>
@@ -307,7 +293,7 @@
   <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
   <div id="list_item_card_border" class="hover-zoom">
     <div>
-      <img id="card_image_list" src="images/{{$item->img_path}}">
+      <img class="img-fluid" alt="Responsive image" id="card_image_list image_small" src="images/{{$item->img_path}}">
     </div>
     <div class="card_text">
       <p>{{$item->name}}</p>
