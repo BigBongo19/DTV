@@ -21,6 +21,8 @@ Route::get('/menu', 'MenuController@index')->name('menu');
 Route::middleware(['auth'])->group(function () {
     Route::get('/reserveren', 'ReserveController@index')->name('reserveIndex');
     Route::get('/profile', 'ProfileController@index')->name('profileIndex');
+    Route::post('/profile/upload','ProfileController@upload');
+    Route::get('/profile/remove_image','ProfileController@removeImage');
     Route::get('/edit-profile', 'ProfileController@editIndex')->name('editProfile');
     Route::post('/edit-profile/submit', 'ProfileController@edit');
     Route::post('/edit-profile/submitpassword', 'ProfileController@editPassword');
