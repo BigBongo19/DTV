@@ -74,7 +74,30 @@ class AdminController extends Controller
 
     public function menuIndex()
     {
+        return view('admin.menu');
+    }
+
+    public function menuEditIndex($id)
+    {
+        $items = Menu::where("id", $id)->first();
+
+        return view('admin.menuBewerken', [
+            'items' => $items
+        ]);
+
         return view('admin.menuBewerken');
+    }
+
+    public function menuEdit(Request $request){
+        $item = Menu::find($request->id);
+        $item->name = $request->name;
+        $item->price = $request->price;
+        $item->type = $request->typeInput;
+        $item->enabled = $request->enabled;
+        $item->sale = $request->sale;
+
+        $item->save();
+        return back();
     }
 
     public function menuToevoegen()
