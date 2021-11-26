@@ -28,10 +28,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/reserveren', 'ReserveController@index')->name('index');
     Route::get('/toernooien', 'TournamentController@index')->name('index');
-    Route::get('/toernooi/{Tournament}', 'TournamentController@getTournamentById')->name('index');
+    Route::get('/toernooi/{Tournament}', 'TournamentController@getTournamentWithRegistrations')->name('index');
     Route::post('/toernooi/{Tournament}', 'TournamentController@submitTournamentRegistration');
     Route::get('/menu', 'MenuController@index')->name('index');
-  
+
     // Admin only
     Route::middleware(['admin'])->group(function () {
         Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
