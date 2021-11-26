@@ -48,10 +48,10 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/admin/editTournament/{id}', 'TournamentController@editTournament');
         Route::post('/admin/deleteTournament/{id}', 'TournamentController@deleteTournament');
         Route::get('/admin/reservations', 'AdminController@reservations')->name('adminReservations');
-        Route::get('/admin/menu', 'AdminController@menuIndex')->name('menuIndex');
-        Route::get('/admin/menu/bewerken/{id}', 'AdminController@menuEditIndex')->name('menuEditIndex');
-        Route::post('/admin/menu/bewerken/{id}', 'AdminController@menuEdit');
-        Route::get('/admin/menu/toevoegen', 'AdminController@menuToevoegen')->name('menuToevoegen');
+        Route::get('/admin/menu', 'MenuController@menuIndex')->name('menuIndex');
+        Route::get('/admin/menu/edit/{id}', 'MenuController@menuEditIndex')->name('menuEditIndex');
+        Route::post('/admin/menu/edit/{id}', 'MenuController@menuEdit');
+        Route::get('/admin/menu/toevoegen', 'MenuController@menuToevoegen')->name('menuToevoegen');
         Route::post('/admin/menu/toevoegen', 'MenuController@saveMenu');
     });
 });

@@ -13,16 +13,50 @@ class MenuController extends Controller{
         return view('menu', compact('items'));
     }
 
+    public function menuIndex()
+    {
+        $items = Menu::all();
+
+        return view('admin.menu', [
+            'items' => $items
+        ]);
+    }
+
+    public function menuEditIndex($id)
+    {
+        $items = Menu::where("id", $id)->first();
+
+        return view('admin.menuBewerken', [
+            'items' => $items
+        ]);
+    }
+
+    public function menuEdit(Request $request){
+        $item = Menu::find($request->id);
+        $item->name = $request->itemNaam;
+        $item->price = $request->priceInput;
+        $item->type = $request->typeInput;
+        $item->enabled = $request->enabled;
+
+        $item->save();
+        return redirect('/admin/menu')->with('message','Het product is bijgewerkt!');
+    }
+
+    public function menuToevoegen()
+    {
+        return view('admin.menuToevoegen');
+    }
+
     public function saveMenu(Request $request){
         $menu = new Menu;
         $menu->name = $request->itemNaam;
         $menu->price = $request->priceInput;
         $menu->type = $request->typeInput;
-        $menu->img_path = $request->file;
-        if(isset($request->enabled)){
-            $menu->enabled = $request->enabled;
+
+        if(isset($request->aanbieding)){
+            $menu->sale = $request->aanbieding;
         }else{
-            $menu->enabled = 0;
+            $menu->sale = 0;
         }
 
         $menu->save();

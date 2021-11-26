@@ -163,21 +163,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <label class="form-check-label" for="admincheck">op de kaart</label>
                 </div>
                 </div>
-            <div id="form-input" class="row-6">
-                <label>aanbieding</label>
-                <div class="form-check">
-                  <input
-                  <?php
-                    if ($items->sale == 1) {
-                        ?>
-                        checked
-                        <?php
-                    }
-                    ?>
-                  type="checkbox" class="form-check-input" id="enabled" value="1" name="aanbieding">
-                  <label class="form-check-label" for="admincheck">in de aanbieding</label>
-                </div>
-                </div>
             </div>
         </div>
         </div>
