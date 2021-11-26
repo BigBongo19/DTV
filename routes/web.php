@@ -27,8 +27,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/edit-profile/submit', 'ProfileController@edit');
     Route::post('/edit-profile/submitpassword', 'ProfileController@editPassword');
     Route::get('/payments', 'ProfileController@payment')->name('paymentIndex');
-    Route::get('/toernooien', 'TournamentController@getTournaments')->name('index');
-    Route::get('/toernooi', 'TournamentDetailController@index')->name('index');
+
+    Route::get('/reserveren', 'ReserveController@index')->name('index');
+    Route::get('/toernooien', 'TournamentController@index')->name('index');
+    Route::get('/toernooi/{Tournament}', 'TournamentController@getTournamentWithRegistrations')->name('index');
+    Route::post('/toernooi/{Tournament}', 'TournamentController@submitTournamentRegistration');
     Route::get('/menu', 'MenuController@index')->name('index');
 
     // Admin only

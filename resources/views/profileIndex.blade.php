@@ -68,7 +68,7 @@
                 <div class="profile-update">
                     <h3>Profielfoto:</h3>
                     <div class="avatar">
-                        <img src="assets/img/team/team-1.jpg" alt="team 1">
+                        <img @if(isset($user->img_path)) src="/storage/{{ $user->img_path }}" @else src="/images/default.jpg" @endif alt="Profielfoto">
                     </div>
                     <form action="#">
                         <div class="row">
