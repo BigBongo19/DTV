@@ -50,9 +50,7 @@ h5,
 h6 {
     font-family: "Nunito", sans-serif;
 }
-main .account {
-    padding-top: 100px;
-}
+
 main .container > h1 {
     margin: 50px 0;
     position: relative;

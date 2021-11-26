@@ -21,24 +21,34 @@ Route::get('/menu', 'MenuController@index')->name('menu');
 Route::middleware(['auth'])->group(function () {
     Route::get('/reserveren', 'ReserveController@index')->name('reserveIndex');
     Route::get('/profile', 'ProfileController@index')->name('profileIndex');
-    Route::get('/edit-profile', 'ProfileController@edit')->name('editIndex');
+    Route::get('/edit-profile', 'ProfileController@editIndex')->name('editProfile');
+    Route::post('/edit-profile/submit', 'ProfileController@edit');
+    Route::post('/edit-profile/submitpassword', 'ProfileController@editPassword');
     Route::get('/payments', 'ProfileController@payment')->name('paymentIndex');
+
     Route::get('/reserveren', 'ReserveController@index')->name('index');
     Route::get('/toernooien', 'TournamentController@index')->name('index');
     Route::get('/toernooi/{Tournament}', 'TournamentController@getTournamentById')->name('index');
     Route::post('/toernooi/{Tournament}', 'TournamentController@submitTournamentRegistration');
+    Route::get('/menu', 'MenuController@index')->name('index');
+  
     // Admin only
     Route::middleware(['admin'])->group(function () {
         Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
         Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
-        Route::get('/admin/users/edit', 'AdminController@edit')->name('adminEdit');
-
-        Route::get('/admin/tournaments', 'AdminController@add')->name('adminAdd');
-        Route::get('/admin/reservations', 'ReservationsController@index')->name('adminReservations');
-        //Route::get('/admin/reservations', 'AdminController@reservations')->name('adminReservations');
-
-        Route::get('/admin/toernooiList', 'AdminController@toernooiOverview')->name('adminToernooiOverview');
-        Route::get('/admin/addToernooi', 'AdminController@addToernooi')->name('adminAddToernooi');
+        Route::post('/admin/users', 'AdminController@deleteUser');
+        Route::get('/admin/users/edit/{id}', 'AdminController@edit')->name('adminEdit');
+        Route::post('/admin/users/edit/{id}', 'AdminController@editSave');
+        Route::get('/admin/tournamentList', 'TournamentController@getTournamentsAdmin')->name('adminTournamentOverview');
+        Route::get('/admin/addTournament', 'AdminController@addTournament')->name('adminAddTournament');
+        Route::post('/admin/addTournament', 'TournamentController@submitTournament');
+        Route::get('/admin/editTournament/{id}', 'TournamentController@getTournamentById');
+        Route::post('/admin/editTournament/{id}', 'TournamentController@editTournament');
+        Route::post('/admin/deleteTournament/{id}', 'TournamentController@deleteTournament');
+        Route::get('/admin/reservations', 'AdminController@reservations')->name('adminReservations');
+        Route::get('/admin/menu', 'AdminController@menuIndex')->name('menuIndex');
+        Route::get('/admin/menu/toevoegen', 'AdminController@menuToevoegen')->name('menuToevoegen');
+        Route::post('/admin/menu/toevoegen', 'MenuController@saveMenu');
     });
 });
 

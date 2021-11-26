@@ -87,16 +87,38 @@
                   <p>Users</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="/admin/toernooiList" class="nav-link  {{ (request()->is('admin/tournaments')) ? 'active' : '' }}">
+              <li class="nav-item {{ (request()->is('admin/tournamentList')) ? 'menu-open' : '' }}">
+                <a href="#" class="nav-link">
                   <i class="fa fa-trophy nav-icon"></i>
-                  <p>Tournaments</p>
+                  <p>Tournaments
+                  <i class="fas fa-angle-left right"></i>
+                  </p>
                 </a>
+                <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Registered Tournaments</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/admin/tournamentList" class="nav-link  {{ (request()->is('admin/tournamentList')) ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Manage Tournaments</p>
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
                 <a href="/admin/reservations" class="nav-link  {{ (request()->is('admin/reservations')) ? 'active' : '' }}">
                   <i class="fa fa-calendar-check nav-icon"></i>
                   <p>Reservations</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/menu" class="nav-link  {{ (request()->is('admin/menu')) ? 'active' : '' }}">
+                <i class="fas fa-utensils nav-icon"></i>
+                  <p>Menu</p>
                 </a>
               </li>
             </ul>

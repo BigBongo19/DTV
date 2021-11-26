@@ -79,7 +79,6 @@
                     @php($i = 0)
                     @foreach($tournaments as $tournament)
                         @php($participants = $participant_list[$i])
-{{--                        @if(!($participants >= $tournament->max_participants))--}}
                             <li class="list-group-item flex-row" data-href="toernooi/{{$tournament->id}}"
                                 data-aos="fade-up"
                                 data-aos-delay="{{$i * 100}}">
@@ -97,16 +96,20 @@
                                                 </button>
                                             @endif
                                         </div>
+
+
                                     </div>
                                     <hr>
+
                                     <div class="row">
                                         <p class="col-12 col-md-6 col-lg-4">Datum: {{date('d-m-Y', strtotime($tournament->start_date))}}</p>
                                         <p class="col-12 col-md-6 col-lg-8">plekken bezet: {{$participants}}/{{$tournament->max_participants}}</p>
+                                        <p class="col-12 col-md-6 col-lg-4">Wordt gehouden op: {{$tournament->lane}}</p>
+
                                         {{--                                    <p class="col-12 col-md-6 col-lg-4">entree prijs: €</p>--}}
                                     </div>
                                 </div>
                             </li>
-{{--                        @endif--}}
                         @php($i++)
                     @endforeach
                 </ul>

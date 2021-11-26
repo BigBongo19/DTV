@@ -50,7 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="inner">
                       <h3>12</h3>
 
-                      <p>Abbonoment houders</p>
+                      <p>Abonnement houders</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-bag"></i>

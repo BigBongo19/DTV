@@ -43,8 +43,18 @@
 
   <main id="main">
     <!-- ======= About Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>Mijn account</li>
+          </ol>
+          <h2>Mijn account</h2>
+        </div>
+      </section>
     <div class="container account">
-        <h1>Instellingen</h1>
+
 
         <section class="account-details">
             <div class="list">
@@ -54,10 +64,10 @@
             </div>
 
             <div class="account-options">
-                <h1>Account</h1>
+                <h1>Algemene informatie</h1>
 
                 <div class="profile-update">
-                    <h3>Profielfoto</h3>
+                    <h3>Profielfoto:</h3>
                     <div class="avatar">
                         <img src="assets/img/team/team-1.jpg" alt="team 1">
                     </div>
