@@ -2235,6 +2235,8 @@ section {
 }
 .hover-zoom:hover {
     transform: scale(1.05) !important;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
     cursor: pointer;
 }
 .tourney button {
