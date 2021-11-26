@@ -142,7 +142,7 @@
     </div>
 </section>
   <div id="menu" data-aos="fade-left">
-    <div id="item_list">
+    <div id="item_list" class="container">
       <div class="row">
         <div class="warm_eten col">
           <ul class="list-group list-group-flush">

@@ -98,18 +98,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <option value="5">alcoholische dranken</option>
                 </select>
               </div>
-              <div id="form-input"  class="row-6">
-                <label for="exampleInputFile">menu item foto</label>
-                <div class="input-group">
-                  <div class="custom-file">
-                    <input name="file" type="file" class="custom-file-input" id="profielfotoinput">
-                    <label class="custom-file-label" for="profielfotoinput">kies een afbeelding</label>
-                  </div>
-                  <div class="input-group-append">
-                    <span class="input-group-text">Upload</span>
-                  </div>
-                </div>
-              </div>
             </div>
             <div class="row">
             <div id="form-input" class="row-6">

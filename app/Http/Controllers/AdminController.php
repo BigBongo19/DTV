@@ -87,19 +87,13 @@ class AdminController extends Controller
         $menu->name = $request->itemNaam;
         $menu->price = $request->priceInput;
         $menu->type = $request->typeInput;
-        $menu->img_path = $request->file;
-        if(isset($request->enabled)){
-            $menu->enabled = $request->enabled;
-        }else{
-            $menu->enabled = 0;
-        }
 
         if(isset($request->aanbieding)){
             $menu->sale = $request->aanbieding;
         }else{
             $menu->sale = 0;
         }
-        
+
         $menu->save();
         return back();
     }
