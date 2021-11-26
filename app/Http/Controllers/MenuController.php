@@ -10,7 +10,7 @@ class MenuController extends Controller{
     {
         $items = Menu::all();
 
-        return view('admin.menu', compact('items'));
+        return view('menu', compact('items'));
     }
 
     public function saveMenu(Request $request){
