@@ -53,6 +53,13 @@ class TournamentController extends Controller
         return view('admin.editTournament', compact('startdate', 'enddate', 'tournament'));
     }
 
+    public function getTournamentByDate(Request $request, $date){
+        $date = $request->datePicker;
+        $tournaments = Tournament::where('end_date', '<=', $date)->get();
+        dd($tournaments);
+
+    }
+
     public function editTournament(Request $request){
         $request->validate([
             'titleTournament' => 'required|max:50',
