@@ -52,7 +52,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">edit users</h1>
+            <h1 class="m-0">menu items toevoegen</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -70,37 +70,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- edit content -->
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">edit user</h3>
+                <h3 class="card-title">menu item toevoegen</h3>
             </div>
         <form method="POST">
             @csrf
             <div class="card-body">
                 <div class="row">
               <div id="form-input" class="row-6">
-                <label for="voornaaminput">voornaam</label>
-                <input name="name" type="firstname" class="form-control" id="voornaaminput" placeholder="voornaam" value="{{$user->name}}">
+                <label for="itemNaamInput">item naam</label>
+                <input name="itemNaam" type="itemname" class="form-control" id="itemNaamInput" placeholder="item naam">
               </div>
               <div id="form-input" class="row-6">
-                <label for="achternaaminput">achternaam</label>
-                <input name="achternaam" type="lastname" class="form-control" id="achternaaminput" placeholder="achternaam" value="{{$user->last_name}}">
+                <label for="priceInput">prijs</label>
+                <input name="priceInput" type="price" class="form-control" id="priceInput" placeholder="prijs">
               </div>
             </div>
             <div class="row">
               <div id="form-input" class="row-6">
-                <label for="emailinput">Email</label>
-                <input name="email" type="email" class="form-control" id="emailinput" placeholder="email" value="{{$user->email}}">
+                <label for="typeInput">type</label>
+                <input name="typeInput" type="typeInput" class="form-control" id="typeInput" placeholder="type">
               </div>
-              <div id="form-input" class="row-6">
-                <label for="passwordinput">wachtwoord</label>
-                <input name="password" type="password" class="form-control" id="passwordinput" placeholder="wachtwoord" value="{{$user->password}}">
-              </div>
-            </div>
-              <div class="row">
               <div id="form-input"  class="row-6">
-                <label for="exampleInputFile">profiel foto</label>
+                <label for="exampleInputFile">menu item foto</label>
                 <div class="input-group">
                   <div class="custom-file">
-                    <input name="file" type="file" class="custom-file-input" id="profielfotoinput" value="{{$user->img_path}}">
+                    <input name="file" type="file" class="custom-file-input" id="profielfotoinput">
                     <label class="custom-file-label" for="profielfotoinput">kies een afbeelding</label>
                   </div>
                   <div class="input-group-append">
@@ -108,53 +102,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </div>
                 </div>
               </div>
-              <div id="form-input" class="row-6">
-                <label for="phonenumberinput">telefoonnummer</label>
-                <input name="phonenumber" type="phonenumber" class="form-control" id="phonenumberinput" placeholder="telefoon nummer" value="{{$user->phone_number}}">
-              </div>
             </div>
-            <div class="row">
-            <div id="button-input">
-            <label>geslacht</label>
-              <div class="form-check">
-                <input
-                <?php
-                    if ($user->gender == 0) {
-                        ?>
-                        checked
-                        <?php
-                    }
-                ?>
-                type="radio" class="form-check-input" id="radio1" value="0" name="geslacht">
-                <label class="form-check-label" for="radio1">man</label><br>
-                <input
-                <?php
-                    if ($user->gender == 1) {
-                        ?>
-                        checked
-                        <?php
-                    }
-                ?>
-                type="radio" class="form-check-input" id="radio2" value="1" name="geslacht">
-                <label class="form-check-label" for="radio2">vrouw</label>
-              </div><br>
-            </div>
-              <div id="button-input admin-button">
-              <label>is admin</label>
-              <div class="form-check">
-                <input
-                <?php
-                    if ($user->is_admin == 1) {
-                        ?>
-                        checked
-                        <?php
-                    }
-                ?>
-                type="checkbox" class="form-check-input" id="admincheck" value="1" name="admin">
-                <label class="form-check-label" for="admincheck">admin</label>
-              </div>
-              </div>
-            </div>
+            <div id="button-input admin-button">
+                <label>op de kaart</label>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="enabled" value="1" name="enabled">
+                  <label class="form-check-label" for="admincheck">op de kaart</label>
+                </div>
+                </div>
             </div>
             <!-- /.card-body -->
 

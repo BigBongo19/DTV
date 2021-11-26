@@ -35,7 +35,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Overzicht</li>
+                                <li class="breadcrumb-item active">Menukaart</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -48,9 +48,8 @@
                         <div class="card">
                             <div class="card-header">
 
-                                <h3 class="d-inline-block">Alle toernooien</h3>
-                                <a href="addTournament" class="add-btn btn btn-success float-right">Maak een nieuw toernooi
-                                    aan</a>
+                                <h3 class="d-inline-block">Menukaart</h3>
+                                <a href="menu/toevoegen" class="add-btn btn btn-success float-right">Voeg een nieuw product toe</a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -58,32 +57,27 @@
                                     <thead>
                                         <tr>
                                             <th>Titel</th>
-                                            <th>Start datum</th>
-                                            <th>Eind datum</th>
-                                            <th>Beschrijving</th>
-                                            <th>Baan</th>
-                                            <th>Max. deelnemers</th>
+                                            <th>Prijs</th>
+                                            <th>Categorie</th>
                                             <th>Actie</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($tournaments as $tournament)
-                                            <tr>
-                                                <td>{{ $tournament->title }}</td>
-                                                <td>{{ $tournament->start_date }}</td>
-                                                <td>{{ $tournament->end_date }}</td>
-                                                <td>{{ $tournament->description }}</td>
-                                                <td>{{ $tournament->lane }}</td>
-                                                <td>{{ $tournament->max_participants }}</td>
-                                                <td>
-                                                    <a href="editTournament/{{ $tournament->id }}" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
+                                        @foreach($items as $menuItem)
+                                        <tr>
+                                            <td>{{$menuItem->name}}</td>
+                                            <td>{{number_format($menuItem->price)}}</td>
+                                            <td>{{$menuItem->type}}</td>
+                                            <td>
+                                                <a href="#" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
 
-                                                    <form method="POST" action="/admin/deleteTournament/{{ $tournament->id }}" accept-charset="UTF-8" style="display: inline;"><input name="_method" type="hidden">
-                                                        @csrf
-                                                        <span onclick="deleteEntity(this)"><i class="fas fa-trash" style="color: red"></i></span>
-                                                    </form>
-                                                </td>
-                                            </tr>
+                                                <form method="POST" action="#" accept-charset="UTF-8" style="display: inline;">
+                                                    <input name="_method" type="hidden">
+                                                    @csrf
+                                                    <span onclick="deleteEntity(this)"><i class="fas fa-trash" style="color: red"></i></span>
+                                                </form>
+                                            </td>
+                                        </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
