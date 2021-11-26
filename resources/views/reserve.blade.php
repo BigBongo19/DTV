@@ -67,10 +67,10 @@
     <section id="about" class="about">
 
         <div class="container">
-            <div class="row justify-content-center flex-column banen text-center">
-                <form method="GET">
-                    <h4>Selecteer een datum</h4>
-                    <input type="datetime-local" name="datePicker" class="form-control-lg inputDate">
+            <div class="row reservatie">
+                <form method="GET" action="/reserveren/courts">
+                    <h4>Wanneer wil jij een baan reserveren?</h4>
+                    <input type="datetime-local" name="date" class="form-control-lg inputDate">
                     <button type="submit" class="btn btn-success">Volgende <i class="bi bi-arrow-right"></i></button>
                 </form>
             </div>
