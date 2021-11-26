@@ -65,13 +65,22 @@
         <div class="container tourney">
             <div class="section-header" data-aos="fade-up">
                 <h1><b>Inschrijven</b></h1>
+                @if (session('message'))
+                    <div class="alert alert-fail text-success">
+                        {{ session('message') }}
+                    </div>
+                @elseif(session('error'))
+                    <div class="alert alert-fail text-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
             </div>
 
             <div class="description d-flex justify-content row mt-5" data-aos="fade-up" data-aos-delay="100">
                 <p class="col-12 col-lg-8">{{$tournament->description}}</p>
                 <div class="col-12 col-lg-4">
-                    <div class="row">
-                        <img class="col-12" src="/assets/img/logo.png">
+                    <div class="row d-flex justify-content-center">
+                        <img class="col-8 col-lg-12" src="/assets/img/logo.png">
                     </div>
                 </div>
             </div>
@@ -81,6 +90,7 @@
                 <p class="col-sm-12 col-md-4">Inschrijven tot {{date('d-m-Y', strtotime($tournament->start_date))}}</p>
                 <form method="POST" style="max-width: 1200px">
                     @csrf
+                    <input type="hidden" name="tournament_id" value="{{$tournament->id}}">
                     <button type="submit" class="col-sm-12 col-md-4 btn btn-success addTournament">Inschrijven</button>
                 </form>
             </div>

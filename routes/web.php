@@ -25,8 +25,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/payments', 'ProfileController@payment')->name('paymentIndex');
     Route::get('/reserveren', 'ReserveController@index')->name('index');
     Route::get('/toernooien', 'TournamentController@index')->name('index');
-    Route::get('/toernooi/{Tournament}', 'TournamentDetailController@index')->name('index');
-    Route::post('/toernooi/{Tournament}', 'TournamentDetailController@submitTournamentRegistration');
+    Route::get('/toernooi/{Tournament}', 'TournamentController@getTournamentById')->name('index');
+    Route::post('/toernooi/{Tournament}', 'TournamentController@submitTournamentRegistration');
     // Admin only
     Route::middleware(['admin'])->group(function () {
         Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
