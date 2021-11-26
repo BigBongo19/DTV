@@ -115,6 +115,12 @@
                   <p>Reservations</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="/admin/menu" class="nav-link  {{ (request()->is('admin/menu')) ? 'active' : '' }}">
+                <i class="fas fa-utensils nav-icon"></i>
+                  <p>Menu</p>
+                </a>
+              </li>
             </ul>
           </li>
         </ul>
