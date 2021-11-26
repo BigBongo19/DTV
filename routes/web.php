@@ -20,6 +20,7 @@ Route::get('/menu', 'MenuController@index')->name('menu');
 // Authenticated users only
 Route::middleware(['auth'])->group(function () {
     Route::get('/reserveren', 'ReserveController@index')->name('reserveIndex');
+    Route::get('/reserveren?{date}', 'TournamentController@getTournamentByDate');
     Route::get('/profile', 'ProfileController@index')->name('profileIndex');
     Route::get('/edit-profile', 'ProfileController@editIndex')->name('editProfile');
     Route::post('/edit-profile/submit', 'ProfileController@edit');
