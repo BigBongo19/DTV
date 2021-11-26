@@ -11,19 +11,19 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
     $(document).ready(function () {
@@ -35,7 +35,7 @@
 </script>
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: FlexStart - v1.7.0
@@ -67,12 +67,23 @@
     <section id="about" class="about">
 
         <div class="container">
-            <div class="row justify-content-center flex-column banen text-center">
-                <form method="GET">
-                    <h4>Selecteer een datum</h4>
-                    <input type="datetime-local" name="datePicker" class="form-control-lg inputDate">
-                    <button type="submit" class="btn btn-success">Volgende <i class="bi bi-arrow-right"></i></button>
-                </form>
+            <div class="row reservatie">
+                <h4>Deze banen zijn beschikbaar op jouw gekozen datum</h4>
+                @foreach ($tournaments as $tournament)
+                <div class="courtcard">
+                    <div class="courtcard-img">
+                        <img src="/assets/img/banen/tennisbaan1.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="courtcard-info">
+                        <h4>{{$tournament->title}}</h4>
+                        <span>{{$tournament->lane}}</span>
+                        <p>{{$tournament->description}}</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#confirmModal">Reserveer</button>
+                    </div>
+                </div>
+                @endforeach
+
             </div>
 
         </div>
