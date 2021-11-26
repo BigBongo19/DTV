@@ -68,20 +68,11 @@
 
         <div class="container">
             <div class="row justify-content-center flex-column banen text-center">
-                <div class="member">
-                    <div class="member-img">
-                        <img src="assets/img/banen/tennisbaan1.jpg" class="img-fluid" alt="">
-                    </div>
-                    <div class="member-info">
-                        <h4>Tennisbaan 1</h4>
-                        <span>Harde ondergrond</span>
-                        <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae
-                            aut.
-                            Ipsum exercitationem iure minima enim corporis et voluptate.</p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#confirmModal">Reserveer</button>
-                    </div>
-                </div>
+                <form method="GET">
+                    <h4>Selecteer een datum</h4>
+                    <input type="datetime-local" name="datePicker" class="form-control-lg inputDate">
+                    <button type="submit" class="btn btn-success">Volgende <i class="bi bi-arrow-right"></i></button>
+                </form>
             </div>
 
             {{-- <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModal" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">

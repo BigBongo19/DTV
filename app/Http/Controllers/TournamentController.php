@@ -59,7 +59,7 @@ class TournamentController extends Controller
         dd($tournaments);
 
         $tournaments = Tournament::find($date);
-        return view('reserve')
+        return view('reserve-date', compact('tournaments', 'date'));
 
     }
 
