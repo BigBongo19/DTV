@@ -26,7 +26,7 @@
     transition: 0.2s;
 }
 
-.addTournament{
+.addTournament {
     float: right;
 }
 
@@ -183,7 +183,83 @@ main .container .account-details .profile-reservations table {
     margin: 25px 0;
     width: 100%;
 }
-h1, h2, h3, h4, h5, h6 {
+
+/*--------------------------------------------------
+# tCards
+--------------------------------------------------*/
+
+main .inner-page .container .tCards{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+main .inner-page .container .tCards .tCard {
+    width: 100%;
+    height: 300px;
+    padding: 30px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 28px 28px 35px #c2c2c2, -28px -28px 35px #ffffff;
+    position: relative;
+    text-align: center;
+    float: left;
+}
+
+main .inner-page .container .tCards .tCard .tCard-header {
+    text-align: center;
+}
+
+main .inner-page .container .tCards .tCard .tCard-body{
+    padding: 20px;
+}
+
+main .inner-page .container .tCards .tCard .tCard-body .tCard-dates-and-button{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: white;
+    background: #012970;
+    padding: 20px;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 60px;
+    overflow: hidden;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+main .inner-page .container .tCards .tCard .tCard-body .tCard-dates-and-button .text{
+    transition: 0.2s;
+}
+
+main .inner-page .container .tCards .tCard .tCard-body .tCard-dates-and-button .tCard-btn{
+    margin: 30px 0 0 0;
+    transition: 0.2s;
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+main .inner-page .container .tCards .tCard .tCard-body .tCard-dates-and-button:hover{
+    background: #13719d;
+}
+
+main .inner-page .container .tCards .tCard .tCard-body .tCard-dates-and-button:hover .tCard-btn, main .inner-page .container .tCards .tCard .tCard-body .tCard-dates-and-button:hover .text{
+    transform: translateY(-68px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Nunito", sans-serif;
 }
 /*--------------------------------------------------------------
@@ -219,7 +295,8 @@ section {
         line-height: 32px;
     }
 
-    main .container .account-details, main .container .account-details-change {
+    main .container .account-details,
+    main .container .account-details-change {
         grid-template-columns: 100%;
     }
 
@@ -253,19 +330,27 @@ section {
         margin: 10px 0;
     }
 
-    .account-details, .account-options{
+    .account-details,
+    .account-options {
         text-align: center;
     }
 
-    main .container .account-details .account-options .profile-update .avatar{
+    main .container .account-details .account-options .profile-update .avatar {
         width: unset;
         justify-content: center;
     }
 
-    main .container .account-details .account-options .payInfo{
+    main .container .account-details .account-options .payInfo {
         display: unset;
         width: 100%;
         text-align: center;
+    }
+
+    main .inner-page .container .tCards{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
     }
 }
 /*--------------------------------------------------------------
@@ -396,7 +481,8 @@ section {
     position: relative;
 }
 
-.navbar a, .navbar a:focus {
+.navbar a,
+.navbar a:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -409,7 +495,8 @@ section {
     transition: 0.3s;
 }
 
-.navbar a i, .navbar a:focus i {
+.navbar a i,
+.navbar a:focus i {
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
@@ -421,17 +508,22 @@ section {
     color: #4154f1;
 }
 
-.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover > a {
     color: #4154f1;
 }
-.navbar .getstarted, .navbar .getstarted:focus {
+.navbar .getstarted,
+.navbar .getstarted:focus {
     background: #4154f1;
     padding: 8px 20px;
     margin-left: 30px;
     border-radius: 4px;
     color: #fff;
 }
-.navbar .getstarted:hover, .navbar .getstarted:focus:hover {
+.navbar .getstarted:hover,
+.navbar .getstarted:focus:hover {
     color: #fff;
     background: #5969f3;
 }
@@ -462,7 +554,9 @@ section {
 .navbar .dropdown ul a i {
     font-size: 12px;
 }
-.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover > a {
     color: #4154f1;
 }
 .navbar .dropdown:hover > ul {
@@ -539,15 +633,19 @@ section {
     overflow-y: auto;
     transition: 0.3s;
 }
-.navbar-mobile a, .navbar-mobile a:focus {
+.navbar-mobile a,
+.navbar-mobile a:focus {
     padding: 10px 20px;
     font-size: 15px;
     color: #012970;
 }
-.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover > a {
     color: #4154f1;
 }
-.navbar-mobile .getstarted, .navbar-mobile .getstarted:focus {
+.navbar-mobile .getstarted,
+.navbar-mobile .getstarted:focus {
     margin: 15px;
 }
 .navbar-mobile .dropdown ul {
@@ -570,7 +668,9 @@ section {
 .navbar-mobile .dropdown ul a i {
     font-size: 12px;
 }
-.navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
+.navbar-mobile .dropdown ul a:hover,
+.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul li:hover > a {
     color: #4154f1;
 }
 .navbar-mobile .dropdown > .dropdown-active {
@@ -984,7 +1084,9 @@ section {
 .services .service-box.pink:hover {
     background: #f51f9c;
 }
-.services .service-box:hover h3, .services .service-box:hover p, .services .service-box:hover .read-more {
+.services .service-box:hover h3,
+.services .service-box:hover p,
+.services .service-box:hover .read-more {
     color: #fff;
 }
 .services .service-box:hover .icon {
@@ -1127,7 +1229,8 @@ section {
     border-radius: 50px;
     border: 1px solid #fff;
 }
-.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
+.portfolio #portfolio-flters li:hover,
+.portfolio #portfolio-flters li.filter-active {
     color: #4154f1;
     border-color: #4154f1;
 }
@@ -1611,13 +1714,15 @@ section {
     -webkit-animation: animate-loading 1s linear infinite;
     animation: animate-loading 1s linear infinite;
 }
-.contact .php-email-form input, .contact .php-email-form textarea {
+.contact .php-email-form input,
+.contact .php-email-form textarea {
     border-radius: 0;
     box-shadow: none;
     font-size: 14px;
     border-radius: 0;
 }
-.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
     border-color: #4154f1;
 }
 .contact .php-email-form input {
@@ -1626,7 +1731,7 @@ section {
 .contact .php-email-form textarea {
     padding: 12px 15px;
 }
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type="submit"] {
     background: #4154f1;
     border: 0;
     padding: 10px 30px;
@@ -1634,7 +1739,7 @@ section {
     transition: 0.4s;
     border-radius: 4px;
 }
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type="submit"]:hover {
     background: #5969f3;
 }
 @-webkit-keyframes animate-loading {
@@ -1939,10 +2044,12 @@ section {
     align-items: center;
     justify-content: center;
 }
-.blog .blog-pagination li.active, .blog .blog-pagination li:hover {
+.blog .blog-pagination li.active,
+.blog .blog-pagination li:hover {
     background: #4154f1;
 }
-.blog .blog-pagination li.active a, .blog .blog-pagination li:hover a {
+.blog .blog-pagination li.active a,
+.blog .blog-pagination li:hover a {
     color: #fff;
 }
 .blog .sidebar {
@@ -1967,7 +2074,7 @@ section {
     padding: 3px 10px;
     position: relative;
 }
-.blog .sidebar .search-form form input[type=text] {
+.blog .sidebar .search-form form input[type="text"] {
     border: 0;
     padding: 4px;
     border-radius: 4px;
@@ -2098,12 +2205,12 @@ section {
     border-radius: 4px;
     border: 1px solid #e1ecff;
 }
-.footer .footer-newsletter form input[type=email] {
+.footer .footer-newsletter form input[type="email"] {
     border: 0;
     padding: 8px;
     width: calc(100% - 140px);
 }
-.footer .footer-newsletter form input[type=submit] {
+.footer .footer-newsletter form input[type="submit"] {
     position: absolute;
     top: 0;
     right: 0;
@@ -2118,7 +2225,7 @@ section {
     transition: 0.3s;
     border-radius: 4px;
 }
-.footer .footer-newsletter form input[type=submit]:hover {
+.footer .footer-newsletter form input[type="submit"]:hover {
     background: #5969f3;
 }
 .footer .footer-top {
@@ -2250,5 +2357,5 @@ section {
 .tourney hr {
     opacity: 0.05;
     width: 80%;
-    margin: 16px auto
+    margin: 16px auto;
 }

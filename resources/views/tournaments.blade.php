@@ -70,33 +70,80 @@
 
     <section class="inner-page">
         <div class="container tourney">
-            <div class="section-header" data-aos="fade-up">
-                <h1><b>Inschrijven</b></h1>
+            <div class="section-header">
+                <h1><b>Schrijf je in voor een toernooi</b></h1>
             </div>
-            <div class="d-flex justify-content-center">
-                <ul class="list-group features flex-column col-8">
-                    <!-- example -->
-                    @foreach($tournaments as $tournament)
-                        <li class="list-group-item flex-row" style="box-shadow:  10px 10px 25px black">
-                            <div class="container feature-box d-grid hover-zoom">
-                                <div class="row">
-                                    <h3 class="col-12 col-md-6 col-lg-8 text-center text-md-start align-center">{{$tournament->title}}</h3>
-                                    <div class="col-12 col-md-6 col-lg-4 row">
-                                        <button class="col-10 col-md-12 align-self-center" style="margin: 0 auto" type="submit">Inschrijven</button>
-                                    </div>
-                                </div>
-                                <div>
-                                    <hr>
-                                    <p class="col-12 col-md-6 col-lg-4">Toernooi begint op: {{$tournament->start_date}}</p>
-                                    <p class="col-12 col-md-6 col-lg-4">Wordt gehouden op: {{$tournament->lane}}</p>
-                                </div>
-                                <div class="row">
-                                    <p class="col-12 col-md-6 col-lg-8">plekken: {{rand(0, 32)}}/32</p>
-                                </div>
-                            </div>
-                        </li>
-                    @endforeach
-                </ul>
+            <div class="tCards">
+                <div class="tCard">
+                    <div class="tCard-header">
+                        <h3>Titel kaart</h3>
+                    </div>
+                    <div class="tCard-body">
+                        <div class="tCard-desc">
+                            <p>Hier komt een beetje beschrijving te staan.</p>
+                        </div>
+                        <div class="tCard-dates-and-button">
+                            <p class="text">Dit toernooi begint op: DATUM</p>
+                            <a href="#" class="tCard-btn">Schrijf je in!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tCard">
+                    <div class="tCard-header">
+                        <h3>Titel kaart</h3>
+                    </div>
+                    <div class="tCard-body">
+                        <div class="tCard-desc">
+                            <p>Soms staat er wat nuttigs in de beschrijving.</p>
+                        </div>
+                        <div class="tCard-dates-and-button">
+                            <p class="text">Dit toernooi begint op: DATUM</p>
+                            <a href="#" class="tCard-btn">Schrijf je in!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tCard">
+                    <div class="tCard-header">
+                        <h3>Titel kaart</h3>
+                    </div>
+                    <div class="tCard-body">
+                        <div class="tCard-desc">
+                            <p>Het kan ook voorkomen dat een beschrijving niet zo lang is.</p>
+                        </div>
+                        <div class="tCard-dates-and-button">
+                            <p class="text">Dit toernooi begint op: DATUM</p>
+                            <a href="#" class="tCard-btn">Schrijf je in!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tCard">
+                    <div class="tCard-header">
+                        <h3>Titel kaart</h3>
+                    </div>
+                    <div class="tCard-body">
+                        <div class="tCard-desc">
+                            <p>Het kan ook voorkomen dat een beschrijving niet zo lang is.</p>
+                        </div>
+                        <div class="tCard-dates-and-button">
+                            <p class="text">Dit toernooi begint op: DATUM</p>
+                            <a href="#" class="tCard-btn">Schrijf je in!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tCard">
+                    <div class="tCard-header">
+                        <h3>Titel kaart</h3>
+                    </div>
+                    <div class="tCard-body">
+                        <div class="tCard-desc">
+                            <p>Het kan ook voorkomen dat een beschrijving niet zo lang is.</p>
+                        </div>
+                        <div class="tCard-dates-and-button">
+                            <p class="text">Dit toernooi begint op: DATUM</p>
+                            <a href="#" class="tCard-btn">Schrijf je in!</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
