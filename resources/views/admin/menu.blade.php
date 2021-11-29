@@ -66,10 +66,10 @@
                                         @foreach($items as $menuItem)
                                         <tr>
                                             <td>{{$menuItem->name}}</td>
-                                            <td>{{number_format($menuItem->price)}}</td>
+                                            <td>€{{number_format($menuItem->price,2)}}</td>
                                             <td>{{$menuItem->type}}</td>
                                             <td>
-                                                <a href="#" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
+                                                <a href="/admin/menu/edit/{{$menuItem->id}}" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
 
                                                 <form method="POST" action="#" accept-charset="UTF-8" style="display: inline;">
                                                     <input name="_method" type="hidden">

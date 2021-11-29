@@ -59,10 +59,7 @@
     }
 
     #item_list{
-      width: calc(75% - 10px);
-      display: flex;
-      flex-wrap: wrap;
-      padding: 10px;
+      width: 100%;
     }
     #random_item_card_border{
       display: flex;
@@ -83,20 +80,6 @@
       margin-top: 20px;
       margin-bottom: 20px;
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      border-radius: 5px;
-    }
-
-    #card_image_list{
-      width: 95%;
-      height: 75%;
-      margin: 5px;
-      border-radius: 5px;
-    }
-
-    #card_image{
-      width: 95%;
-      height: 75%;
-      margin: 10px;
       border-radius: 5px;
     }
 
@@ -159,178 +142,154 @@
     </div>
 </section>
   <div id="menu" data-aos="fade-left">
-    <div id="page_title">
-      <h1>Menukaart</h1>
-    </div>
-    <div id="random_item">
-      <div id="random_item_title">
-          <a href="#" onclick="eten()" id="random_item_title_section">eten</a>
-          <a href="#" onclick="drinken()" id="random_item_title_section">drinken</a>
-          <a href="#" onclick="alles()" id="random_item_title_section">alles</a>
-      </div>
-      <?php
-        for($x = 0; $x <= 1; $x++){
-          ?>
-        <div class="hover-zoom">
-        <div id="random_item_card_border" class="col-lg-3 col-md-6">
-          <div>
-            <img id="card_image" src="images/perfect-hot-dog.jpg">
-          </div>
-          <div class="card_text">
-            <p>willekeurig item</p>
-            <p>$0.00</p>
-          </div>
-        </div>
-        </div>
-        <?php
-        }
-      ?>
-    </div>
-    <div id="item_list">
-        <h1 id="item-soort-titel" class="eten">warm eten</h1>
+    <div id="item_list" class="container">
+      <div class="row">
+        <div class="warm_eten col">
+          <ul class="list-group list-group-flush">
+            <h5 class="d-flex justify-content-center"><b>warm eten</b></h6>
       <?php
         foreach ($items as $item) {
             if ($item->type == 0) {
+                if ($item->enabled == 1) {
           ?>
-        <div class="col-lg-3 col-md-6 eten" data-aos="zoom-in" data-aos-delay="100">
-        <div id="list_item_card_border" class="hover-zoom">
-          <div>
-            <img id="card_image_list" src="images/{{$item->img_path}}">
-          </div>
-          <div class="card_text">
-            <p>{{$item->name}}</p>
-            <p>€{{number_format($item->price,2)}}</p>
-          </div>
-        </div>
-      </div>
+          <li class="list-group-item">
+            <div class="row d-flex justify-content-between">
+            <div class="col-4">
+            <p class="d-flex justify-content-center">{{$item->name}}</p>
+            </div>
+            <div class="col-4">
+            <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+            </div>
+            </div>
+            </li>
           <?php
-        }}
+        }}}
       ?>
-      <h1 id="item-soort-titel" class="drinken">koud eten</h1>
+          </ul>
+        </div>
+        <div class="warm_eten col">
+          <ul class="list-group list-group-flush">
+            <h5 class="d-flex justify-content-center"><b>koud eten</b></h6>
       <?php
         foreach ($items as $item) {
             if ($item->type == 1) {
+                if ($item->enabled == 1) {
           ?>
-        <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
-        <div id="list_item_card_border" class="hover-zoom">
-          <div>
-            <img id="card_image_list" src="images/{{$item->img_path}}">
-          </div>
-          <div class="card_text">
-            <p>{{$item->name}}</p>
-            <p>€{{number_format($item->price,2)}}</p>
-          </div>
-        </div>
-      </div>
+          <li class="list-group-item">
+            <div class="row d-flex justify-content-between">
+            <div class="col-4">
+            <p class="d-flex justify-content-center">{{$item->name}}</p>
+            </div>
+            <div class="col-4">
+            <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+            </div>
+            </div>
+            </li>
           <?php
-        }}
+        }}}
       ?>
-      <h1 id="item-soort-titel" class="drinken">snacks</h1>
+          </ul>
+        </div>
+        <div class="warm_eten col">
+          <ul class="list-group list-group-flush">
+            <h5 class="d-flex justify-content-center"><b>snacks</b></h6>
       <?php
         foreach ($items as $item) {
             if ($item->type == 2) {
+                if ($item->enabled == 1) {
           ?>
-        <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
-        <div id="list_item_card_border" class="hover-zoom">
-          <div>
-            <img id="card_image_list" src="images/{{$item->img_path}}">
-          </div>
-          <div class="card_text">
-            <p>{{$item->name}}</p>
-            <p>€{{number_format($item->price,2)}}</p>
-          </div>
-        </div>
-      </div>
+          <li class="list-group-item">
+            <div class="row d-flex justify-content-between">
+            <div class="col-4">
+            <p class="d-flex justify-content-center">{{$item->name}}</p>
+            </div>
+            <div class="col-4">
+            <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+            </div>
+            </div>
+            </li>
           <?php
-        }}
+        }}}
       ?>
-      <h1 id="item-soort-titel" class="drinken">water</h1>
-      <?php
-        foreach ($items as $item) {
-            if ($item->type == 3) {
-          ?>
-        <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
-        <div id="list_item_card_border" class="hover-zoom">
-          <div>
-            <img id="card_image_list" src="images/{{$item->img_path}}">
-          </div>
-          <div class="card_text">
-            <p>{{$item->name}}</p>
-            <p>€{{number_format($item->price,2)}}</p>
-          </div>
+          </ul>
         </div>
-      </div>
-          <?php
-        }}
-      ?>
-
-<h1 id="item-soort-titel" class="drinken">fris drank</h1>
-      <?php
-        foreach ($items as $item) {
-            if ($item->type == 4) {
-          ?>
-        <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
-        <div id="list_item_card_border" class="hover-zoom">
-          <div>
-            <img id="card_image_list" src="images/{{$item->img_path}}">
-          </div>
-          <div class="card_text">
-            <p>{{$item->name}}</p>
-            <p>€{{number_format($item->price,2)}}</p>
-          </div>
         </div>
-      </div>
-          <?php
-        }}
-      ?>
-<h1 id="item-soort-titel" class="drinken">alcoholische dranken</h1>
-<?php
-  foreach ($items as $item) {
-    if ($item->type == 5) {
-    ?>
-  <div class="col-lg-3 col-md-6 drinken" data-aos="zoom-in" data-aos-delay="100">
-  <div id="list_item_card_border" class="hover-zoom">
-    <div>
-      <img id="card_image_list" src="images/{{$item->img_path}}">
-    </div>
-    <div class="card_text">
-      <p>{{$item->name}}</p>
-      <p>€{{number_format($item->price,2)}}</p>
-    </div>
-  </div>
-</div>
-    <?php
-  }}
-?>
+        <div class="row">
+          <div class="warm_eten col">
+            <ul class="list-group list-group-flush">
+              <h5 class="d-flex justify-content-center"><b>water</b></h6>
+        <?php
+          foreach ($items as $item) {
+              if ($item->type == 3) {
+                if ($item->enabled == 1) {
+            ?>
+            <li class="list-group-item">
+              <div class="row d-flex justify-content-between">
+              <div class="col-4">
+              <p class="d-flex justify-content-center">{{$item->name}}</p>
+              </div>
+              <div class="col-4">
+              <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+              </div>
+              </div>
+              </li>
+            <?php
+          }}}
+        ?>
+            </ul>
+          </div>
+          <div class="warm_eten col">
+            <ul class="list-group list-group-flush">
+              <h5 class="d-flex justify-content-center"><b>frisdrank</b></h6>
+        <?php
+          foreach ($items as $item) {
+              if ($item->type == 4) {
+                if ($item->enabled == 1) {
+            ?>
+            <li class="list-group-item">
+              <div class="row d-flex justify-content-between">
+              <div class="col-4">
+              <p class="d-flex justify-content-center">{{$item->name}}</p>
+              </div>
+              <div class="col-4">
+              <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+              </div>
+              </div>
+              </li>
+            <?php
+          }}}
+        ?>
+            </ul>
+          </div>
+          <div class="warm_eten col">
+            <ul class="list-group list-group-flush">
+              <h5 class="d-flex justify-content-center"><b>alcolholische dranken</b></h6>
+        <?php
+          foreach ($items as $item) {
+              if ($item->type == 5) {
+                if ($item->enabled == 1) {
+            ?>
+            <li class="list-group-item">
+              <div class="row d-flex justify-content-between">
+              <div class="col-4">
+              <p class="d-flex justify-content-center">{{$item->name}}</p>
+              </div>
+              <div class="col-4">
+              <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+              </div>
+              </div>
+              </li>
+            <?php
+          }}}
+        ?>
+            </ul>
+          </div>
+          </div>
     </div>
   </div>
   <!-- ======= Footer ======= -->
   @include('parts.footer')
 
 </body>
-
-<script>
-    let etens = document.querySelectorAll('.eten');
-    let drinkens = document.querySelectorAll('.drinken');
-
-      function eten(){
-        etens.forEach(eten => {
-        eten.style.display = "inline"});
-        drinkens.forEach(drinken => {
-        drinken.style.display = "none"});
-      }
-      function drinken(){
-        etens.forEach(eten => {
-        eten.style.display = "none"});
-        drinkens.forEach(drinken => {
-        drinken.style.display = "inline"});
-      }
-      function alles(){
-        etens.forEach(eten => {
-        eten.style.display = "inline"});
-        drinkens.forEach(drinken => {
-        drinken.style.display = "inline"});
-      }
-    </script>
 
 </html>
