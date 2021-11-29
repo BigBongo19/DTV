@@ -36,8 +36,11 @@ class MenuController extends Controller{
         $item->name = $request->itemNaam;
         $item->price = $request->priceInput;
         $item->type = $request->typeInput;
-        $item->enabled = $request->enabled;
-
+        if(isset($request->enabled)){
+            $item->enabled = $request->enabled;
+        }else{
+            $item->enabled = 0;
+        }
         $item->save();
         return redirect('/admin/menu')->with('message','Het product is bijgewerkt!');
     }

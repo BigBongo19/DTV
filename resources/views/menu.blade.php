@@ -150,6 +150,7 @@
       <?php
         foreach ($items as $item) {
             if ($item->type == 0) {
+                if ($item->enabled == 1) {
           ?>
           <li class="list-group-item">
             <div class="row d-flex justify-content-between">
@@ -162,7 +163,7 @@
             </div>
             </li>
           <?php
-        }}
+        }}}
       ?>
           </ul>
         </div>
@@ -172,6 +173,7 @@
       <?php
         foreach ($items as $item) {
             if ($item->type == 1) {
+                if ($item->enabled == 1) {
           ?>
           <li class="list-group-item">
             <div class="row d-flex justify-content-between">
@@ -184,7 +186,7 @@
             </div>
             </li>
           <?php
-        }}
+        }}}
       ?>
           </ul>
         </div>
@@ -194,6 +196,7 @@
       <?php
         foreach ($items as $item) {
             if ($item->type == 2) {
+                if ($item->enabled == 1) {
           ?>
           <li class="list-group-item">
             <div class="row d-flex justify-content-between">
@@ -206,7 +209,7 @@
             </div>
             </li>
           <?php
-        }}
+        }}}
       ?>
           </ul>
         </div>
@@ -218,6 +221,7 @@
         <?php
           foreach ($items as $item) {
               if ($item->type == 3) {
+                if ($item->enabled == 1) {
             ?>
             <li class="list-group-item">
               <div class="row d-flex justify-content-between">
@@ -230,7 +234,7 @@
               </div>
               </li>
             <?php
-          }}
+          }}}
         ?>
             </ul>
           </div>
@@ -240,6 +244,7 @@
         <?php
           foreach ($items as $item) {
               if ($item->type == 4) {
+                if ($item->enabled == 1) {
             ?>
             <li class="list-group-item">
               <div class="row d-flex justify-content-between">
@@ -252,7 +257,7 @@
               </div>
               </li>
             <?php
-          }}
+          }}}
         ?>
             </ul>
           </div>
@@ -262,6 +267,7 @@
         <?php
           foreach ($items as $item) {
               if ($item->type == 5) {
+                if ($item->enabled == 1) {
             ?>
             <li class="list-group-item">
               <div class="row d-flex justify-content-between">
@@ -274,7 +280,7 @@
               </div>
               </li>
             <?php
-          }}
+          }}}
         ?>
             </ul>
           </div>
