@@ -1,12 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\Tournament;
-
 use Illuminate\Http\Request;
+use App\Reservation;
+use App\Tournament;
+use App\Court;
 use App\User;
 use App\Menu;
+
 
 class AdminController extends Controller
 {
@@ -69,7 +72,49 @@ class AdminController extends Controller
 
     public function reservations()
     {
-        return view('admin.reservations');
+        $reservations = Reservation::all();
+        $names = Array();
+        foreach ($reservations as $reservation) {
+            $user = User::find($reservation->user_id);
+            array_push($names, ['name' => $user->name,
+                'last_name' => $user->last_name]);
+        }
+        //dd($names[0]['name']);
+        return view('admin.reservations', ['reservations' => $reservations, 'names' => $names]);
+    }
+
+    public function editReservationView($id)
+    {
+        $courts = Court::all();
+        $reservation = Reservation::find($id);
+        return view('admin.editReservation', ['reservation' => $reservation, 'courts' => $courts]);
+    }
+
+    public function editReservation(Request $request)
+    {
+        $request->validate([
+            'id' => 'required',
+            'court_id' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required'
+        ]);
+
+        Reservation::where('id', $request->id)->update([
+            'court_id' => $request->court_id,
+            'start_time' => $request->start_time,
+            'end_time' => $request->end_time
+        ]);
+
+        return redirect('admin/reservations')->with('message', "De reservatie is aangepast.");
+    }
+
+    public function deleteReservation(Request $request)
+    {
+        $request->validate([
+            'id' => 'required',
+        ]);
+        Reservation::find($request->id)->delete();
+        return redirect('admin/reservations')->with('message', "De reservatie is verwijderd.");
     }
 
     public function menuIndex()
@@ -82,7 +127,7 @@ class AdminController extends Controller
         return view('admin.menuToevoegen');
     }
 
-    
+
 
 
 }
