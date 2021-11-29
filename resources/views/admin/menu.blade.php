@@ -66,7 +66,7 @@
                                         @foreach($items as $menuItem)
                                         <tr>
                                             <td>{{$menuItem->name}}</td>
-                                            <td>{{number_format($menuItem->price)}}</td>
+                                            <td>€{{number_format($menuItem->price,2)}}</td>
                                             <td>{{$menuItem->type}}</td>
                                             <td>
                                                 <a href="/admin/menu/edit/{{$menuItem->id}}" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
