@@ -84,34 +84,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <a name="edit_id" href="/admin/users/edit/{{$user->id}}" style="background-color: #f2d61f; border-color: #f2d61f" id="edit" class="btn btn-primary">
                                 <i class="fas fa-pen"></i>
                                 </a>
-                                <a type="button" data-toggle="modal" data-target="#exampleModal" style="background-color: red; border-color: red;" id="delete" type="submit" class="btn btn-primary">
+                                <a onclick="deleteEntity(this)" type="button" data-toggle="modal" data-target="#exampleModal" style="background-color: red; border-color: red;" id="delete" type="submit" class="btn btn-primary">
                                   <i class="fas fa-trash"></i>
                                 </a>
                               </td>
                             </tr>
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                              <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">user verwijderen</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                  <div class="modal-body">
-                                    weet jij zeker dat je deze user wilt verwijderen?
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">terug</button>
-                                    <form action="/admin/users" method="POST">
-                                        @csrf
-                                    <button value="{{$user->id}}" style="background-color: red; border-color: red;" type="submit" class="btn btn-primary">verwijder user</button>
-                                    </form>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
                             @endforeach
                           </tbody>
                       </table>
@@ -187,6 +164,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
       "responsive": true,
     });
   });
+  window.deleteEntity = function (element, message = "Weet je zeker dat je dit wil verwijderen?") {
+            Swal.fire({
+  title: 'Weet je het zeker?',
+  text: "Je kan dit niet terugdraaien!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Ja, verwijderen'
+}).then((result) => {
+  if (result.isConfirmed) {
+
+    Swal.fire(
+      'Verwijderd!',
+      'Het is verwijderd.',
+      'success'
+    )
+    $(element).closest('form').submit();
+  }
+})
+};
 </script>
 </body>
 </html>
