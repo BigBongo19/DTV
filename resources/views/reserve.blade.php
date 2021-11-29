@@ -58,107 +58,24 @@
 
           <ol>
             <li><a href="/">Home</a></li>
-            <li>Reseveren</li>
+            <li>Baan reserveren</li>
           </ol>
-          <h2>Reseveren</h2>
+          <h2>Reserveer een baan</h2>
         </div>
       </section>
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
 
         <div class="container">
-            <div class="row justify-content-center flex-column banen text-center">
-
-
-                <section id="team" class="team">
-
-                    <div class="container" data-aos="fade-up">
-
-                        <header class="section-header">
-                            <h2>Beschikbare banen</h2>
-                        </header>
-
-                        <div class="row gy-4">
-
-                            <div class="col-lg-3 col-md-6 d-flex align-items-baseline" data-aos="fade-up"
-                                data-aos-delay="100">
-                                <div class="member">
-                                    <div class="member-img">
-                                        <img src="assets/img/banen/tennisbaan1.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="member-info">
-                                        <h4>Tennisbaan 1</h4>
-                                        <span>Harde ondergrond</span>
-                                        <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae
-                                            aut.
-                                            Ipsum exercitationem iure minima enim corporis et voluptate.</p>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#confirmModal">Reserveer</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                                data-aos-delay="400">
-                                <div class="member">
-                                    <div class="member-img">
-                                        <img src="assets/img/banen/tennisbaan1.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="member-info">
-                                        <h4>Squashbaan 2</h4>
-                                        <span>Zachte ondergrond</span>
-                                        <p>Rerum voluptate non adipisci animi distinctio et deserunt amet voluptas. Quia aut
-                                            aliquid doloremque ut possimus ipsum officia.</p>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#confirmModal" disabled>Reserveer</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                                data-aos-delay="400">
-                                <div class="member">
-                                    <div class="member-img">
-                                        <img src="assets/img/banen/tennisbaan1.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="member-info">
-                                        <h4>Tennisbaan 3</h4>
-                                        <span>Zachte ondergrond</span>
-                                        <p>Rerum voluptate non adipisci animi distinctio et deserunt amet voluptas. Quia aut
-                                            aliquid doloremque ut possimus ipsum officia.</p>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#confirmModal">Reserveer</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                                data-aos-delay="400">
-                                <div class="member">
-                                    <div class="member-img">
-                                        <img src="assets/img/banen/tennisbaan1.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="member-info">
-                                        <h4>Tennisbaan 4</h4>
-                                        <span>Harde ondergrond</span>
-                                        <p>Rerum voluptate non adipisci animi distinctio et deserunt amet voluptas. Quia aut
-                                            aliquid doloremque ut possimus ipsum officia.</p>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#confirmModal">Reserveer</button>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-
-                    </div>
-
-                </section><!-- End Team Section -->
+            <div class="row reservatie">
+                <form method="GET" action="/reserveren/courts">
+                    <h4>Wanneer wil jij een baan reserveren?</h4>
+                    <input type="datetime-local" name="date" class="form-control-lg inputDate">
+                    <button type="submit" class="btn btn-success">Volgende <i class="bi bi-arrow-right"></i></button>
+                </form>
             </div>
 
-            <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModal" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+            {{-- <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModal" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -193,7 +110,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </section><!-- End Contact Section -->

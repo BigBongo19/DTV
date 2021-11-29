@@ -61,7 +61,6 @@
                 <div class="list">
                     <div class="list-item"><a href="/profile">Account</a></div>
                     <div class="list-item"><a href="/edit-profile">Aanpassen</a></div>
-                    <div class="list-item"><a href="/payments">Betalingen</a></div>
                 </div>
 
                 <div class="account-options">
@@ -69,9 +68,13 @@
                     <div class="profile-update">
                         <h3>Profielfoto:</h3>
                         <div class="avatar">
-                            <img src="assets/img/team/team-1.jpg" alt="team 1">
-                            <a href="#" class="link-primary">Upload</a>
-                            <a href="#" class="link-secondary">Remove</a>
+                            <img @if(isset($user->img_path)) src="/storage/{{ $user->img_path }}" @else src="/images/default.jpg" @endif alt="Profielfoto">
+                            <form action="/profile/upload" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="file" name="image" id="img" style="display:none;" onchange="form.submit()">
+                                <label class="link-primary" style="cursor: pointer; margin-left:10px;" for="img">Uploaden</label>
+                            </form>
+                            @if(isset($user->img_path))<a href="/profile/remove_image" class="link-danger">Verwijderen</a>@endif
                         </div>
                         <form action="/edit-profile/submit" method="POST">
                             @csrf
@@ -161,22 +164,22 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"
+                            <form data-parsley-validate class="form-horizontal form-label-left"
                                 action="/edit-profile/submitpassword" method="post">
                                 @csrf
-                                <div class="form-group">
-                                    <input type="password" class="form-control col-md-7 col-xs-12"
-                                        placeholder="Enter old password" name="oldpassword">
+                                <div class="form-group" style="margin-bottom: 5px">
+                                    <input type="password" class="form-control"
+                                        placeholder="Uw huidige wachtwoord" name="oldpassword">
+                                </div>
+
+                                <div class="form-group" style="margin-bottom: 5px">
+                                    <input type="password" placeholder="Nieuw wachtwoord"
+                                        class="form-control" name="newpassword">
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="password" placeholder="Enter new password"
-                                        class="form-control col-md-7 col-xs-12" name="newpassword">
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="password" class="form-control col-md-7 col-xs-12"
-                                        placeholder="Enter password confirmation" name="password_confirmation">
+                                    <input type="password" class="form-control"
+                                        placeholder="Herhaal nieuw wachtwoord" name="password_confirmation">
                                 </div>
                         </div>
                         <div class="modal-footer">
@@ -241,6 +244,16 @@
         }
         toastr.warning("{{ session('warning') }}");
     @endif
+    @if(count($errors) > 0)
+    @foreach($errors->all() as $error)
+    toastr.options =
+    {
+        "closeButton" : true,
+        "progressBar" : true
+    }
+            toastr.error("{{$error}}");
+     @endforeach
+@endif
 </script>
 
 

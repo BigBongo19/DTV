@@ -60,7 +60,6 @@
             <div class="list">
                 <div class="list-item"><a href="/profile">Account</a></div>
                 <div class="list-item"><a href="/edit-profile">Aanpassen</a></div>
-                <div class="list-item"><a href="/payments">Betalingen</a></div>
             </div>
 
             <div class="account-options">
@@ -69,7 +68,7 @@
                 <div class="profile-update">
                     <h3>Profielfoto:</h3>
                     <div class="avatar">
-                        <img src="assets/img/team/team-1.jpg" alt="team 1">
+                        <img @if(isset($user->img_path)) src="/storage/{{ $user->img_path }}" @else src="/images/default.jpg" @endif alt="Profielfoto">
                     </div>
                     <form action="#">
                         <div class="row">
