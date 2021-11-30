@@ -132,13 +132,11 @@
                     <table>
                         <tr>
                             <th>Datum</th>
-                            <th>Tijdstip</th>
                             <th>Toernooi</th>
                         </tr>
                         @foreach ($resTournaments as $resTournament)
                             <tr>
                                 <td>{{ $resTournament->created_at }}</td>
-                                <td>{{ $resTournament->registered_by }}</td>
                                 <td>{{ $resTournament->tournament_id }}</td>
                             </tr>
                         @endforeach
