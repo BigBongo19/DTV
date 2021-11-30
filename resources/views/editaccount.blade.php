@@ -121,11 +121,6 @@
                                     </select>
                                     <div id="emailHelp" class="form-text">Algemene info</div>
                                 </div>
-
-                                <div class="col">
-                                    <label for="inputEmail" class="form-label">Actie</label><br>
-                                    <input type="submit" class="btn btn-primary" value="Opslaan">
-                                </div>
                             </div>
 
                             <div class="row change_pass">
@@ -138,6 +133,14 @@
                                         data-bs-target="#modalDelete">Wijzigen</button>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <input type="submit" class="btn btn-primary" value="Opslaan">
+                                </div>
+                            </div>
+
+
 
                             {{-- <div class="row delete">
                             <div class="col">
