@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DTV Admin | Home</title>
+  <title>AdminLTE 3 | Starter</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -15,6 +15,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <style>
+      #form-input{
+          width: 45%;
+          margin-right: 5px;
+      }
+      #name-fields{
+          display: flex;
+      }
+      #form-submit{
+          padding-left: 20px;
+      }
+      #button-input{
+          width: 20%;
+          margin-right: 5px;
+          margin-right: 10px;
+      }
+      #align-buttons{
+          display: flex;
+          flex-direction: column;
+      }
+      #admin-button{
+          display: flex;
+          align-items: flex-start;
+      }
+  </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -22,8 +47,135 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @include('parts.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">menu items toevoegen</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Starter Page</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
 
+    <!-- Main content -->
+    <div class="content">
+        <!-- edit content -->
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">menu item toevoegen</h3>
+            </div>
+        <form method="POST">
+            @csrf
+            <div class="card-body">
+                <div class="row">
+              <div id="form-input" class="row-6">
+                <label for="itemNaamInput">item naam</label>
+                <input value="{{$items->name}}" name="itemNaam" type="itemname" class="form-control" id="itemNaamInput" placeholder="item naam">
+              </div>
+              <div id="form-input" class="row-6">
+                <label for="priceInput">prijs</label>
+                <input value="{{$items->price}}" name="priceInput" type="price" class="form-control" id="priceInput" placeholder="prijs">
+              </div>
+            </div>
+            <div class="row">
+              <div id="form-input" class="row-6">
+                <label for="typeInput">type</label>
+                <select name="typeInput" class="form-control" id="typeInput" placeholder="type">
+                    <option
+                    <?php
+                    if ($items->type == 0) {
+                        ?>
+                        selected
+                        <?php
+                    }
+                    ?>
+                    value="0">warm eten</option>
+                    <option
+                    <?php
+                    if ($items->type == 1) {
+                        ?>
+                        selected
+                        <?php
+                    }
+                    ?>
+                    value="1">koud eten</option>
+                    <option
+                    <?php
+                    if ($items->type == 2) {
+                        ?>
+                        selected
+                        <?php
+                    }
+                    ?>
+                    value="2">snacks</option>
+                    <option
+                    <?php
+                    if ($items->type == 3) {
+                        ?>
+                        selected
+                        <?php
+                    }
+                    ?>
+                    value="3">water</option>
+                    <option
+                    <?php
+                    if ($items->type == 4) {
+                        ?>
+                        selected
+                        <?php
+                    }
+                    ?>
+                    value="4">fris drank</option>
+                    <option
+                    <?php
+                    if ($items->type == 5) {
+                        ?>
+                        selected
+                        <?php
+                    }
+                    ?>
+                    value="5">alcoholische dranken</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+            <div id="form-input" class="row-6">
+                <label>op de kaart</label>
+                <div class="form-check">
+                  <input
+                  <?php
+                    if ($items->enabled == 1) {
+                        ?>
+                        checked
+                        <?php
+                    }
+                    ?>
+                  type="checkbox" class="form-check-input" id="enabled" value="1" name="enabled">
+                  <label class="form-check-label" for="admincheck">op de kaart</label>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+            <!-- /.card-body -->
 
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+    </div>
+    <!-- /.content -->
+  </div>
   <!-- /.content-wrapper -->
 
   <!-- Control Sidebar -->

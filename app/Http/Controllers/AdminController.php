@@ -71,18 +71,4 @@ class AdminController extends Controller
     {
         return view('admin.reservations');
     }
-
-    public function menuIndex()
-    {
-        return view('admin.menu');
-    }
-
-    public function menuToevoegen()
-    {
-        return view('admin.menuToevoegen');
-    }
-
-    
-
-
 }

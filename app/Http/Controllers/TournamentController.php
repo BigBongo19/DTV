@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Support\Facades\Auth;
 use App\TournamentRegistration;
 use Illuminate\Http\Request;
@@ -122,10 +123,16 @@ class TournamentController extends Controller
     public function getTournamentById(Request $request, $id)
     {
         $tournament = Tournament::find($id);
-        $startdate = Carbon::parse($tournament->start_date)->format('Y-m-d\TH:i');
-        $enddate = Carbon::parse($tournament->end_date)->format('Y-m-d\TH:i');
-        // dd(Session::all());
-        return view('admin.editTournament', compact('startdate', 'enddate', 'tournament'));
+
+        if ($tournament != null) {
+            $startdate  = Carbon::parse($tournament->start_date)->format('Y-m-d\TH:i');
+            $enddate    = Carbon::parse($tournament->end_date)->format('Y-m-d\TH:i');
+            // dd(Session::all());
+            return view('admin.editTournament', compact('startdate', 'enddate', 'tournament'));
+        } else {
+            return redirect('/admin/tournamentList')->with('error', 'Dit toernooi bestaat niet.');
+        }
+
     }
 
     public function editTournament(Request $request)
