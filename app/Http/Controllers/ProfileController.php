@@ -73,10 +73,6 @@ class ProfileController extends Controller
         }
     }
 
-    /* public function getReservations(Request $id){
-        $userid = TournamentRegistration::find($id);
-    } */
-
     public function upload(Request $request)
     {
 
