@@ -80,8 +80,15 @@ class TournamentController extends Controller
         $tournamentRegistration = new TournamentRegistration();
         $tournamentRegistration->user_id = Auth::id();
         $tournamentRegistration->tournament_id = $request->tournament_id;
+        $tournamentRegistration->registered_by = Auth::user()->name . ' ' .Auth::user()->last_name;
         $tournamentRegistration->save();
         return redirect('/toernooi/' . $id)->with('message', "U bent registreerd voor dit toernooi.");
+    }
+
+    public function getTournamentRegistration(){
+        $registeredTournaments = TournamentRegistration::all();
+
+        return view('admin.registeredTournaments', compact('registeredTournaments'));
     }
 
     public function submitTournament(Request $request)
@@ -103,7 +110,7 @@ class TournamentController extends Controller
         $tournament->description = $request->descTournament;
 
         $tournament->save();
-        return redirect('/admin/tournamentList')->with('message', 'Het toernooi is aangemaakt!');
+        return redirect('/admin/tournament/list')->with('message', 'Het toernooi is aangemaakt!');
     }
 
     public function getTournaments()
@@ -130,9 +137,8 @@ class TournamentController extends Controller
             // dd(Session::all());
             return view('admin.editTournament', compact('startdate', 'enddate', 'tournament'));
         } else {
-            return redirect('/admin/tournamentList')->with('error', 'Dit toernooi bestaat niet.');
+            return redirect('/admin/tournament/list')->with('error', 'Dit toernooi bestaat niet.');
         }
-
     }
 
     public function editTournament(Request $request)
@@ -153,12 +159,18 @@ class TournamentController extends Controller
         $tournament->description = $request->descTournament;
 
         $tournament->save();
-        return redirect('/admin/tournamentList')->with('message', 'Gegevens opgeslagen!');
+        return redirect('/admin/tournament/list')->with('message', 'Gegevens opgeslagen!');
     }
 
     public function deleteTournament($id)
     {
         Tournament::find($id)->delete();
-        return redirect('/admin/tournamentList')->with('message', 'Toernooi is verwijderd!');
+        return redirect('/admin/tournament/list')->with('message', 'Toernooi is verwijderd!');
+    }
+
+    public function deleteRegisteredTournament($id)
+    {
+        TournamentRegistration::find($id)->delete();
+        return redirect('/admin/tournament/registered')->with('message', 'De inschrijving is verwijderd!');
     }
 }

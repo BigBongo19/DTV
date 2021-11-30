@@ -87,7 +87,7 @@
                   <p>Users</p>
                 </a>
               </li>
-              <li class="nav-item {{ (request()->is('admin/tournamentList')) ? 'menu-open' : '' }}">
+              <li class="nav-item {{ (request()->is('admin/tournament/list')) ? 'menu-open' : '' }}">
                 <a href="#" class="nav-link">
                   <i class="fa fa-trophy nav-icon"></i>
                   <p>Tournaments
@@ -96,13 +96,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="/admin/tournament/registered" class="nav-link {{ (request()->is('admin/tournament/registered')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Registered Tournaments</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="/admin/tournamentList" class="nav-link  {{ (request()->is('admin/tournamentList')) ? 'active' : '' }}">
+                    <a href="/admin/tournament/list" class="nav-link  {{ (request()->is('admin/tournament/list')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Manage Tournaments</p>
                     </a>
