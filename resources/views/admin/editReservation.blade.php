@@ -7,11 +7,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DTV Admin | Tournaments</title>
+    <title>DTV Admin | Reservations</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
@@ -34,12 +33,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Toernooi toevoegen</h1>
+                        <h1 class="m-0">Reservatie bewerken</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin/home">Home</a></li>
-                            <li class="breadcrumb-item active">Toernooi toevoegen</li>
+                            <li class="breadcrumb-item active">Reservatie bewerken</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -52,33 +51,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="container-fluid">
                 <form method="POST" style="max-width: 1200px">
                     @csrf
+                    <input type="hidden" name="id" value="{{$reservation->id}}">
                     <div class="mb-3">
-                        <label for="inputTitle">
-                            @if($errors->first('titleTournament'))
-                                @foreach ($errors->get('descTournament') as $error)
+                        <label for="select-court">
+                            @if($errors->first('select-court'))
+                                @foreach ($errors->get('select-court') as $error)
                                     <i class="fas fa-exclamation-circle" style="color: red"></i>
                                 @endforeach
                             @endif
-                            Titel
+                            Baan:
                         </label>
-                        <input type="text" class="form-control" id="inputTitle" name="titleTournament">
-
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="baanSelect">
-                            @if($errors->first('selectLane'))
-                                @foreach ($errors->get('selectLane') as $error)
-                                    <i class="fas fa-exclamation-circle" style="color: red"></i>
-                                @endforeach
-                            @endif
-                            Op welke baan wordt het toernooi gehouden?
-                        </label>
-                        <select class="form-select" id="baanSelect" aria-label="Floating label select example"
-                                name="selectLane">
+                        <select class="form-select" id="select-court" aria-label="Floating label select example" name="court_id">
                             <option selected>Selecteer een baan</option>
                             @foreach($courts as $court)
-                                <option value="{{$court->id}}">{{$court->name}}</option>
+                                <option {{$reservation->court_id == $court->id ? 'selected' : ''}}
+                                        value="{{$court->id}}">baan {{$court->id}}</option>
                             @endforeach
                         </select>
 
@@ -91,10 +78,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <i class="fas fa-exclamation-circle" style="color: red"></i>
                                 @endforeach
                             @endif
-                            Wanneer begint het toernooi?
+                            Start tijd:
                         </label>
-                        <input type="datetime-local" class="form-control" id="dateTournament"
-                               aria-describedby="dateHelp" name="dateTournamentStart">
+                        <input type="datetime-local" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="start_time"
+                        value="{{date('Y-m-d\TH:i:s', strtotime($reservation->start_time))}}">
                         <div id="dateHelp" class="form-text">Datum + tijd</div>
                     </div>
 
@@ -105,26 +92,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <i class="fas fa-exclamation-circle" style="color: red"></i>
                                 @endforeach
                             @endif
-                            Wanneer eindigt het toernooi?
+                            Eind tijd:
                         </label>
-                        <input type="datetime-local" class="form-control" id="dateTournament"
-                               aria-describedby="dateHelp" name="dateTournamentEnd">
+                        <input type="datetime-local" class="form-control" id="dateTournament" aria-describedby="dateHelp" name="end_time"
+                        value="{{date('Y-m-d\TH:i:s', strtotime($reservation->end_time))}}">
                         <div id="dateHelp" class="form-text">Datum + tijd</div>
                     </div>
-
-                    <div class="mb-3">
-                        <label for="inputDesc" class="form-label">
-                            @if($errors->first('descTournament'))
-                                @foreach ($errors->get('descTournament') as $error)
-                                    <i class="fas fa-exclamation-circle" style="color: red"></i>
-                                @endforeach
-                            @endif
-                            Beschrijving
-                        </label>
-                        <textarea class="form-control" id="inputDesc" rows="5" name="descTournament"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-success addTournament">Toevoegen</button>
+                    <button type="submit" class="btn btn-success addTournament">Aanpassen</button>
                 </form>
             </div><!-- /.container-fluid -->
         </div>

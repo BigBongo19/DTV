@@ -76,13 +76,8 @@
                 @endif
             </div>
 
-            <div class="description d-flex justify-content row mt-5" data-aos="fade-up" data-aos-delay="100">
+            <div class="description d-flex justify-content-center row mt-5" data-aos="fade-up" data-aos-delay="100">
                 <p class="col-12 col-lg-8">{{$tournament->description}}</p>
-                <div class="col-12 col-lg-4">
-                    <div class="row d-flex justify-content-center">
-                        <img class="col-8 col-lg-12" src="/assets/img/logo.png">
-                    </div>
-                </div>
             </div>
 
             <div class="align-self-center d-flex row mt-5" data-aos="fade-up" data-aos-delay="200">

@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DTV Admin | Reservations</title>
+    <title>DTV Admin | Lanes</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -34,12 +34,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Overzicht reservaties</h1>
+                        <h1 class="m-0">Overzicht banen</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin/home">Home</a></li>
-                            <li class="breadcrumb-item active">Overzicht reservaties</li>
+                            <li class="breadcrumb-item active">Overzicht banen</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -55,7 +55,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">DataTable with default features</h3>
-                                <a href="/admin/reservation/add" class="add-btn btn btn-success">Maak een nieuwe reservatie aan</a>
+                                <a href="/admin/court/add" class="add-btn btn btn-success">Maak een nieuwe Baan aan</a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -63,33 +63,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Baan</th>
                                         <th>Naam</th>
-                                        <th>Begintijd</th>
-                                        <th>Eindtijd</th>
+                                        <th>Type</th>
+                                        <th>Locatie</th>
+                                        <th>Aangemaakt op</th>
+                                        <th>Bewerkt op</th>
                                         <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @php($i = 0)
-                                    @foreach($reservations as $reservation)
+                                    @foreach($courts as $court)
                                         <tr>
-                                            <td>{{$reservation->id}}</td>
-                                            <td>{{$reservation->court_id}}</td>
-                                            <td>{{$names[$i]['name']}} {{$names[$i]['last_name']}}</td>
-                                            <td>{{date('H:i - d-m-Y', strtotime($reservation->start_time))}}</td>
-                                            <td>{{date('H:i - d-m-Y', strtotime($reservation->end_time))}}</td>
+                                            <td>{{$court->id}}</td>
+                                            <td>{{$court->name}}</td>
+                                            <td>{{$court->type}}</td>
+                                            <td>{{$court->is_inside ? "Binnen" : "Buiten"}}</td>
+                                            <td>{{date('H:i - d-m-Y', strtotime($court->created_at))}}</td>
+                                            <td>{{date('H:i - d-m-Y', strtotime($court->updated_at))}}</td>
                                             <td>
-                                                <a href="reservation/edit/{{$reservation->id}}" class="mr-2 ml-2"><i
+                                                <a href="court/edit/{{$court->id}}" class="mr-2 ml-2"><i
                                                         class="fas fa-edit"></i></a>
 
-                                                <form method="POST"
-                                                      action="/admin/reservation/delete/{{$reservation->id}}"
+                                                <form method="POST" action="/admin/court/delete/{{$court->id}}"
                                                       accept-charset="UTF-8" style="display: inline;"><input
                                                         name="_method" type="hidden">
                                                     @csrf
                                                     @method('delete')
-                                                    <input type="hidden" name="id" value="{{$reservation->id}}">
                                                     <span onclick="deleteEntity(this)"><i class="fas fa-trash"
                                                                                           style="color: red"></i></span>
                                                 </form>
@@ -153,6 +153,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
     $(function () {
         $("#example1").DataTable({
             "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+
+
+    $(function () {
+        $("#dt_tournaments").DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
             "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         $('#example2').DataTable({
