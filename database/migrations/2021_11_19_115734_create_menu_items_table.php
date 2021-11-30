@@ -19,7 +19,6 @@ class CreateMenuItemsTable extends Migration
             $table->float('price');
             $table->integer('type');
             $table->boolean('enabled');
-            $table->string('img_path')->nullable();
             $table->timestamps();
         });
     }

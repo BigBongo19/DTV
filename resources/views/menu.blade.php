@@ -155,10 +155,10 @@
           <li class="list-group-item">
             <div class="row d-flex justify-content-between">
             <div class="col-4">
-            <p class="d-flex justify-content-center">{{$item->name}}</p>
+            <p class="d-flex justify-content-start">{{$item->name}}</p>
             </div>
             <div class="col-4">
-            <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+            <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
             </div>
             </div>
             </li>
@@ -178,10 +178,10 @@
           <li class="list-group-item">
             <div class="row d-flex justify-content-between">
             <div class="col-4">
-            <p class="d-flex justify-content-center">{{$item->name}}</p>
+            <p class="d-flex justify-content-start">{{$item->name}}</p>
             </div>
             <div class="col-4">
-            <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+            <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
             </div>
             </div>
             </li>
@@ -201,10 +201,10 @@
           <li class="list-group-item">
             <div class="row d-flex justify-content-between">
             <div class="col-4">
-            <p class="d-flex justify-content-center">{{$item->name}}</p>
+            <p class="d-flex justify-content-start">{{$item->name}}</p>
             </div>
             <div class="col-4">
-            <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+            <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
             </div>
             </div>
             </li>
@@ -226,10 +226,10 @@
             <li class="list-group-item">
               <div class="row d-flex justify-content-between">
               <div class="col-4">
-              <p class="d-flex justify-content-center">{{$item->name}}</p>
+              <p class="d-flex justify-content-start">{{$item->name}}</p>
               </div>
               <div class="col-4">
-              <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+              <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
               </div>
               </div>
               </li>
@@ -249,10 +249,10 @@
             <li class="list-group-item">
               <div class="row d-flex justify-content-between">
               <div class="col-4">
-              <p class="d-flex justify-content-center">{{$item->name}}</p>
+              <p class="d-flex justify-content-start">{{$item->name}}</p>
               </div>
               <div class="col-4">
-              <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+              <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
               </div>
               </div>
               </li>
@@ -272,10 +272,10 @@
             <li class="list-group-item">
               <div class="row d-flex justify-content-between">
               <div class="col-4">
-              <p class="d-flex justify-content-center">{{$item->name}}</p>
+              <p class="d-flex justify-content-start">{{$item->name}}</p>
               </div>
               <div class="col-4">
-              <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+              <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
               </div>
               </div>
               </li>

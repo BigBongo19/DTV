@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use App\Tournament;
+
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -31,8 +35,9 @@ class AdminController extends Controller
 
     public function deleteUser($id)
     {
-        $user = User::find($id);
-        $user->delete();
+        User::find($id)->delete();
+        return redirect('/admin/users')->with('message', 'user is verwijderd!');
+
     }
 
     public function edit($id)
@@ -50,8 +55,10 @@ class AdminController extends Controller
         $user->name = $request->name;
         $user->last_name = $request->achternaam;
         $user->email = $request->email;
-        $user->password = $request->password;
-        $user->img_path = $request->file;
+        if(isset($request->password)){
+            $password = Hash::make($request->password);
+            $user->password = $password;
+        }
         $user->phone_number = $request->phonenumber;
         $user->gender = $request->geslacht;
         if (isset($request->admin)) {
@@ -61,7 +68,7 @@ class AdminController extends Controller
         }
 
         $user->save();
-        return back();
+        return redirect('/admin/users')->with('message', 'Gegevens opgeslagen!');
     }
 
 

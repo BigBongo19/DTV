@@ -84,9 +84,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <a name="edit_id" href="/admin/users/edit/{{$user->id}}" style="background-color: #f2d61f; border-color: #f2d61f" id="edit" class="btn btn-primary">
                                 <i class="fas fa-pen"></i>
                                 </a>
+                                <form method="POST" action="/admin/deleteUser/{{$user->id}}">
+                                    @csrf
                                 <a onclick="deleteEntity(this)" type="button" data-toggle="modal" data-target="#exampleModal" style="background-color: red; border-color: red;" id="delete" type="submit" class="btn btn-primary">
                                   <i class="fas fa-trash"></i>
                                 </a>
+                                </form>
                               </td>
                             </tr>
                             @endforeach
