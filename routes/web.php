@@ -20,6 +20,11 @@ Route::get('/menu', 'MenuController@index')->name('menu');
 // Authenticated users only
 Route::middleware(['auth'])->group(function () {
     Route::get('/reserveren', 'ReserveController@index')->name('reserveIndex');
+    Route::get('/reserveren/{date}', 'ReserveController@getLaneByDate');
+
+    Route::get('/reserveren/baan/{id}', 'ReserveController@ReserveCourt');
+    Route::post('/reserveren/bevestigen', 'ReserveController@ConfirmResevation');
+  
     Route::get('/profile', 'ProfileController@index')->name('profileIndex');
     Route::post('/profile/upload','ProfileController@upload');
     Route::get('/profile/remove_image','ProfileController@removeImage');
@@ -29,9 +34,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/payments', 'ProfileController@payment')->name('paymentIndex');
 
     Route::get('/reserveren', 'ReserveController@index')->name('index');
+
     Route::get('/toernooien', 'TournamentController@index')->name('index');
     Route::get('/toernooi/{Tournament}', 'TournamentController@getTournamentWithRegistrations')->name('index');
     Route::post('/toernooi/{Tournament}', 'TournamentController@submitTournamentRegistration');
+
     Route::get('/menu', 'MenuController@index')->name('index');
 
     // Admin only
@@ -41,17 +48,34 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/admin/deleteUser/{id}', 'AdminController@deleteUser');
         Route::get('/admin/users/edit/{id}', 'AdminController@edit')->name('adminEdit');
         Route::post('/admin/users/edit/{id}', 'AdminController@editSave');
-        Route::get('/admin/tournamentList', 'TournamentController@getTournamentsAdmin')->name('adminTournamentOverview');
-        Route::get('/admin/addTournament', 'AdminController@addTournament')->name('adminAddTournament');
-        Route::post('/admin/addTournament', 'TournamentController@submitTournament');
-        Route::get('/admin/editTournament/{id}', 'TournamentController@getTournamentById');
-        Route::post('/admin/editTournament/{id}', 'TournamentController@editTournament');
-        Route::post('/admin/deleteTournament/{id}', 'TournamentController@deleteTournament');
+
+        Route::get('/admin/court', 'AdminController@courtView')->name('adminCourt');
+        Route::get('/admin/court/add', 'AdminController@addCourtView')->name('adminAddCourt');
+        Route::post('/admin/court/add', 'AdminController@addCourt');
+        Route::get('/admin/court/edit/{id}', 'AdminController@editCourtView')->name('adminEditCourt');
+        Route::post('/admin/court/edit/{id}', 'AdminController@editCourt');
+        Route::delete('/admin/court/delete/{id}', 'AdminController@deleteCourt');
+
         Route::get('/admin/reservations', 'AdminController@reservations')->name('adminReservations');
+        Route::get('/admin/reservation/add', 'AdminController@addReservationView')->name('adminAddReservations');
+        Route::post('/admin/reservation/add', 'AdminController@addReservation');
+        Route::get('/admin/reservation/edit/{id}', 'AdminController@editReservationView')->name('adminEditReservations');
+        Route::post('/admin/reservation/edit/{id}', 'AdminController@editReservation');
+        Route::delete('/admin/reservation/delete/{id}', 'AdminController@deleteReservation');
+
+        Route::get('/admin/tournament/list', 'TournamentController@getTournamentsAdmin')->name('adminTournamentOverview');
+        Route::get('/admin/tournament/add', 'AdminController@addTournament')->name('adminAddTournament');
+        Route::post('/admin/tournament/add', 'TournamentController@submitTournament');
+        Route::get('/admin/tournament/edit/{id}', 'TournamentController@getTournamentById');
+        Route::post('/admin/tournament/edit/{id}', 'TournamentController@editTournament');
+        Route::post('/admin/tournament/delete/{id}', 'TournamentController@deleteTournament');
+        Route::post('/admin/tournament/registered/delete/{id}', 'TournamentController@deleteRegisteredTournament');
+        Route::get('/admin/tournament/registered', 'TournamentController@getTournamentRegistration');
+
         Route::get('/admin/menu', 'MenuController@menuIndex')->name('menuIndex');
         Route::get('/admin/menu/edit/{id}', 'MenuController@menuEditIndex')->name('menuEditIndex');
         Route::post('/admin/menu/edit/{id}', 'MenuController@menuEdit');
-        Route::get('/admin/menu/toevoegen', 'MenuController@menuToevoegen')->name('menuToevoegen');
+
         Route::post('/admin/menu/toevoegen', 'MenuController@saveMenu');
         Route::post('/admin/deleteMenuItem/{id}', 'MenuController@deleteMenu');
     });

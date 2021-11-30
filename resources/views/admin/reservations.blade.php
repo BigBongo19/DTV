@@ -7,10 +7,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DTV Admin | Tournaments</title>
+    <title>DTV Admin | Reservations</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
@@ -33,12 +34,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Overzicht toernooien</h1>
+                        <h1 class="m-0">Overzicht reservaties</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="/admin/home">Home</a></li>
-                            <li class="breadcrumb-item active">Overzicht toernooien</li>
+                            <li class="breadcrumb-item active">Overzicht reservaties</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -54,7 +55,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">DataTable with default features</h3>
-                                <a class="add-btn btn btn-success">Maak een nieuw toernooi aan</a>
+                                <a href="/admin/reservation/add" class="add-btn btn btn-success">Maak een nieuwe reservatie aan</a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -70,37 +71,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @for ($i=0; $i < 10; $i++)
+                                    @php($i = 0)
+                                    @foreach($reservations as $reservation)
                                         <tr>
-                                            <td>reservation_id{{$i}}</td>
-                                            <td>court_id</td>
-                                            <td>user_id->user_name</td>
-                                            <td>start_time</td>
-                                            <td>end_time</td>
+                                            <td>{{$reservation->id}}</td>
+                                            <td>{{$reservation->court_id}}</td>
+                                            <td>{{$names[$i]['name']}} {{$names[$i]['last_name']}}</td>
+                                            <td>{{date('H:i - d-m-Y', strtotime($reservation->start_time))}}</td>
+                                            <td>{{date('H:i - d-m-Y', strtotime($reservation->end_time))}}</td>
                                             <td>
-                                                <a style="background-color: #f2d61f; border-color: #f2d61f"
-                                                   href="reservations/edit"
-                                                   type="submit" class="btn btn-primary"
-                                                   data-toggle="tooltip"
-                                                   data-placement="top" title="Bewerk reservatie">
-                                                    <i class="fas fa-pen"></i>
-                                                </a>
-                                                <a style="background-color: #28a745; border-color: #28a745"
-                                                   href="reservations/verify"
-                                                   type="submit" class="btn btn-primary"
-                                                   data-toggle="tooltip"
-                                                   data-placement="top" title="Verifieër reservatie"><i
-                                                        class="fas fa-check"></i></a>
-                                                <a style="background-color: red; border-color: red;"
-                                                   href="reservations/delete"
-                                                   type="submit"
-                                                   class="btn btn-primary"
-                                                   data-toggle="tooltip"
-                                                   data-placement="top" title="Verwijder reservatie">
-                                                    <i class="fas fa-trash"></i></a>
+                                                <a href="reservation/edit/{{$reservation->id}}" class="mr-2 ml-2"><i
+                                                        class="fas fa-edit"></i></a>
+
+                                                <form method="POST"
+                                                      action="/admin/reservation/delete/{{$reservation->id}}"
+                                                      accept-charset="UTF-8" style="display: inline;"><input
+                                                        name="_method" type="hidden">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <input type="hidden" name="id" value="{{$reservation->id}}">
+                                                    <span onclick="deleteEntity(this)"><i class="fas fa-trash"
+                                                                                          style="color: red"></i></span>
+                                                </form>
                                             </td>
                                         </tr>
-                                    @endfor
+                                        @php($i++)
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -169,6 +165,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
             "responsive": true,
         });
     });
+    window.deleteEntity = function (element, message = "Weet je zeker dat je dit wil verwijderen?") {
+        Swal.fire({
+            title: 'Weet je het zeker?',
+            text: "Je kan dit niet terugdraaien!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ja, verwijderen'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                Swal.fire(
+                    'Verwijderd!',
+                    'Het is verwijderd.',
+                    'success'
+                )
+                $(element).closest('form').submit();
+            }
+        })
+    };
 </script>
 </body>
 </html>
