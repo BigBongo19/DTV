@@ -49,7 +49,7 @@
                             <div class="card-header">
 
                                 <h3 class="d-inline-block">Alle toernooien</h3>
-                                <a href="addTournament" class="add-btn btn btn-success float-right">Maak een nieuw toernooi
+                                <a href="add" class="add-btn btn btn-success float-right">Maak een nieuw toernooi
                                     aan</a>
                             </div>
                             <!-- /.card-header -->
@@ -76,9 +76,9 @@
                                                 <td>{{ $tournament->lane }}</td>
                                                 <td>{{ $tournament->max_participants }}</td>
                                                 <td>
-                                                    <a href="editTournament/{{ $tournament->id }}" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
+                                                    <a href="edit/{{ $tournament->id }}" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
 
-                                                    <form method="POST" action="/admin/deleteTournament/{{ $tournament->id }}" accept-charset="UTF-8" style="display: inline;"><input name="_method" type="hidden">
+                                                    <form method="POST" action="/admin/tournament/delete/{{ $tournament->id }}" accept-charset="UTF-8" style="display: inline;"><input name="_method" type="hidden">
                                                         @csrf
                                                         <span onclick="deleteEntity(this)"><i class="fas fa-trash" style="color: red"></i></span>
                                                     </form>
