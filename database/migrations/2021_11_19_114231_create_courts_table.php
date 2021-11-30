@@ -15,8 +15,8 @@ class CreateCourtsTable extends Migration
     {
         Schema::create('courts', function (Blueprint $table) {
             $table->id();
-            $table->string('court_type');
-            $table->string('court_image');
+            $table->string('name');
+            $table->string('type');
             $table->boolean('is_inside');
             $table->timestamps();
         });

@@ -87,6 +87,12 @@
                   <p>Users</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="/admin/court" class="nav-link  {{ (request()->is('admin/courts')) ? 'active' : '' }}">
+                    <i class="fas fa-flag nav-icon"></i>
+                    <p>Courts</p>
+                </a>
+              </li>
               <li class="nav-item {{ (request()->is('admin/tournamentList')) ? 'menu-open' : '' }}">
                 <a href="#" class="nav-link">
                   <i class="fa fa-trophy nav-icon"></i>
