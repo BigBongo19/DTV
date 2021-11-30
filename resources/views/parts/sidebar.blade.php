@@ -87,7 +87,7 @@
                   <p>Users</p>
                 </a>
               </li>
-              <li class="nav-item {{ (request()->is('admin/tournament/list')) ? 'menu-open' : '' }}">
+              <li class="nav-item {{ (request()->is('admin/tournament/list') ||  request()->is('admin/tournament/registered')) ? 'menu-open' : '' }}">
                 <a href="#" class="nav-link">
                   <i class="fa fa-trophy nav-icon"></i>
                   <p>Tournaments
