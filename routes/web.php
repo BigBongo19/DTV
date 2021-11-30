@@ -23,8 +23,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/reserveren/baan/{id}', 'ReserveController@ReserveCourt');
     Route::post('/reserveren/bevestigen', 'ReserveController@ConfirmResevation');
     Route::get('/reserveren/annuleren/{id}', 'ReserveController@cancel');
-
-
     Route::get('/profile', 'ProfileController@index')->name('profileIndex');
     Route::post('/profile/upload','ProfileController@upload');
     Route::get('/profile/remove_image','ProfileController@removeImage');
@@ -44,10 +42,10 @@ Route::middleware(['auth'])->group(function () {
     // Admin only
     Route::middleware(['admin'])->group(function () {
         Route::get('/admin/home', 'AdminController@index')->name('adminIndex');
-        Route::get('/admin/users', 'AdminController@users')->name('adminUsers');
-        Route::post('/admin/deleteUser/{id}', 'AdminController@deleteUser');
-        Route::get('/admin/users/edit/{id}', 'AdminController@edit')->name('adminEdit');
-        Route::post('/admin/users/edit/{id}', 'AdminController@editSave');
+        Route::get('/admin/users', 'ProfileController@users')->name('adminUsers');
+        Route::post('/admin/deleteUser/{id}', 'ProfileController@deleteUser');
+        Route::get('/admin/users/edit/{id}', 'ProfileController@editPage')->name('adminEdit');
+        Route::post('/admin/users/edit/{id}', 'ProfileController@editSave');
 
         Route::get('/admin/court', 'AdminController@courtView')->name('adminCourt');
         Route::get('/admin/court/add', 'AdminController@addCourtView')->name('adminAddCourt');
