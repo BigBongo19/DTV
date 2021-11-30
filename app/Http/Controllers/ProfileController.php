@@ -107,4 +107,51 @@ class ProfileController extends Controller
         $user->save();
         return redirect()->back()->with('message','Uw profielfoto is verwijderd');
     }
+
+    public function users()
+    {
+        $users = User::all();
+
+        return view('admin.users', [
+            'users' => $users
+        ]);
+    }
+
+    public function deleteUser($id)
+    {
+        User::find($id)->delete();
+        return redirect('/admin/users')->with('message', 'user is verwijderd!');
+
+    }
+
+    public function editPage($id)
+    {
+        $user = User::where("id", $id)->first();
+
+        return view('admin.edit', [
+            'user' => $user
+        ]);
+    }
+
+    public function editSave(Request $request)
+    {
+        $user = User::find($request->id);
+        $user->name = $request->name;
+        $user->last_name = $request->achternaam;
+        $user->email = $request->email;
+        if(isset($request->password)){
+            $password = Hash::make($request->password);
+            $user->password = $password;
+        }
+        $user->phone_number = $request->phonenumber;
+        $user->gender = $request->geslacht;
+        if (isset($request->admin)) {
+            $user->is_admin = $request->admin;
+        } else {
+            $user->is_admin = 0;
+        }
+
+        $user->save();
+        return redirect('/admin/users')->with('message', 'Gegevens opgeslagen!');
+    }
 }
