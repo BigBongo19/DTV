@@ -24,7 +24,13 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="/assets/css/default.css" rel="stylesheet">
+  <link href="/assets/css/default.date.css" rel="stylesheet">
+  <link href="/assets/css/default.time.css" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
   <script>
     $(document).ready(function () {
         $(".list-group-item").click(function () {
@@ -65,52 +71,28 @@
       </section>
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-
         <div class="container">
+            <script>
+                $( function() {
+                    $( "#datepicker" ).datepicker({
+                        minDate: 0,
+                        maxDate: "+6D",
+                        onSelect : function (dateText, inst) {
+                            $('#form').submit(); // <-- SUBMIT
+                        }
+
+                        });
+                } );
+                </script>
             <div class="row reservatie">
-                <form method="GET" action="/reserveren/courts">
-                    <h4>Wanneer wil jij een baan reserveren?</h4>
-                    <input type="datetime-local" name="date" class="form-control-lg inputDate">
-                    <button type="submit" class="btn btn-success">Volgende <i class="bi bi-arrow-right"></i></button>
+
+                <form id="form" action="/reserveren">
+                    <h3>Selecteer een datum om een baan te reserveren</h3>
+                <input class="form-control" name="datum" type="text" id="datepicker" autocomplete="off" placeholder="Selecteer datum">
                 </form>
             </div>
 
-            {{-- <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModal" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="confirmModal">Bevestig uw reservering</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="#">
-                                <div class="mb-3">
-                                    <label for="disabledNumber" class="form-label">Uw lidnummer:</label>
-                                    <input type="text" id="disabledNumber" class="form-control"
-                                        placeholder="Hier komt het lidnummer van de gebruiker" disabled name="inputNumber">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="inputEmail" class="form-label">Email:</label>
-                                    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
-                                        name="inputMail">
-                                    <div id="emailHelp" class="form-text">Wij sturen u een email ter bevestiging van de
-                                        reservering.</div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="inputDate" class="form-label">Datum:</label>
-                                    <input type="datetime-local" class="form-control" id="inputDate" name="inputDate"
-                                        aria-describedby="dateHelp">
-                                    <div id="dateHelp" class="form-text">U kan 1x per dag een baan reserveren!</div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuleren</button>
-                            <button type="button" class="btn btn-free">Reserveren</button>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
+
 
         </div>
     </section><!-- End Contact Section -->
