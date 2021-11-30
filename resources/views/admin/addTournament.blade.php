@@ -78,7 +78,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 name="selectLane">
                             <option selected>Selecteer een baan</option>
                             @foreach($courts as $court)
-                                <option value="{{$court->id}}">{{$court->name}}</option>
+                                <option value="{{$court->name}}">{{$court->name}}</option>
                             @endforeach
                         </select>
 
