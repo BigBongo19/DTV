@@ -55,7 +55,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">DataTable with default features</h3>
-                                <a href="/admin/addCourt" class="add-btn btn btn-success">Maak een nieuwe Baan aan</a>
+                                <a href="/admin/court/add" class="add-btn btn btn-success">Maak een nieuwe Baan aan</a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -82,10 +82,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <td>{{date('H:i - d-m-Y', strtotime($court->created_at))}}</td>
                                             <td>{{date('H:i - d-m-Y', strtotime($court->updated_at))}}</td>
                                             <td>
-                                                <a href="editCourt/{{$court->id}}" class="mr-2 ml-2"><i
+                                                <a href="court/edit/{{$court->id}}" class="mr-2 ml-2"><i
                                                         class="fas fa-edit"></i></a>
 
-                                                <form method="POST" action="/admin/deleteCourt/{{$court->id}}"
+                                                <form method="POST" action="/admin/court/delete/{{$court->id}}"
                                                       accept-charset="UTF-8" style="display: inline;"><input
                                                         name="_method" type="hidden">
                                                     @csrf

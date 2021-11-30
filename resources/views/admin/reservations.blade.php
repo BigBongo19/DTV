@@ -55,7 +55,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">DataTable with default features</h3>
-                                <a href="/admin/addReservation" class="add-btn btn btn-success">Maak een nieuwe reservatie aan</a>
+                                <a href="/admin/reservation/add" class="add-btn btn btn-success">Maak een nieuwe reservatie aan</a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -80,11 +80,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <td>{{date('H:i - d-m-Y', strtotime($reservation->start_time))}}</td>
                                             <td>{{date('H:i - d-m-Y', strtotime($reservation->end_time))}}</td>
                                             <td>
-                                                <a href="editReservation/{{$reservation->id}}" class="mr-2 ml-2"><i
+                                                <a href="reservation/edit/{{$reservation->id}}" class="mr-2 ml-2"><i
                                                         class="fas fa-edit"></i></a>
 
                                                 <form method="POST"
-                                                      action="/admin/deleteReservation/{{$reservation->id}}"
+                                                      action="/admin/reservation/delete/{{$reservation->id}}"
                                                       accept-charset="UTF-8" style="display: inline;"><input
                                                         name="_method" type="hidden">
                                                     @csrf

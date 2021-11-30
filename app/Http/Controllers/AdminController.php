@@ -162,10 +162,11 @@ class AdminController extends Controller
             'start_time' => 'required',
             'end_time' => 'required'
         ]);
+        $start_time = Carbon::createFromTimestamp($request->start_time);
+        $end_time = Carbon::createFromTimestamp($request->start_time);
 
         $reservations = Reservation::all()->where('court_id', $request->court_id);
-        $start_time = Carbon::createFromTimestamp($request->start_time);
-        $end_time = Carbon::createFromTimestamp($request->end_time);
+
         foreach ($reservations as $reservation) {
             if ($start_time->between($reservation->start_time, $reservation->end_time)) {
                 return redirect()->back()->with('error', "Deze baan is niet beschikbaar op dit tijdstip");
@@ -173,7 +174,25 @@ class AdminController extends Controller
             if ($end_time->between($reservation->start_time, $reservation->end_time)) {
                 return redirect()->back()->with('error', "Deze baan is niet beschikbaar op dit tijdstip");
             }
+
+            //$range = [$start_time, $end_time];
+//            $range = ['start_time', 'end_time'];
+//            $test = Reservation::whereBetween('start_time', $start_time, $range)->get();
+//            $test2 = Reservation::whereBetween('end_time', $end_time, $range)->get();
+//            dd($test);
         }
+
+
+//        $start_time = Carbon::createFromTimestamp($request->start_time);
+//        $end_time = Carbon::createFromTimestamp($request->end_time);
+//        foreach ($reservations as $reservation) {
+//            if ($start_time->between($reservation->start_time, $reservation->end_time)) {
+//                return redirect()->back()->with('error', "Deze baan is niet beschikbaar op dit tijdstip");
+//            }
+//            if ($end_time->between($reservation->start_time, $reservation->end_time)) {
+//                return redirect()->back()->with('error', "Deze baan is niet beschikbaar op dit tijdstip");
+//            }
+//        }
 
         dd($reservations);
 
