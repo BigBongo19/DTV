@@ -82,7 +82,7 @@ main .container .account-details-change h1 {
 }
 main .container .account-details .list,
 main .container .account-details-change .list {
-    height: 25%;
+    height: 15%;
     font-weight: bold;
     display: flex;
     justify-content: space-evenly;

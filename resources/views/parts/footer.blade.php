@@ -20,3 +20,59 @@
   <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
   <!-- Template Main JS File -->
   <script src="/assets/js/main.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+  <script>
+      @if (Session::has('message'))
+          toastr.options = {
+          "closeButton": false,
+          "debug": false,
+          "newestOnTop": false,
+          "progressBar": false,
+          "positionClass": "toast-bottom-center",
+          "preventDuplicates": false,
+          "onclick": null,
+          "showDuration": "300",
+          "hideDuration": "1000",
+          "timeOut": "5000",
+          "extendedTimeOut": "1000",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"
+          }
+          toastr.success("{{ session('message') }}");
+      @endif
+      @if (Session::has('warning'))
+          toastr.options = {
+          "closeButton": false,
+          "debug": false,
+          "newestOnTop": false,
+          "progressBar": false,
+          "positionClass": "toast-bottom-center",
+          "preventDuplicates": false,
+          "onclick": null,
+          "showDuration": "300",
+          "hideDuration": "1000",
+          "timeOut": "5000",
+          "extendedTimeOut": "1000",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"
+          }
+          toastr.warning("{{ session('warning') }}");
+      @endif
+      @if(count($errors) > 0)
+      @foreach($errors->all() as $error)
+      toastr.options =
+      {
+          "closeButton" : true,
+          "progressBar" : true
+      }
+              toastr.error("{{$error}}");
+       @endforeach
+  @endif
+  </script>
