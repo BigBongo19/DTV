@@ -56,14 +56,20 @@ class MenuController extends Controller{
         $menu->price = $request->priceInput;
         $menu->type = $request->typeInput;
 
-        if(isset($request->aanbieding)){
-            $menu->sale = $request->aanbieding;
+        if(isset($request->enabled)){
+            $menu->enabled = $request->enabled;
         }else{
-            $menu->sale = 0;
+            $menu->enabled = 0;
         }
 
         $menu->save();
         return redirect('/admin/menu')->with('message','Het product is toegevoegd!');
+    }
+
+    public function deleteMenu($id)
+    {
+        Menu::find($id)->delete();
+        return redirect('/admin/menu')->with('message', 'item is verwijderd!');
     }
 
 
