@@ -24,7 +24,9 @@
   <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
   <script>
     $(document).ready(function () {
         $(".list-group-item").click(function () {
@@ -67,19 +69,34 @@
     <section id="about" class="about">
 
         <div class="container">
+            <div class="row">
+                <script>
+                    $( function() {
+                        $( "#datepicker" ).datepicker({
+                            minDate: 0,
+                            maxDate: "+6D",
+                            onSelect : function (dateText, inst) {
+                                $('#form').submit(); // <-- SUBMIT
+                            }
+
+                            });
+                    } );
+                    </script>
+            <form id="form" action="/reserveren">
+                <input class="form-control" name="datum" type="text" id="datepicker" value="{{$date}}" autocomplete="off" placeholder="Selecteer datum">
+                </form>
+            </div>
             <div class="row reservatie">
                 <h4>Deze banen zijn beschikbaar op jouw gekozen datum</h4>
-                @foreach ($tournaments as $tournament)
+
+                @foreach ($courts as $court)
                 <div class="courtcard">
                     <div class="courtcard-img">
                         <img src="/assets/img/banen/tennisbaan1.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="courtcard-info">
-                        <h4>{{$tournament->title}}</h4>
-                        <span>{{$tournament->lane}}</span>
-                        <p>{{$tournament->description}}</p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#confirmModal">Reserveer</button>
+                        <h4>{{$court->name}}</h4>
+                        <a class="btn btn-primary" href="/reserveren/baan/{{$court->id}}/?datum={{$date}}" class="button">Reseveer</a>
                     </div>
                 </div>
                 @endforeach

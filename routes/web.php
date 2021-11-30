@@ -20,7 +20,8 @@ Route::get('/menu', 'MenuController@index')->name('menu');
 // Authenticated users only
 Route::middleware(['auth'])->group(function () {
     Route::get('/reserveren', 'ReserveController@index')->name('reserveIndex');
-    Route::get('/reserveren/{date}', 'ReserveController@getLaneByDate');
+    Route::get('/reserveren/baan/{id}', 'ReserveController@ReserveCourt');
+    Route::post('/reserveren/bevestigen', 'ReserveController@ConfirmResevation');
     Route::get('/profile', 'ProfileController@index')->name('profileIndex');
     Route::post('/profile/upload','ProfileController@upload');
     Route::get('/profile/remove_image','ProfileController@removeImage');
@@ -28,8 +29,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/edit-profile/submit', 'ProfileController@edit');
     Route::post('/edit-profile/submitpassword', 'ProfileController@editPassword');
     Route::get('/payments', 'ProfileController@payment')->name('paymentIndex');
-
-    Route::get('/reserveren', 'ReserveController@index')->name('index');
     Route::get('/toernooien', 'TournamentController@index')->name('index');
     Route::get('/toernooi/{Tournament}', 'TournamentController@getTournamentWithRegistrations')->name('index');
     Route::post('/toernooi/{Tournament}', 'TournamentController@submitTournamentRegistration');
