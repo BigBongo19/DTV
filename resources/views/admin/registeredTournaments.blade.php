@@ -49,36 +49,30 @@
                             <div class="card-header">
 
                                 <h3 class="d-inline-block">Alle toernooien</h3>
-                                <a href="add" class="add-btn btn btn-success float-right">Maak een nieuw toernooi
-                                    aan</a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <table id="dt_tournaments" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Titel</th>
-                                            <th>Start datum</th>
-                                            <th>Eind datum</th>
-                                            <th>Beschrijving</th>
-                                            <th>Baan</th>
-                                            <th>Max. deelnemers</th>
+                                            <th>ID</th>
+                                            <th>Geregistereerd door</th>
+                                            <th>Gebruiker ID</th>
+                                            <th>Toernooi ID</th>
                                             <th>Actie</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($tournaments as $tournament)
+                                        @foreach ($registeredTournaments as $registeredTournament)
                                             <tr>
-                                                <td>{{ $tournament->title }}</td>
-                                                <td>{{ $tournament->start_date }}</td>
-                                                <td>{{ $tournament->end_date }}</td>
-                                                <td>{{ $tournament->description }}</td>
-                                                <td>{{ $tournament->lane }}</td>
-                                                <td>{{ $tournament->max_participants }}</td>
+                                                <td>{{ $registeredTournament->id }}</td>
+                                                <td>{{ $registeredTournament->registered_by}}</td>
+                                                <td>{{ $registeredTournament->user_id }}</td>
+                                                <td>{{ $registeredTournament->tournament_id }}</td>
                                                 <td>
-                                                    <a href="edit/{{ $tournament->id }}" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
+                                                    <a href="edit/{{ $registeredTournament->id }}" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
 
-                                                    <form method="POST" action="/admin/tournament/delete/{{ $tournament->id }}" accept-charset="UTF-8" style="display: inline;"><input name="_method" type="hidden">
+                                                    <form method="POST" action="/admin/tournament/registered/delete/{{ $registeredTournament->id }}" accept-charset="UTF-8" style="display: inline;"><input name="_method" type="hidden">
                                                         @csrf
                                                         <span onclick="deleteEntity(this)"><i class="fas fa-trash" style="color: red"></i></span>
                                                     </form>

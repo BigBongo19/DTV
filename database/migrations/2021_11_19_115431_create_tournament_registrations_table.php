@@ -17,6 +17,7 @@ class CreateTournamentRegistrationsTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('tournament_id');
+            $table->string('registered_by');
             $table->timestamps();
         });
     }
