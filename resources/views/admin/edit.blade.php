@@ -92,22 +92,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <div id="form-input" class="row-6">
                 <label for="passwordinput">wachtwoord</label>
-                <input name="password" type="password" class="form-control" id="passwordinput" placeholder="wachtwoord" value="{{$user->password}}">
+                <input name="password" type="password" class="form-control" id="passwordinput" placeholder="wachtwoord">
               </div>
             </div>
               <div class="row">
-              <div id="form-input"  class="row-6">
-                <label for="exampleInputFile">profiel foto</label>
-                <div class="input-group">
-                  <div class="custom-file">
-                    <input name="file" type="file" class="custom-file-input" id="profielfotoinput" value="{{$user->img_path}}">
-                    <label class="custom-file-label" for="profielfotoinput">kies een afbeelding</label>
-                  </div>
-                  <div class="input-group-append">
-                    <span class="input-group-text">Upload</span>
-                  </div>
-                </div>
-              </div>
               <div id="form-input" class="row-6">
                 <label for="phonenumberinput">telefoonnummer</label>
                 <input name="phonenumber" type="phonenumber" class="form-control" id="phonenumberinput" placeholder="telefoon nummer" value="{{$user->phone_number}}">

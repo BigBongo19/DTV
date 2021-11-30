@@ -66,5 +66,11 @@ class MenuController extends Controller{
         return redirect('/admin/menu')->with('message','Het product is toegevoegd!');
     }
 
+    public function deleteMenu($id)
+    {
+        Menu::find($id)->delete();
+        return redirect('/admin/menu')->with('message', 'item is verwijderd!');
+    }
+
 
 }

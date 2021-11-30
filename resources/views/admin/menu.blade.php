@@ -71,7 +71,7 @@
                                             <td>
                                                 <a href="/admin/menu/edit/{{$menuItem->id}}" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
 
-                                                <form method="POST" action="#" accept-charset="UTF-8" style="display: inline;">
+                                                <form method="POST" action="/admin/deleteMenuItem/{{$menuItem->id}}" accept-charset="UTF-8" style="display: inline;">
                                                     <input name="_method" type="hidden">
                                                     @csrf
                                                     <span onclick="deleteEntity(this)"><i class="fas fa-trash" style="color: red"></i></span>
