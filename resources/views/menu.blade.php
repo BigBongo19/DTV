@@ -158,7 +158,7 @@
             <p class="d-flex justify-content-start">{{$item->name}}</p>
             </div>
             <div class="col-4">
-            <p class="d-flex justify-content-start">€{{number_format($item->price,2)}}</p>
+            <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
             </div>
             </div>
             </li>
@@ -181,7 +181,7 @@
             <p class="d-flex justify-content-start">{{$item->name}}</p>
             </div>
             <div class="col-4">
-            <p class="d-flex justify-content-start">€{{number_format($item->price,2)}}</p>
+            <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
             </div>
             </div>
             </li>
@@ -204,7 +204,7 @@
             <p class="d-flex justify-content-start">{{$item->name}}</p>
             </div>
             <div class="col-4">
-            <p class="d-flex justify-content-start">€{{number_format($item->price,2)}}</p>
+            <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
             </div>
             </div>
             </li>
@@ -229,7 +229,7 @@
               <p class="d-flex justify-content-start">{{$item->name}}</p>
               </div>
               <div class="col-4">
-              <p class="d-flex justify-content-start">€{{number_format($item->price,2)}}</p>
+              <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
               </div>
               </div>
               </li>
@@ -252,7 +252,7 @@
               <p class="d-flex justify-content-start">{{$item->name}}</p>
               </div>
               <div class="col-4">
-              <p class="d-flex justify-content-start">€{{number_format($item->price,2)}}</p>
+              <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
               </div>
               </div>
               </li>
@@ -275,7 +275,7 @@
               <p class="d-flex justify-content-start">{{$item->name}}</p>
               </div>
               <div class="col-4">
-              <p class="d-flex justify-content-start">€{{number_format($item->price,2)}}</p>
+              <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
               </div>
               </div>
               </li>
