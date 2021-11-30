@@ -28,7 +28,13 @@ class ReserveController extends Controller
             $courts = Court::all();
 
             return view('/reserve-date', compact('courts', 'date'));
-        } else{
+        }
+        $reservation = Reservation::where('user_id', Auth::id())->whereDate('start_time', '>', Carbon::now())->first();
+        // dd($reservation);
+        if(!empty($reservation)){
+            return view('pending', compact('reservation'));
+        }
+        else{
             return view('reserve');
         }
 
@@ -93,6 +99,20 @@ class ReserveController extends Controller
             $reservation->save();
             return redirect('reserveren')->with('message', 'Je reservatie is gelukt!');
 
+    }
+
+    public function cancel($id){
+        $reservation = Reservation::find($id);
+        if($reservation){
+            if($reservation->user_id == Auth::id()){
+                $reservation->delete();
+                return redirect('reserveren')->with('message', 'Je reservatie is verwijderd!');
+            }  else{
+                return redirect('reserveren')->with('warning', 'Deze reservatie is niet van jou');
+            }
+        } else{
+            return redirect('reserveren')->with('warning', 'Er is iets fout gegaan');
+        }
     }
 
 
