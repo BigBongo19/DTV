@@ -102,7 +102,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
             </div>
             <div class="row">
-            <div id="button-input">
+            <div id="button-input" class="col-4">
             <label>geslacht</label>
               <div class="form-check">
                 <input
@@ -127,7 +127,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <label class="form-check-label" for="radio2">vrouw</label>
               </div><br>
             </div>
-              <div id="button-input admin-button">
+              <div id="button-input admin-button" class="col-4">
               <label>is admin</label>
               <div class="form-check">
                 <input
@@ -142,6 +142,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <label class="form-check-label" for="admincheck">admin</label>
               </div>
               </div>
+              <div id="button-input admin-button" class="col-4">
+                <label>is lid</label>
+                <div class="form-check">
+                  <input
+                  <?php
+                      if ($user->is_member == 1) {
+                          ?>
+                          checked
+                          <?php
+                      }
+                  ?>
+                  type="checkbox" class="form-check-input" id="admincheck" value="1" name="member">
+                  <label class="form-check-label" for="admincheck">lid</label>
+                </div>
+                </div>
             </div>
             </div>
             <!-- /.card-body -->

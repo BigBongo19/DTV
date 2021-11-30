@@ -151,6 +151,12 @@ class ProfileController extends Controller
             $user->is_admin = 0;
         }
 
+        if (isset($request->member)) {
+            $user->is_member = $request->member;
+        } else {
+            $user->is_member = 0;
+        }
+
         $user->save();
         return redirect('/admin/users')->with('message', 'Gegevens opgeslagen!');
     }
