@@ -73,7 +73,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/menu', 'MenuController@menuIndex')->name('menuIndex');
         Route::get('/admin/menu/edit/{id}', 'MenuController@menuEditIndex')->name('menuEditIndex');
         Route::post('/admin/menu/edit/{id}', 'MenuController@menuEdit');
-
+        Route::get('/admin/menu/toevoegen', 'MenuController@menuToevoegen')->name('menuToevoegen');
         Route::post('/admin/menu/toevoegen', 'MenuController@saveMenu');
         Route::post('/admin/deleteMenuItem/{id}', 'MenuController@deleteMenu');
     });

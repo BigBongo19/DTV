@@ -69,6 +69,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <th>Achternaam</th>
                               <th>Email</th>
                               <th>admin</th>
+                              <th>abonnement</th>
                               <th>actie</th>
                             </tr>
                           </thead>
@@ -80,6 +81,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <td>{{$user->last_name}}</td>
                               <td>{{$user->email}}</td>
                               <td>{{$user->is_admin}}</td>
+                              <td>{{$user->is_member}}</td>
                               <td id="forms-input">
                                 <a name="edit_id" href="/admin/users/edit/{{$user->id}}" style="background-color: #f2d61f; border-color: #f2d61f" id="edit" class="btn btn-primary">
                                 <i class="fas fa-pen"></i>

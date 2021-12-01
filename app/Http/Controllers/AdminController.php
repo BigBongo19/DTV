@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use App\Tournament;
-
-
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -15,11 +13,22 @@ use App\User;
 use App\Menu;
 
 
+
 class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.index');
+        $date = date("Y-m-d");
+
+        $users = User::all();
+        $menus = Menu::all();
+        $wedstrijden = Tournament::where('start_date', '>', Carbon::today()->toDateString())->get();
+
+        return view('admin.index', [
+            'users' => $users,
+            'menus' => $menus,
+            'wedstrijden' => $wedstrijden
+        ]);
     }
 
     public function users()
