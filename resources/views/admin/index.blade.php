@@ -58,7 +58,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         @endforeach
                     <h3>{{$countUsers}}</h3>
 
-                      <p>Geregistreede gebruikers</p>
+                      <p>Geregistreerde klanten</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-bag"></i>
@@ -72,7 +72,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <div class="small-box bg-success">
                     <div class="inner">
                         <h3>{{$wedstrijden}}<sup style="font-size: 20px"></sup></h3>
-                      <p>Toernooien</p>
+                      <p>Actieve toernooien</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-stats-bars"></i>
@@ -91,7 +91,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         @endforeach
                     <h3>{{$countReservations}}</h3>
 
-                      <p>Reserveringen</p>
+                      <p>Banen gereserveerd</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-person-add"></i>
