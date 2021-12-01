@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DTV | Reserveer een baan</title>
+  <title>DTV | Home</title>
   <meta content="" name="description">
 
   <meta content="" name="keywords">
@@ -80,18 +80,25 @@
                         onSelect : function (dateText, inst) {
                             $('#form').submit(); // <-- SUBMIT
                         }
-                    });
+
+                        });
                 } );
                 </script>
+                <div class="alert alert-warning d-flex align-items-center" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" role="img" width="24" height="24"></i>
+                    <div>
+                     Om zoveel mogelijk banen beschikbaar te stellen, kunt je maar 1x per dag een baan reserveren.
+                    </div>
+                  </div>
             <div class="row reservatie">
 
-                <form id="form" action="/reserveren">
-                    <fieldset>
-                        <h1>Wanneer wil je komen sporten?</h1>
-                        <input class="form-control" name="datum" type="text" id="datepicker" autocomplete="off" placeholder="Selecteer datum">
-                    </fieldset>
+                <div class="res-text">
+                    <h1>Jouw reservatie</h1>
+                    <h3 class="text-muted">Bekijk je reserveringen op <a href="/profile">jouw account</a>.</h3>
+                </div>
+                <p class="res-date"><b>{{$reservation->start_time}}</b> tot <b>{{$reservation->end_time}}</b></p>
+                <a href="/reserveren/annuleren/{{$reservation->id}}" class="btn btn-danger d-inline" style="max-width: 200px">Annuleer</a>
 
-                </form>
             </div>
 
 

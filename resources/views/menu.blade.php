@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DTV | Home</title>
+  <title>DTV | Menu</title>
   <meta content="" name="description">
 
   <meta content="" name="keywords">
@@ -25,97 +25,11 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
+   <!-- Font Awesome Icons -->
+   <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <style>
-    #menu{
-      margin: 50px;
-      display: flex;
-      flex-wrap: wrap;
-    }
-    #page_title{
-      display: flex;
-      justify-content: center;
-      width: 100%;
-    }
-    #random_item{
-      width: 25%;
-    }
-    #random_item_title{
-      margin-bottom: 20px;
-      display: flex;
-      flex-direction: column;
-    }
-    #random_item_title_section{
-      display: flex;
-      justify-content: center;
-    }
-    #random_item_title_section{
-      color: black;
-    }
-
-    a:hover{
-      text-decoration: underline;
-    }
-
-    #item_list{
-      width: 100%;
-    }
-    #random_item_card_border{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      border-radius: 5px;
-    }
-
-    #list_item_card_border{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 90%;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      border-radius: 5px;
-    }
-
-    .hover-zoom {
-      transition: 500ms;
-      z-index: auto;
-    }
-    .hover-zoom:hover {
-      transform: scale(1.05);
-      transition: 500ms;
-      cursor: pointer;
-    }
-    #item-soort-titel{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-    @media only screen and (max-width: 768px) {
-        #random_item_card_border{
-            display: none;
-        }
-        #menu{
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            margin: 0%;
-        }
-
-        .eten .drinken{
-            display: flex;
-            align-items: center;
-        }
-    }
-
-  </style>
-
   <!-- =======================================================
   * Template Name: FlexStart - v1.7.0
   * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
@@ -141,7 +55,28 @@
 
     </div>
 </section>
-  <div id="menu" data-aos="fade-left">
+  <div id="menu">
+      <div class="selection-list">
+          <div class="selection-list-item">
+            <i class="fas fa-hamburger"></i>
+            <div class="selection-item-text">Warm eten</div>
+          </div>
+
+          <div class="selection-list-item">
+            <i class="fas fa-ice-cream"></i>
+            <div class="selection-item-text">Koud eten</div>
+          </div>
+
+          <div class="selection-list-item">
+            <i class="fas fa-cookie-bite"></i>
+            <div class="selection-item-text">Snacks</div>
+          </div>
+
+          <div class="selection-list-item">
+            <i class="fas fa-cocktail"></i>
+            <div class="selection-item-text">Drinken</div>
+          </div>
+      </div>
     <div id="item_list" class="container">
       <div class="row">
         <div class="warm_eten col">
@@ -155,10 +90,10 @@
           <li class="list-group-item">
             <div class="row d-flex justify-content-between">
             <div class="col-4">
-            <p class="d-flex justify-content-center">{{$item->name}}</p>
+            <p class="d-flex justify-content-start">{{$item->name}}</p>
             </div>
             <div class="col-4">
-            <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+            <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
             </div>
             </div>
             </li>
@@ -178,10 +113,10 @@
           <li class="list-group-item">
             <div class="row d-flex justify-content-between">
             <div class="col-4">
-            <p class="d-flex justify-content-center">{{$item->name}}</p>
+            <p class="d-flex justify-content-start">{{$item->name}}</p>
             </div>
             <div class="col-4">
-            <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+            <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
             </div>
             </div>
             </li>
@@ -201,10 +136,10 @@
           <li class="list-group-item">
             <div class="row d-flex justify-content-between">
             <div class="col-4">
-            <p class="d-flex justify-content-center">{{$item->name}}</p>
+            <p class="d-flex justify-content-start">{{$item->name}}</p>
             </div>
             <div class="col-4">
-            <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+            <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
             </div>
             </div>
             </li>
@@ -226,10 +161,10 @@
             <li class="list-group-item">
               <div class="row d-flex justify-content-between">
               <div class="col-4">
-              <p class="d-flex justify-content-center">{{$item->name}}</p>
+              <p class="d-flex justify-content-start">{{$item->name}}</p>
               </div>
               <div class="col-4">
-              <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+              <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
               </div>
               </div>
               </li>
@@ -249,10 +184,10 @@
             <li class="list-group-item">
               <div class="row d-flex justify-content-between">
               <div class="col-4">
-              <p class="d-flex justify-content-center">{{$item->name}}</p>
+              <p class="d-flex justify-content-start">{{$item->name}}</p>
               </div>
               <div class="col-4">
-              <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+              <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
               </div>
               </div>
               </li>
@@ -272,10 +207,10 @@
             <li class="list-group-item">
               <div class="row d-flex justify-content-between">
               <div class="col-4">
-              <p class="d-flex justify-content-center">{{$item->name}}</p>
+              <p class="d-flex justify-content-start">{{$item->name}}</p>
               </div>
               <div class="col-4">
-              <p class="d-flex justify-content-center">€{{number_format($item->price,2)}}</p>
+              <p class="d-flex justify-content-end">€{{number_format($item->price,2)}}</p>
               </div>
               </div>
               </li>

@@ -82,12 +82,12 @@
                             });
                     } );
                     </script>
+            <h1>Deze banen zijn beschikbaar op jouw gekozen datum</h1>
             <form id="form" action="/reserveren">
                 <input class="form-control" name="datum" type="text" id="datepicker" value="{{$date}}" autocomplete="off" placeholder="Selecteer datum">
                 </form>
             </div>
             <div class="row reservatie">
-                <h4>Deze banen zijn beschikbaar op jouw gekozen datum</h4>
 
                 @foreach ($courts as $court)
                 <div class="courtcard">
@@ -96,7 +96,7 @@
                     </div>
                     <div class="courtcard-info">
                         <h4>{{$court->name}}</h4>
-                        <a class="btn btn-primary" href="/reserveren/baan/{{$court->id}}/?datum={{$date}}" class="button">Reseveer</a>
+                        <a class="btn btn-primary" href="/reserveren/baan/{{$court->id}}/?datum={{$date}}" class="button">Reserveer</a>
                     </div>
                 </div>
                 @endforeach

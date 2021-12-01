@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\TournamentRegistration;
 use App\User;
+use App\Reservation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -12,9 +14,11 @@ use Illuminate\Support\Str;
 class ProfileController extends Controller
 {
     public function index() {
-        $user = $id = Auth::user();
+        $user = Auth::user();
+        $resTournaments = TournamentRegistration::where('user_id', $user->id)->get();
+        $resCourts = Reservation::where('user_id', $user->id)->get();
 
-        return view('profileIndex', compact('user'));
+        return view('profileIndex', compact('user', 'resTournaments', 'resCourts'));
     }
 
     public function editIndex() {
@@ -35,46 +39,38 @@ class ProfileController extends Controller
         return back();
     }
 
-    public function editPassword(Request $request)
-    {
+    public function editPassword(Request $request){
 
-         $this->validate($request, [
+        $this->validate($request, [
         'oldpassword' => 'required',
         'newpassword' => 'required',
         ]);
-
-
 
        $hashedPassword = Auth::user()->password;
 
        if (Hash::check($request->oldpassword , $hashedPassword )) {
 
-         if (!Hash::check($request->newpassword , $hashedPassword)) {
+            if (!Hash::check($request->newpassword , $hashedPassword)) {
 
-              $user = User::find(Auth::user()->id);
-              $user->password = bcrypt($request->newpassword);
-              $user->save();
+                $user = User::find(Auth::user()->id);
+                $user->password = bcrypt($request->newpassword);
+                $user->save();
 
-              session()->flash('message','Uw wachtwoord is aangepast');
-              return redirect()->back();
+                session()->flash('message','Uw wachtwoord is aangepast');
+                return redirect()->back();
             }
 
             else{
-                  session()->flash('warning','Het nieuwe wachtwoord kan niet het zelfde als de oude zijn');
-                  return redirect()->back();
-                }
+                session()->flash('warning','Het nieuwe wachtwoord kan niet het zelfde als de oude zijn');
+                return redirect()->back();
+            }
 
-           }
+        }
 
-          else{
-               session()->flash('warning','Het oude wachtwoord klopt niet');
-               return redirect()->back();
-             }
-
-       }
-
-    public function payment() {
-        return view('paymentIndex');
+        else{
+            session()->flash('warning','Het oude wachtwoord klopt niet');
+            return redirect()->back();
+        }
     }
 
     public function upload(Request $request)
@@ -106,5 +102,58 @@ class ProfileController extends Controller
         $user->img_path = NULL;
         $user->save();
         return redirect()->back()->with('message','Uw profielfoto is verwijderd');
+    }
+
+    public function users()
+    {
+        $users = User::all();
+
+        return view('admin.users', [
+            'users' => $users
+        ]);
+    }
+
+    public function deleteUser($id)
+    {
+        User::find($id)->delete();
+        return redirect('/admin/users')->with('message', 'user is verwijderd!');
+
+    }
+
+    public function editPage($id)
+    {
+        $user = User::where("id", $id)->first();
+
+        return view('admin.edit', [
+            'user' => $user
+        ]);
+    }
+
+    public function editSave(Request $request)
+    {
+        $user = User::find($request->id);
+        $user->name = $request->name;
+        $user->last_name = $request->achternaam;
+        $user->email = $request->email;
+        if(isset($request->password)){
+            $password = Hash::make($request->password);
+            $user->password = $password;
+        }
+        $user->phone_number = $request->phonenumber;
+        $user->gender = $request->geslacht;
+        if (isset($request->admin)) {
+            $user->is_admin = $request->admin;
+        } else {
+            $user->is_admin = 0;
+        }
+
+        if (isset($request->member)) {
+            $user->is_member = $request->member;
+        } else {
+            $user->is_member = 0;
+        }
+
+        $user->save();
+        return redirect('/admin/users')->with('message', 'Gegevens opgeslagen!');
     }
 }

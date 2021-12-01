@@ -86,12 +86,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
             </div>
             <div class="row">
-              <div id="form-input" class="row-6">
-                <label for="typeInput">type</label>
-                <input name="typeInput" type="typeInput" class="form-control" id="typeInput" placeholder="type">
+                <div id="form-input" class="row-6">
+                  <label for="typeInput">type</label>
+                  <select name="typeInput" class="form-control" id="typeInput" placeholder="type">
+                      <option value="0">warm eten</option>
+                      <option value="1">koud eten</option>
+                      <option value="2">snacks</option>
+                      <option value="3">water</option>
+                      <option value="4">fris drank</option>
+                      <option value="5">alcoholische dranken</option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <div id="button-input admin-button">
+            <div id="button-input admin-button" class="row-6">
                 <label>op de kaart</label>
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="enabled" value="1" name="enabled">

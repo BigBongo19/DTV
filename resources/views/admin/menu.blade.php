@@ -67,11 +67,44 @@
                                         <tr>
                                             <td>{{$menuItem->name}}</td>
                                             <td>€{{number_format($menuItem->price,2)}}</td>
-                                            <td>{{$menuItem->type}}</td>
+                                            <td>
+                                            <?php
+                                                if ($menuItem->type == 0) {
+                                                    ?>
+                                                    warm eten
+                                                    <?php
+                                                }
+                                                if ($menuItem->type == 1) {
+                                                    ?>
+                                                    koud eten
+                                                    <?php
+                                                }
+                                                if ($menuItem->type == 2) {
+                                                    ?>
+                                                    snacks
+                                                    <?php
+                                                }
+                                                if ($menuItem->type == 3) {
+                                                    ?>
+                                                    water
+                                                    <?php
+                                                }
+                                                if ($menuItem->type == 4) {
+                                                    ?>
+                                                    frisdrank
+                                                    <?php
+                                                }
+                                                if ($menuItem->type == 5) {
+                                                    ?>
+                                                    alcolholische dranken
+                                                    <?php
+                                                }
+                                            ?>
+                                            </td>
                                             <td>
                                                 <a href="/admin/menu/edit/{{$menuItem->id}}" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
 
-                                                <form method="POST" action="#" accept-charset="UTF-8" style="display: inline;">
+                                                <form method="POST" action="/admin/deleteMenuItem/{{$menuItem->id}}" accept-charset="UTF-8" style="display: inline;">
                                                     <input name="_method" type="hidden">
                                                     @csrf
                                                     <span onclick="deleteEntity(this)"><i class="fas fa-trash" style="color: red"></i></span>
