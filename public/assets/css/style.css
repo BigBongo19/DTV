@@ -10,25 +10,6 @@
 :root {
     scroll-behavior: smooth;
 }
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    position: relative;
-}
-
-.add-btn {
-    position: absolute;
-    right: 15px;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.addTournament {
-    float: right;
-}
 
 body {
     font-family: "Open Sans", sans-serif;
@@ -51,138 +32,7 @@ h6 {
     font-family: "Nunito", sans-serif;
 }
 
-main .container > h1 {
-    margin: 50px 0;
-    position: relative;
-    font-weight: bold;
-}
-main .container > h1::after {
-    content: "";
-    position: absolute;
-    left: -5px;
-    bottom: 0px;
-    height: 15px;
-    width: 125px;
-    background: #d11944aa;
-    z-index: -1;
-}
-main .container .account-details,
-main .container .account-details-change {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 300px 1fr 1fr;
-    min-height: 100vh;
-}
-main .container .account-details-change {
-    grid-template-columns: 300px 1fr;
-}
-main .container .account-details h1,
-main .container .account-details-change h1 {
-    font-weight: bolder;
-}
-main .container .account-details .list,
-main .container .account-details-change .list {
-    height: 15%;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-}
-main .container .account-details .list .list-item,
-main .container .account-details-change .list .list-item {
-    background: rgba(65, 83, 241, 0.2);
-    border-radius: 50px;
-    padding: 8px 25px;
-    max-width: 200px;
-    transition: background 0.2s;
-    cursor: pointer;
-}
-main .container .account-details .list .list-item a,
-main .container .account-details-change .list .list-item a {
-    display: block;
-    color: black;
-    font-size: 14px;
-    width: 100%;
-}
-main .container .account-details .list .list-item:hover,
-main .container .account-details-change .list .list-item:hover {
-    background: rgba(65, 83, 241, 0.5);
-}
-main .container .account-details .account-options h1 {
-    font-weight: bolder;
-}
-main .container .account-details .account-options .profile-update > h3,
-main .container .account-details-change .account-options .profile-update > h3 {
-    margin: 30px 0;
-}
-main .container .account-details .account-options .profile-update .avatar,
-main .container .account-details-change .account-options .profile-update .avatar {
-    width: 300px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-main .container .account-details .account-options .profile-update .avatar a,
-main .container .account-details-change .account-options .profile-update .avatar a {
-    font-size: 16px;
-    font-weight: bolder;
-}
-main .container .account-details .account-options .profile-update .avatar img,
-main .container .account-details-change .account-options .profile-update .avatar img {
-    width: 100px;
-    height: 100px;
-    border-radius: 150px;
-}
-main .container .account-details .account-options .profile-update form,
-main .container .account-details-change .account-options .profile-update form {
-    padding: 25px 0;
-    width: 100%;
-}
-main .container .account-details .account-options .profile-update form .row {
-    margin: 5px 0;
-}
-main .container .account-details-change .account-options .profile-update form .row {
-    margin: 25px 0;
-}
-main .container .account-details-change .account-options .profile-update form .delete .col,
-main .container .account-details-change .account-options .profile-update form .change_pass .col {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-width: 500px;
-    margin-top: 25px;
-}
-main .container .account-details-change .account-options .profile-update form .change_pass button,
-main .container .account-details-change .account-options .profile-update form .delete button {
-    height: 35px;
-}
-main .container .account-details .account-options .profile-update form label,
-main .container .account-details-change .account-options .profile-update form label {
-    font-weight: bold;
-}
-main .container .account-details .account-options .profile-update form input,
-main .container .account-details-change .account-options .profile-update form input {
-    width: 100%;
-    border-radius: 10px;
-}
-main .container .account-details .account-options .payInfo {
-    display: flex;
-    width: 700px;
-    justify-content: space-between;
-}
-main .container .account-details .account-options .payInfo .payPreference,
-main .container .account-details .account-options .payInfo .payHistory {
-    margin: 20px 0;
-    width: 100%;
-    padding: 20px;
-}
-main .container .account-details .account-options .payInfo .payHistory table {
-    width: 100%;
-}
-main .container .account-details .profile-reservations table {
-    margin: 25px 0;
-    width: 100%;
-}
+
 h1,
 h2,
 h3,
@@ -192,69 +42,8 @@ h6 {
     font-family: "Nunito", sans-serif;
 }
 
-main .about .container .reservatie {
-    min-height: calc(100vh - 385px);
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    text-align: center;
-}
 
-main .about .container .reservatie .courtcard {
-    width: 350px;
-    padding: 20px;
-    border-radius: 15px;
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
-    box-shadow: 25px 25px 50px #cccccc, -25px -25px 50px #ffffff;
-    margin: 25px 0;
-    transition: 0.2s;
-}
 
-main .about .container .reservatie .courtcard:hover{
-    transform: translateY(-15px);
-}
-
-main .about .container .reservatie .courtcard .courtcard-info{
-    padding: 15px;
-}
-
-main .about .container .reservatie form {
-    height: 175px;
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-main .about .container .reservatie form h4 {
-    font-weight: bolder;
-    margin-bottom: 20px;
-}
-
-main .about .container .reservatie form .inputDate {
-    width: 100%;
-    text-align: center;
-    border: 3px solid #012970;
-    border-radius: 50px;
-    font-weight: bold;
-}
-
-main .about .container .reservatie form .btn {
-    padding: 10px 30px;
-    border-radius: 50px;
-    align-self: flex-end;
-    margin: 15px 0;
-}
-
-main .about .container .reservatie form .inputDate::-webkit-calendar-picker-indicator {
-    background: url(../svg/calendar-date-fill.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: scale(1.5);
-    width: 35px;
-    height: 35px;
-}
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
@@ -282,63 +71,7 @@ section {
     font-weight: 700;
     color: #012970;
 }
-@media (max-width: 768px) {
-    .section-header p {
-        font-size: 28px;
-        line-height: 32px;
-    }
 
-    main .container .account-details,
-    main .container .account-details-change {
-        grid-template-columns: 100%;
-    }
-
-    main .container .account-details-change .account-options .profile-update form .row {
-        display: unset;
-    }
-
-    main .container .account-details-change .account-options .profile-update form .delete .col,
-    main .container .account-details-change .account-options .profile-update form .change_pass .col {
-        display: unset;
-    }
-
-    main .container .account-details-change .account-options .profile-update form .change_pass button,
-    main .container .account-details-change .account-options .profile-update form .delete button {
-        margin: 10px 0;
-    }
-
-    main .container .account-details .list,
-    main .container .account-details-change .list {
-        height: unset;
-        align-items: center;
-        padding: 50px 0;
-        justify-content: unset;
-    }
-
-    main .container .account-details .list .list-item,
-    main .container .account-details-change .list .list-item {
-        max-width: unset;
-        width: 200px;
-        text-align: center;
-        margin: 10px 0;
-    }
-
-    .account-details,
-    .account-options {
-        text-align: center;
-    }
-
-    main .container .account-details .account-options .profile-update .avatar {
-        width: unset;
-        justify-content: center;
-    }
-
-    main .container .account-details .account-options .payInfo {
-        display: unset;
-        width: 100%;
-        text-align: center;
-    }
-}
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
@@ -2318,6 +2051,344 @@ section {
 /*--------------------------------------------------------------
 # Custom
 --------------------------------------------------------------*/
+
+main .container > h1 {
+    margin: 50px 0;
+    position: relative;
+    font-weight: bold;
+}
+main .container > h1::after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    bottom: 0px;
+    height: 15px;
+    width: 125px;
+    background: #d11944aa;
+    z-index: -1;
+}
+main .container .account-details,
+main .container .account-details-change {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 300px 1fr 1fr;
+    min-height: 100vh;
+}
+main .container .account-details-change {
+    grid-template-columns: 300px 1fr;
+}
+main .container .account-details h1,
+main .container .account-details-change h1 {
+    font-weight: bolder;
+}
+main .container .account-details .list,
+main .container .account-details-change .list {
+    height: 15%;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+main .container .account-details .list .list-item,
+main .container .account-details-change .list .list-item {
+    background: rgba(65, 83, 241, 0.2);
+    border-radius: 50px;
+    padding: 8px 25px;
+    max-width: 200px;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+main .container .account-details .list .list-item a,
+main .container .account-details-change .list .list-item a {
+    display: block;
+    color: black;
+    font-size: 14px;
+    width: 100%;
+}
+main .container .account-details .list .list-item:hover,
+main .container .account-details-change .list .list-item:hover {
+    background: rgba(65, 83, 241, 0.5);
+}
+main .container .account-details .account-options h1, main .container .account-details .account-reservations h1 {
+    font-weight: bolder;
+    color: #4154F2;
+}
+main .container .account-details .account-options .profile-update > h3,
+main .container .account-details-change .account-options .profile-update > h3 {
+    margin: 30px 0;
+}
+main .container .account-details .account-options .profile-update .avatar,
+main .container .account-details-change .account-options .profile-update .avatar {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main .container .account-details .account-options .profile-update .avatar a,
+main .container .account-details-change .account-options .profile-update .avatar a {
+    font-size: 16px;
+    font-weight: bolder;
+}
+main .container .account-details .account-options .profile-update .avatar img,
+main .container .account-details-change .account-options .profile-update .avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 150px;
+}
+main .container .account-details .account-options .profile-update form,
+main .container .account-details-change .account-options .profile-update form {
+    padding: 25px 0;
+    width: 100%;
+}
+main .container .account-details .account-options .profile-update form .row {
+    margin: 5px 0;
+}
+main .container .account-details-change .account-options .profile-update form .row {
+    margin: 25px 0;
+}
+
+main .container .account-details-change .account-options .profile-update form .row:nth-child(6){
+    margin-top: 75px;
+}
+
+main .container .account-details-change .account-options .profile-update form .row:nth-child(6) .col .btn{
+    width: 150px;
+    float: right;
+}
+
+main .container .account-details-change .account-options .profile-update form .delete .col,
+main .container .account-details-change .account-options .profile-update form .change_pass .col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 500px;
+    margin-top: 25px;
+}
+main .container .account-details-change .account-options .profile-update form .change_pass button,
+main .container .account-details-change .account-options .profile-update form .delete button {
+    height: 35px;
+    width: 150px;
+    border-radius: 10px;
+}
+main .container .account-details .account-options .profile-update form label,
+main .container .account-details-change .account-options .profile-update form label {
+    font-weight: bold;
+}
+main .container .account-details .account-options .profile-update form input,
+main .container .account-details-change .account-options .profile-update form input {
+    width: 100%;
+    border-radius: 10px;
+}
+main .container .account-details .account-options .payInfo {
+    display: flex;
+    width: 700px;
+    justify-content: space-between;
+}
+main .container .account-details .account-options .payInfo .payPreference,
+main .container .account-details .account-options .payInfo .payHistory {
+    margin: 20px 0;
+    width: 100%;
+    padding: 20px;
+}
+main .container .account-details .account-options .payInfo .payHistory table {
+    width: 100%;
+}
+
+main .container .account-details .account-reservations > h2 {
+    margin: 30px 0;
+    font-weight: bold;
+}
+
+main .container .account-details .account-reservations table {
+    margin: 25px 0;
+    width: 100%;
+}
+
+main .about .container .alert {
+    display: flex;
+    justify-content: center;
+}
+
+main .about .container .reservatie {
+    min-height: calc(100vh - 485px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+main .about .container .row h1 {
+    margin: 20px 0;
+    color: #4154f2;
+    font-weight: bold;
+    text-align: center;
+    font-size: 45px;
+}
+
+@media (max-width: 768px) {
+    main .about .container .row h1 {
+        font-size: 26px;
+    }
+
+    #hero .container .row .col-lg-6:nth-child(1) {
+        min-height: 70vh;
+    }
+
+    #hero .container .row .col-lg-6:nth-child(2) {
+        display: none;
+    }
+}
+
+main .about .container .reservatie .res-text .text-muted {
+    text-transform: none;
+}
+
+main .about .container .reservatie .courtcard {
+    width: 350px;
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 25px 25px 50px #cccccc, -25px -25px 50px #ffffff;
+    margin: 45px 0;
+    transition: 0.2s;
+}
+
+main .about .container .reservatie .courtcard:hover {
+    transform: translateY(-15px);
+}
+
+main .about .container .reservatie .courtcard .courtcard-info {
+    padding: 15px;
+}
+
+main .about .container .reservatie form {
+    height: 175px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+main .about .container .reservatie form fieldset input {
+    width: 100%;
+}
+
+main .about .container .reservatie form h4 {
+    font-weight: bolder;
+    margin: 20px 0;
+}
+
+main .about .container .reservatie form .inputDate {
+    width: 100%;
+    text-align: center;
+    border: 3px solid #012970;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+main .about .container .reservatie form .btn {
+    padding: 10px 30px;
+    border-radius: 0.25rem;
+    align-self: flex-end;
+    margin: 15px 0;
+    border: #4154f2;
+}
+
+main .about .container .reservatie form .inputDate::-webkit-calendar-picker-indicator {
+    background: url(../svg/calendar-date-fill.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(1.5);
+    width: 35px;
+    height: 35px;
+}
+
+main .about .container .reservatie form {
+    width: 100%;
+}
+
+main .about .container .reservatie form input {
+    height: 45px;
+    border: 3px solid #012970;
+}
+
+main .about .container .reservatie form input::-webkit-calendar-picker-indicator {
+    background: url(../svg/calendar-date-fill.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(1.5);
+    width: 35px;
+    height: 35px;
+}
+
+main .about .container .reservatie .res-date {
+    font-size: 40px;
+}
+
+@media (max-width: 768px) {
+    .section-header p {
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    main .container .account-details,
+    main .container .account-details-change {
+        grid-template-columns: 100%;
+    }
+
+    main .container .account-details-change .account-options .profile-update form .row {
+        display: unset;
+    }
+
+    main .container .account-details-change .account-options .profile-update form .delete .col,
+    main .container .account-details-change .account-options .profile-update form .change_pass .col {
+        display: unset;
+    }
+
+    main .container .account-details-change .account-options .profile-update form .change_pass button,
+    main .container .account-details-change .account-options .profile-update form .delete button {
+        margin: 10px 0;
+    }
+
+    main .container .account-details .list,
+    main .container .account-details-change .list {
+        height: unset;
+        align-items: center;
+        padding: 50px 0;
+        justify-content: unset;
+    }
+
+    main .container .account-details .list .list-item,
+    main .container .account-details-change .list .list-item {
+        max-width: unset;
+        width: 200px;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .account-details,
+    .account-options {
+        text-align: center;
+    }
+
+    main .container .account-details .account-options .profile-update .avatar {
+        width: unset;
+        justify-content: center;
+    }
+
+    main .container .account-details .account-options .payInfo {
+        display: unset;
+        width: 100%;
+        text-align: center;
+    }
+
+    main .about .container .reservatie .res-date {
+        font-size: 16px;
+    }
+}
+
+
 .tourney .list-group-item {
     border: none !important;
     position: relative;
@@ -2346,4 +2417,142 @@ section {
     opacity: 0.05;
     width: 80%;
     margin: 16px auto;
+}
+
+#menu {
+    margin: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+#menu .selection-list{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 150px;
+}
+
+#menu .selection-list .selection-list-item{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+#menu .selection-list .selection-list-item:hover i{
+    transform: scale(2.8) rotate(15deg);
+}
+
+#menu .selection-list .selection-list-item i{
+    transform: scale(2.5);
+    color: #495CF2;
+    margin-bottom: 25px;
+    transition: 0.2s ease-in-out;
+}
+
+#menu .selection-list .selection-list-item .selection-item-text{
+    font-weight: bolder;
+}
+
+#page_title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#random_item {
+    width: 25%;
+}
+#random_item_title {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+#random_item_title_section {
+    display: flex;
+    justify-content: center;
+}
+#random_item_title_section {
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#item_list {
+    width: 100%;
+}
+#random_item_card_border {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;
+}
+
+#list_item_card_border {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;
+}
+
+.hover-zoom {
+    transition: 500ms;
+    z-index: auto;
+}
+.hover-zoom:hover {
+    transform: scale(1.05);
+    transition: 500ms;
+    cursor: pointer;
+}
+#item-soort-titel {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+@media only screen and (max-width: 768px) {
+    #random_item_card_border {
+        display: none;
+    }
+    #menu {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 0%;
+    }
+
+    .eten .drinken {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.add-btn {
+    position: absolute;
+    right: 15px;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.addTournament {
+    float: right;
 }

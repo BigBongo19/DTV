@@ -50,12 +50,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="inner">
                       <h3>12</h3>
 
-                      <p>Abonnement houders</p>
+                      <p>Gebruikers</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-bag"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/admin/users" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <!-- ./col -->
@@ -65,12 +65,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="inner">
                       <h3>53<sup style="font-size: 20px"></sup></h3>
 
-                      <p>Wedstrijden gespeeld</p>
+                      <p>Toernooien</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-stats-bars"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/admin/tournament/list" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <!-- ./col -->
@@ -85,7 +85,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="icon">
                       <i class="ion ion-person-add"></i>
                     </div>
-                    <a href="#" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/admin/reservations" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <!-- ./col -->
@@ -95,12 +95,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="inner">
                       <h3>65</h3>
 
-                      <p>Gereserveerde Banen</p>
+                      <p>Producten op menukaart</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-pie-graph"></i>
                     </div>
-                    <a href="#" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/admin/menu" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <!-- ./col -->

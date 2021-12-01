@@ -62,28 +62,33 @@
                                             <th>Eind datum</th>
                                             <th>Beschrijving</th>
                                             <th>Baan</th>
+                                            <th>Aantal deelnemers</th>
                                             <th>Max. deelnemers</th>
                                             <th>Actie</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @php($i = 0)
                                         @foreach ($tournaments as $tournament)
-                                            <tr>
-                                                <td>{{ $tournament->title }}</td>
-                                                <td>{{ $tournament->start_date }}</td>
-                                                <td>{{ $tournament->end_date }}</td>
-                                                <td>{{ $tournament->description }}</td>
-                                                <td>{{ $tournament->lane }}</td>
-                                                <td>{{ $tournament->max_participants }}</td>
-                                                <td>
-                                                    <a href="edit/{{ $tournament->id }}" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
+                                            @php($participants = $participant_list[$i])
+                                                <tr>
+                                                    <td>{{ $tournament->title }}</td>
+                                                    <td>{{ $tournament->start_date }}</td>
+                                                    <td>{{ $tournament->end_date }}</td>
+                                                    <td>{{ $tournament->description }}</td>
+                                                    <td>{{ $tournament->lane }}</td>
+                                                    <td>{{ $participants }}</td>
+                                                    <td>{{ $tournament->max_participants }}</td>
+                                                    <td>
+                                                        <a href="edit/{{ $tournament->id }}" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
 
-                                                    <form method="POST" action="/admin/tournament/delete/{{ $tournament->id }}" accept-charset="UTF-8" style="display: inline;"><input name="_method" type="hidden">
-                                                        @csrf
-                                                        <span onclick="deleteEntity(this)"><i class="fas fa-trash" style="color: red"></i></span>
-                                                    </form>
-                                                </td>
-                                            </tr>
+                                                        <form method="POST" action="/admin/tournament/delete/{{ $tournament->id }}" accept-charset="UTF-8" style="display: inline;"><input name="_method" type="hidden">
+                                                            @csrf
+                                                            <span onclick="deleteEntity(this)"><i class="fas fa-trash" style="color: red"></i></span>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @php($i++)
                                         @endforeach
                                     </tbody>
                                 </table>

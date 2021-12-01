@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Tournament;
 use Carbon\Carbon;
 use App\Court;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Ui\Presets\React;
@@ -15,11 +16,11 @@ class ReserveController extends Controller
 {
     public function index(Request $request)
     {
-        $date = new Carbon($request->datum." 23:59");
-        if($date->isPast()){
+        $date = new Carbon($request->datum . " 23:59");
+        if ($date->isPast()) {
             return redirect('/reserveren')->with('warning', 'Deze datum is al geweest');
         }
-        if(isset($request->datum)){
+        if (isset($request->datum)) {
             $date = $request->datum;
 
             $validated = $request->validate([
@@ -31,89 +32,193 @@ class ReserveController extends Controller
         }
         $reservation = Reservation::where('user_id', Auth::id())->whereDate('start_time', '>', Carbon::now())->first();
         // dd($reservation);
-        if(!empty($reservation)){
+        if (!empty($reservation)) {
             return view('pending', compact('reservation'));
-        }
-        else{
+        } else {
             return view('reserve');
         }
-
-
     }
 
-    public function ReserveCourt(Request $request, $id){
+    public function ReserveCourt(Request $request, $id)
+    {
         $validated = $request->validate([
             'datum' => 'required|date_format:m/d/Y',
         ]);
         $date = $request->datum;
         $court_id = $id;
-        $endOfDay = new Carbon($request->datum." 23:59");
-        if($endOfDay->isPast()){
+        $endOfDay = new Carbon($request->datum . " 23:59");
+        if ($endOfDay->isPast()) {
             return redirect('/reserveren')->with('warning', 'Deze datum is al geweest');
         }
 
-        if(Court::find($id)){
-        function get_hours_range( $start = 0, $end = 86400, $step = 3600, $format = 'g:i a' ) {
-            $times = array();
-            foreach ( range( $start, $end, $step ) as $timestamp ) {
-                    $hour_mins = gmdate( 'H,i', $timestamp );
-                    if ( ! empty( $format ) )
-                            $times[$hour_mins] = $hour_mins ;
+        if (Court::find($id)) {
+            function get_hours_range($start = 0, $end = 86400, $step = 3600, $format = 'g:i a')
+            {
+                $times = array();
+                foreach (range($start, $end, $step) as $timestamp) {
+                    $hour_mins = gmdate('H,i', $timestamp);
+                    if (!empty($format))
+                        $times[$hour_mins] = $hour_mins;
                     else $times[$hour_mins] = $hour_mins;
+                }
+
+                return $times;
             }
+            $times = get_hours_range(32400, 57600, 3600, 'H:i');
 
-            return $times;
-    }
-        $times = get_hours_range( 32400, 57600, 3600, 'H:i' );
-
-        return view('reservecourt', compact('times', 'date', 'court_id'));
-        }
-        else {
+            return view('reservecourt', compact('times', 'date', 'court_id'));
+        } else {
             return redirect('reserveren')->with('warning', 'Deze baan bestaat niet');
         }
-
     }
 
-    public function ConfirmResevation(Request $request){
+    public function ConfirmReservation(Request $request)
+    {
 
-            $validated = $request->validate([
-                'time_submit' => 'required|date_format:H:i',
-                'court_id' => 'required',
-                'date' => 'required|date',
-            ]);
+        $validated = $request->validate([
+            'time_submit' => 'required|date_format:H:i',
+            'court_id' => 'required',
+            'date' => 'required|date',
+        ]);
 
-            $date = new Carbon($request->date." ".$request->time_submit);
-            $enddate = new Carbon($request->date." ".$request->time_submit);
+        $date = new Carbon($request->date . " " . $request->time_submit);
+        $enddate = new Carbon($request->date . " " . $request->time_submit);
 
-            if($date->isPast()){
-                return back()->with('warning', 'Deze datum is al geweest');
-            }
+        if ($date->isPast()) {
+            return back()->with('warning', 'Deze datum is al geweest');
+        }
 
 
 
-            $reservation = new Reservation;
-            $reservation->court_id = $request->court_id;
-            $reservation->user_id = Auth::id();
-            $reservation->start_time = $date;
-            $reservation->end_time = $enddate->addHour();
-            $reservation->save();
-            return redirect('reserveren')->with('message', 'Je reservatie is gelukt!');
-
+        $reservation = new Reservation;
+        $reservation->court_id = $request->court_id;
+        $reservation->user_id = Auth::id();
+        $reservation->start_time = $date;
+        $reservation->end_time = $enddate->addHour();
+        $reservation->save();
+        return redirect('reserveren')->with('message', 'Je reservatie is gelukt!');
     }
 
-    public function cancel($id){
+    public function cancel($id)
+    {
         $reservation = Reservation::find($id);
-        if($reservation){
-            if($reservation->user_id == Auth::id()){
+        if ($reservation) {
+            if ($reservation->user_id == Auth::id()) {
                 $reservation->delete();
                 return redirect('reserveren')->with('message', 'Je reservatie is verwijderd!');
-            }  else{
+            } else {
                 return redirect('reserveren')->with('warning', 'Deze reservatie is niet van jou');
             }
-        } else{
+        } else {
             return redirect('reserveren')->with('warning', 'Er is iets fout gegaan');
         }
     }
 
+    public function reservations()
+    {
+        $reservations = Reservation::all();
+        $names = array();
+        foreach ($reservations as $reservation) {
+            $user = User::find($reservation->user_id);
+            array_push($names, [
+                'name' => $user->name,
+                'last_name' => $user->last_name
+            ]);
+        }
+        //dd($names[0]['name']);
+        return view('admin.reservations', ['reservations' => $reservations, 'names' => $names]);
+    }
 
+    public function addReservationView()
+    {
+        $courts = Court::all();
+        return view('admin.addReservation', ['courts' => $courts]);
+    }
+
+    public function addReservation(Request $request)
+    {
+        $request->validate([
+            'court_id' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required'
+        ]);
+        $start_time = Carbon::createFromTimestamp($request->start_time);
+        $end_time = Carbon::createFromTimestamp($request->start_time);
+
+        $reservations = Reservation::all()->where('court_id', $request->court_id);
+
+        foreach ($reservations as $reservation) {
+            if ($start_time->between($reservation->start_time, $reservation->end_time)) {
+                return redirect()->back()->with('error', "Deze baan is niet beschikbaar op dit tijdstip");
+            }
+            if ($end_time->between($reservation->start_time, $reservation->end_time)) {
+                return redirect()->back()->with('error', "Deze baan is niet beschikbaar op dit tijdstip");
+            }
+
+
+
+            /* $range = [$start_time, $end_time];
+           $range = ['start_time', 'end_time'];
+           $test = Reservation::whereBetween('start_time', $start_time, $range)->get();
+           $test2 = Reservation::whereBetween('end_time', $end_time, $range)->get();
+           dd($test); */
+
+           /* $start_time = Carbon::createFromTimestamp($request->start_time);
+            $end_time = Carbon::createFromTimestamp($request->end_time);
+            foreach ($reservations as $reservation) {
+                if ($start_time->between($reservation->start_time, $reservation->end_time)) {
+                    return redirect()->back()->with('error', "Deze baan is niet beschikbaar op dit tijdstip");
+                }
+                if ($end_time->between($reservation->start_time, $reservation->end_time)) {
+                    return redirect()->back()->with('error', "Deze baan is niet beschikbaar op dit tijdstip");
+                }
+            } */
+        }
+
+        dd($reservations);
+
+
+        $court = new Reservation();
+        $court->court_id = $request->courtId;
+        $court->user_id = Auth::id();
+        $court->start_time = $request->start_time;
+        $court->end_time = $request->end_time;
+        $court->save();
+
+        return redirect('admin/reservations')->with('message', "Reservatie is toegevoegd");
+    }
+
+    public function editReservationView($id)
+    {
+        $courts = Court::all();
+        $reservation = Reservation::find($id);
+        return view('admin.editReservation', ['reservation' => $reservation, 'courts' => $courts]);
+    }
+
+    public function editReservation(Request $request)
+    {
+        $request->validate([
+            'id' => 'required',
+            'court_id' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required'
+        ]);
+
+        Reservation::where('id', $request->id)->update([
+            'court_id' => $request->court_id,
+            'start_time' => $request->start_time,
+            'end_time' => $request->end_time
+        ]);
+
+        return redirect('admin/reservations')->with('message', "De reservatie is aangepast.");
+    }
+
+    public function deleteReservation(Request $request)
+    {
+        $request->validate([
+            'id' => 'required',
+        ]);
+        Reservation::find($request->id)->delete();
+        return redirect('admin/reservations')->with('message', "De reservatie is verwijderd.");
+    }
 }
