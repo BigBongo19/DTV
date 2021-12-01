@@ -166,7 +166,7 @@
           <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
             <div class="box">
               <h3 style="color: #07d5c0;">Starter pakket</h3>
-              <div class="price"><sup>€</sup>5.99<span> / m</span></div>
+              <div class="price"><sup>€</sup>5.99<span> / maand</span></div>
               <img src="assets/img/pricing-free.png" class="img-fluid" alt="">
               <ul>
                 <li>Een ledenpas</li>
@@ -181,9 +181,9 @@
 
           <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="box">
-              <span class="featured">Beste prijs</span>
+              <span class="featured">Populair</span>
               <h3 style="color: #65c600;">Advanced pakket</h3>
-              <div class="price"><sup>€</sup>20<span> / m</span></div>
+              <div class="price"><sup>€</sup>19.99<span> / maand</span></div>
               <img src="assets/img/pricing-starter.png" class="img-fluid" alt="">
               <ul>
                 <li>Een ledenpas</li>
@@ -199,7 +199,7 @@
           <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
             <div class="box">
               <h3 style="color: #ff901c;">Premium pakket</h3>
-              <div class="price"><sup>€</sup>30<span> / m</span></div>
+              <div class="price"><sup>€</sup>29.99<span> / maand</span></div>
               <img src="assets/img/pricing-business.png" class="img-fluid" alt="">
               <ul>
                 <li>Een ledenpas</li>
@@ -215,7 +215,7 @@
           <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="box">
               <h3 style="color: #ff0071;">All inclusive pakket</h3>
-              <div class="price"><sup>€</sup>49.99<span> / m</span></div>
+              <div class="price"><sup>€</sup>49.95<span> / maand</span></div>
               <img src="assets/img/pricing-ultimate.png" class="img-fluid" alt="">
               <ul>
                 <li>Een ledenpas</li>

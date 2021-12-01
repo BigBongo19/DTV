@@ -54,7 +54,8 @@
 
             <ol>
                 <li><a href="/">Home</a></li>
-                <li>Toernooi</li>
+                <li><a href="/toernooien">Alle toernooien</a></li>
+                <li>{{$tournament->title}}</li>
             </ol>
             <h2>Toernooi: {{$tournament->title}}</h2>
 

@@ -9,13 +9,14 @@ use Illuminate\Http\Request;
 use App\Tournament;
 use Carbon\Carbon;
 use App\User;
+use App\Court;
 
 
 class TournamentController extends Controller
 {
     public function index()
     {
-        $tournaments = Tournament::whereDate('start_date', '>=', Carbon::now())->get();
+        $tournaments = Tournament::where('start_date', '>=', Carbon::now())->get();
         $participant_list = array();
         foreach ($tournaments as $tournament) {
             array_push($participant_list, TournamentRegistration::where('tournament_id', '=', $tournament['id'])->count());
@@ -91,6 +92,18 @@ class TournamentController extends Controller
         return view('admin.registeredTournaments', compact('registeredTournaments'));
     }
 
+    /* public function tournamentOverview()
+    {
+        return view('admin.tournamentList');
+    } */
+
+    public function addTournament()
+    {
+        $courts = Court::all();
+        return view('admin.addTournament', ['courts' => $courts]);
+    }
+
+
     public function submitTournament(Request $request)
     {
         $request->validate([
@@ -123,8 +136,12 @@ class TournamentController extends Controller
     public function getTournamentsAdmin()
     {
         $tournaments = Tournament::all();
+        $participant_list = array();
+        foreach ($tournaments as $tournament) {
+            array_push($participant_list, TournamentRegistration::where('tournament_id', '=', $tournament['id'])->count());
+        }
 
-        return view('admin.tournamentList', ['tournaments' => $tournaments]);
+        return view('admin.tournamentList', ['tournaments' => $tournaments, 'participant_list' => $participant_list]);
     }
 
     public function getTournamentById(Request $request, $id)

@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DTV Admin | Lanes</title>
+    <title>DTV Admin | Alle banen</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -54,7 +54,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">DataTable with default features</h3>
+                                <h3 class="card-title">Banen</h3>
                                 <a href="/admin/court/add" class="add-btn btn btn-success">Maak een nieuwe Baan aan</a>
                             </div>
                             <!-- /.card-header -->

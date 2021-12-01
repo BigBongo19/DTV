@@ -74,7 +74,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="inner">
                       <h3>53<sup style="font-size: 20px"></sup></h3>
 
-                      <p>Wedstrijden gespeeld</p>
+                      <p>Toernooien</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-stats-bars"></i>
@@ -113,7 +113,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                       <h3>65</h3>
 
-                      <p>Gereserveerde Banen</p>
+                      <p>Producten op menukaart</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-pie-graph"></i>
