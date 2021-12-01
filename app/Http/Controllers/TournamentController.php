@@ -151,8 +151,9 @@ class TournamentController extends Controller
         if ($tournament != null) {
             $startdate  = Carbon::parse($tournament->start_date)->format('Y-m-d\TH:i');
             $enddate    = Carbon::parse($tournament->end_date)->format('Y-m-d\TH:i');
+            $courts = Court::all();
             // dd(Session::all());
-            return view('admin.editTournament', compact('startdate', 'enddate', 'tournament'));
+            return view('admin.editTournament', compact('startdate', 'enddate', 'tournament', 'courts'));
         } else {
             return redirect('/admin/tournament/list')->with('error', 'Dit toernooi bestaat niet.');
         }
