@@ -74,9 +74,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     Op welke baan wordt het toernament gehouden?</label>
                 <select class="form-control form-select" id="baanSelect" name="selectLane">
                   <option selected value="{{$tournament->lane}}">{{$tournament->lane}}</option>
-                  <option value="baan1">baan 1</option>
-                  <option value="baan2">baan 2</option>
-                  <option value="baan3">baan 3</option>
+                    @foreach($courts as $court)
+                        <option value="{{$court->name}}">{{$court->name}}</option>
+                    @endforeach
                 </select>
             </div>
 
