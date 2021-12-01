@@ -104,7 +104,7 @@
                 <li class="nav-item">
                     <a href="/admin/tournament/registered" class="nav-link {{ (request()->is('admin/tournament/registered')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Registered Tournaments</p>
+                      <p>Tournament Registries</p>
                     </a>
                   </li>
                   <li class="nav-item">
