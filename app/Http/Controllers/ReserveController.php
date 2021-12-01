@@ -90,7 +90,7 @@ class ReserveController extends Controller
 
 
 
-        $reservation = new Reservation;
+        $reservation = new Reservation();
         $reservation->court_id = $request->court_id;
         $reservation->user_id = Auth::id();
         $reservation->start_time = $date;
@@ -142,44 +142,23 @@ class ReserveController extends Controller
             'start_time' => 'required',
             'end_time' => 'required'
         ]);
-        $start_time = Carbon::createFromTimestamp($request->start_time);
-        $end_time = Carbon::createFromTimestamp($request->start_time);
+
+        $start_time = date('Y-m-d H:i:s', strtotime($request->start_time));
+        $end_time = date('Y-m-d H:i:s', strtotime($request->start_time));
 
         $reservations = Reservation::all()->where('court_id', $request->court_id);
 
         foreach ($reservations as $reservation) {
-            if ($start_time->between($reservation->start_time, $reservation->end_time)) {
+            if ($start_time >=$reservation->start_time && $start_time <= $reservation->end_time) {
                 return redirect()->back()->with('error', "Deze baan is niet beschikbaar op dit tijdstip");
             }
-            if ($end_time->between($reservation->start_time, $reservation->end_time)) {
+            if ($end_time >=$reservation->start_time && $end_time <= $reservation->end_time) {
                 return redirect()->back()->with('error', "Deze baan is niet beschikbaar op dit tijdstip");
             }
-
-
-
-            /* $range = [$start_time, $end_time];
-           $range = ['start_time', 'end_time'];
-           $test = Reservation::whereBetween('start_time', $start_time, $range)->get();
-           $test2 = Reservation::whereBetween('end_time', $end_time, $range)->get();
-           dd($test); */
-
-           /* $start_time = Carbon::createFromTimestamp($request->start_time);
-            $end_time = Carbon::createFromTimestamp($request->end_time);
-            foreach ($reservations as $reservation) {
-                if ($start_time->between($reservation->start_time, $reservation->end_time)) {
-                    return redirect()->back()->with('error', "Deze baan is niet beschikbaar op dit tijdstip");
-                }
-                if ($end_time->between($reservation->start_time, $reservation->end_time)) {
-                    return redirect()->back()->with('error', "Deze baan is niet beschikbaar op dit tijdstip");
-                }
-            } */
         }
 
-        dd($reservations);
-
-
         $court = new Reservation();
-        $court->court_id = $request->courtId;
+        $court->court_id = $request->court_id;
         $court->user_id = Auth::id();
         $court->start_time = $request->start_time;
         $court->end_time = $request->end_time;
