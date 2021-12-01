@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DTV | Home</title>
+  <title>DTV | Reserveer een baan</title>
   <meta content="" name="description">
 
   <meta content="" name="keywords">
@@ -80,15 +80,17 @@
                         onSelect : function (dateText, inst) {
                             $('#form').submit(); // <-- SUBMIT
                         }
-
-                        });
+                    });
                 } );
                 </script>
             <div class="row reservatie">
 
                 <form id="form" action="/reserveren">
-                    <h3>Selecteer een datum om een baan te reserveren</h3>
-                <input class="form-control" name="datum" type="text" id="datepicker" autocomplete="off" placeholder="Selecteer datum">
+                    <fieldset>
+                        <h1>Wanneer wil je komen sporten?</h1>
+                        <input class="form-control" name="datum" type="text" id="datepicker" autocomplete="off" placeholder="Selecteer datum">
+                    </fieldset>
+
                 </form>
             </div>
 
