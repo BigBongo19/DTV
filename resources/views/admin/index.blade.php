@@ -110,7 +110,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           @endforeach
                       <h3>{{$countItems}}</h3>
 
-                      <p>Producten op menukaart</p>
+                      <p>Producten op de menukaart</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-pie-graph"></i>
