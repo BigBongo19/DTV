@@ -16,16 +16,28 @@ class ReserveController extends Controller
 {
     public function index(Request $request)
     {
-        $date = new Carbon($request->datum . " 23:59");
-        if ($date->isPast()) {
-            return redirect('/reserveren')->with('warning', 'Deze datum is al geweest');
-        }
+
         if (isset($request->datum)) {
+
+
+
+
             $date = $request->datum;
 
             $validated = $request->validate([
                 'datum' => 'required|date_format:m/d/Y',
             ]);
+            $EndDay = new Carbon($request->datum . " 23:59");
+            if ($EndDay->isPast()) {
+                return redirect('/reserveren')->with('warning', 'Deze datum is al geweest');
+            }
+
+            $lastdate = Carbon::now()->addDays(7);
+
+            if ($EndDay->gt($lastdate)) {
+                return redirect('/reserveren')->with('warning', 'Je kan niet zo ver in de toekomst reserveren');
+            }
+
             $courts = Court::all();
 
             return view('/reserve-date', compact('courts', 'date'));
@@ -46,6 +58,7 @@ class ReserveController extends Controller
         ]);
         $date = $request->datum;
         $court_id = $id;
+        $startOfDay = new Carbon($request->datum . " 00:00");
         $endOfDay = new Carbon($request->datum . " 23:59");
         if ($endOfDay->isPast()) {
             return redirect('/reserveren')->with('warning', 'Deze datum is al geweest');
@@ -66,7 +79,15 @@ class ReserveController extends Controller
             }
             $times = get_hours_range(32400, 57600, 3600, 'H:i');
 
-            return view('reservecourt', compact('times', 'date', 'court_id'));
+            $reservations = Reservation::whereBetween('start_time', [$startOfDay, $endOfDay])->get();
+            $reservationsTimes = [];
+            foreach($reservations as $reservation) {
+                $reservationsTimes[] = Carbon::parse($reservation->start_time)->format('H,i');
+              }
+
+            //   dd($reservationsTimes);
+
+            return view('reservecourt', compact('times', 'date', 'court_id', 'reservationsTimes'));
         } else {
             return redirect('reserveren')->with('warning', 'Deze baan bestaat niet');
         }
