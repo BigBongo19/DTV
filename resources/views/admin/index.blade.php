@@ -64,7 +64,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="icon">
                       <i class="ion ion-bag"></i>
                     </div>
-                    <a href="/admin/users" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/admin/users" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <!-- ./col -->
@@ -72,21 +72,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- small box -->
                   <div class="small-box bg-success">
                     <div class="inner">
-                        <?php
-                            $wedstrijdenAantal = 0;
-                        ?>
-                        @foreach ($wedstrijden as $wedstrijd)
-                        <?php
-                        $wedstrijdenAantal += 1;
-                        ?>
-                        <h3>{{$wedstrijdenAantal}}<sup style="font-size: 20px"></sup></h3>
-                        @endforeach
-                      <p>open Toernooien</p>
+                        <h3>{{$wedstrijden}}<sup style="font-size: 20px"></sup></h3>
+                      <p>Toernooien</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-stats-bars"></i>
                     </div>
-                    <a href="/admin/tournament/list" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/admin/tournament/list" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <!-- ./col -->
