@@ -48,14 +48,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- small box -->
                   <div class="small-box bg-info">
                     <div class="inner">
-                      <h3>12</h3>
-
+                        <?php
+                        $countMembers = 0;
+                        ?>
+                    @foreach ($users as $user)
+                        @if ($user->is_member == 1)
+                            <?php
+                            $countMembers += 1;
+                            ?>
+                        @endif
+                    @endforeach
+                      <h3>{{$countMembers}}</h3>
                       <p>Abonnement houders</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-bag"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/admin/users" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <!-- ./col -->
@@ -70,7 +79,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="icon">
                       <i class="ion ion-stats-bars"></i>
                     </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/admin/tournament/list" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <!-- ./col -->
@@ -78,14 +87,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- small box -->
                   <div class="small-box bg-warning">
                     <div class="inner">
-                      <h3>44</h3>
+                      <?php
+                      $countUsers = 0;
+                      ?>
+                        @foreach ($users as $user)
+                                <?php
+                                $countUsers += 1;
+                                ?>
+                        @endforeach
+                    <h3>{{$countUsers}}</h3>
 
                       <p>Geregistreede gebruikers</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-person-add"></i>
                     </div>
-                    <a href="#" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/admin/users" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <!-- ./col -->
@@ -93,6 +110,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- small box -->
                   <div class="small-box bg-danger">
                     <div class="inner">
+
                       <h3>65</h3>
 
                       <p>Gereserveerde Banen</p>
@@ -100,7 +118,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="icon">
                       <i class="ion ion-pie-graph"></i>
                     </div>
-                    <a href="#" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/admin/reservations" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <!-- ./col -->
