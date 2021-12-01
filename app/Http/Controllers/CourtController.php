@@ -52,7 +52,7 @@ class CourtController extends Controller
 
         Court::where('id', $request->id)->update([
             'name' => $request->courtName,
-            'type' => $request->courtName,
+            'type' => $request->courtType,
             'is_inside' => ($request->isInside == "on") ? 1 : 0,
         ]);
 
