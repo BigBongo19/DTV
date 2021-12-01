@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Reservation;
 use App\Court;
 use App\User;
+use App\Menu;
 
 
 
@@ -20,12 +21,12 @@ class AdminController extends Controller
         $date = date("Y-m-d");
 
         $users = User::all();
-        $banen = Reservation::whereDate('end_time', '<', Carbon::today()->toDateString());
-        $wedstrijden = Tournament::whereDate('start_time', '>', Carbon::today()->toDateString());
+        $menus = Menu::all();
+        $wedstrijden = Tournament::where('start_date', '>', Carbon::today()->toDateString())->get();
 
         return view('admin.index', [
             'users' => $users,
-            'banen' => $banen,
+            'menus' => $menus,
             'wedstrijden' => $wedstrijden
         ]);
     }

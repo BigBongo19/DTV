@@ -72,9 +72,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- small box -->
                   <div class="small-box bg-success">
                     <div class="inner">
-                      <h3>53<sup style="font-size: 20px"></sup></h3>
-
-                      <p>Toernooien</p>
+                        <?php
+                            $wedstrijdenAantal = 0;
+                        ?>
+                        @foreach ($wedstrijden as $wedstrijd)
+                        <?php
+                        $wedstrijdenAantal += 1;
+                        ?>
+                        <h3>{{$wedstrijdenAantal}}<sup style="font-size: 20px"></sup></h3>
+                        @endforeach
+                      <p>open Toernooien</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-stats-bars"></i>
@@ -110,15 +117,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- small box -->
                   <div class="small-box bg-danger">
                     <div class="inner">
-
-                      <h3>65</h3>
+                        <?php
+                        $countItems = 0;
+                        ?>
+                          @foreach ($menus as $menu)
+                                  <?php
+                                  $countItems += 1;
+                                  ?>
+                          @endforeach
+                      <h3>{{$countItems}}</h3>
 
                       <p>Producten op menukaart</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-pie-graph"></i>
                     </div>
-                    <a href="/admin/reservations" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/admin/menu" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <!-- ./col -->
