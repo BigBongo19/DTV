@@ -118,6 +118,11 @@
   max: [{{end($times)}}],
   formatSubmit: 'HH:i',
   interval: 60,
+  disable: [
+    @foreach ($reservationsTimes as $key => $value)
+        [{{$reservationsTimes[$key]}}],
+    @endforeach
+  ]
 
 })
     // picker.open()

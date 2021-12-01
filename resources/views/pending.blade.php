@@ -87,7 +87,7 @@
                 <div class="alert alert-warning d-flex align-items-center" role="alert">
                     <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" role="img" width="24" height="24"></i>
                     <div>
-                     Om zoveel mogelijk banen beschikbaar te stellen, kunt je maar 1x per dag een baan reserveren.
+                     Om zoveel mogelijk banen beschikbaar te stellen kunt u maar 1 reservatie hebben.
                     </div>
                   </div>
             <div class="row reservatie">
