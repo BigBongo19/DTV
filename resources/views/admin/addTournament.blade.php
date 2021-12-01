@@ -62,7 +62,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             Titel
                         </label>
                         <input type="text" class="form-control" id="inputTitle" name="titleTournament">
-
                     </div>
 
                     <div class="mb-3">
@@ -81,7 +80,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <option value="{{$court->name}}">{{$court->name}}</option>
                             @endforeach
                         </select>
-
                     </div>
 
                     <div class="mb-3">
