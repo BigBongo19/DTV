@@ -77,7 +77,7 @@
                 <form method="POST" action="/reserveren/bevestigen">
                     @csrf
                     <fieldset>
-                        <h3><label for="input_01">Kies een tijd om deze baan de reserveren</label></h3>
+                        <h1><label for="input_01">Kies een tijd om deze baan de reserveren</label></h1>
                         <input
                             id="input_from"
                             class="datepicker form-control"
