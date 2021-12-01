@@ -54,7 +54,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">DataTable with default features</h3>
+                                <h3 class="card-title">Reservaties</h3>
                                 <a href="/admin/reservation/add" class="add-btn btn btn-success">Maak een nieuwe reservatie aan</a>
                             </div>
                             <!-- /.card-header -->
