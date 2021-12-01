@@ -205,38 +205,6 @@ class AdminController extends Controller
         return view('admin.addReservation', ['courts' => $courts]);
     }
 
-    public function addReservation(Request $request)
-    {
-        $request->validate([
-            'court_id' => 'required',
-            'start_time' => 'required',
-            'end_time' => 'required'
-        ]);
-
-        $start_time = date('Y-m-d H:i:s', strtotime($request->start_time));
-        $end_time = date('Y-m-d H:i:s', strtotime($request->start_time));
-
-        $reservations = Reservation::all()->where('court_id', $request->court_id);
-
-        foreach ($reservations as $reservation) {
-            if ($start_time >=$reservation->start_time && $start_time <= $reservation->end_time) {
-                return redirect()->back()->with('error', "Deze baan is niet beschikbaar op dit tijdstip");
-            }
-            if ($end_time >=$reservation->start_time && $end_time <= $reservation->end_time) {
-                return redirect()->back()->with('error', "Deze baan is niet beschikbaar op dit tijdstip");
-            }
-        }
-
-        $court = new Reservation();
-        $court->court_id = $request->court_id;
-        $court->user_id = Auth::id();
-        $court->start_time = $request->start_time;
-        $court->end_time = $request->end_time;
-        $court->save();
-
-        return redirect('admin/reservations')->with('message', "Reservatie is toegevoegd");
-    }
-
     public function editReservationView($id)
     {
         $courts = Court::all();

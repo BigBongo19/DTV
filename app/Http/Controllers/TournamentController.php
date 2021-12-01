@@ -135,7 +135,7 @@ class TournamentController extends Controller
 
     public function getTournamentsAdmin()
     {
-        $tournaments = Tournament::whereDate('start_date', '>=', Carbon::now())->get();
+        $tournaments = Tournament::all();
         $participant_list = array();
         foreach ($tournaments as $tournament) {
             array_push($participant_list, TournamentRegistration::where('tournament_id', '=', $tournament['id'])->count());
