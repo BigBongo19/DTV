@@ -151,90 +151,9 @@
       </div>
     </section><!-- End Counts Section -->
 
-    <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
 
-      <div class="container" data-aos="fade-up">
 
-        <header class="section-header">
-          <h2>Financieel</h2>
-          <p>Bekijk onze tarieven</p>
-        </header>
-
-        <div class="row gy-4" data-aos="fade-left">
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h3 style="color: #07d5c0;">Starter pakket</h3>
-              <div class="price"><sup>€</sup>5.99<span> / maand</span></div>
-              <img src="assets/img/pricing-free.png" class="img-fluid" alt="">
-              <ul>
-                <li>Een ledenpas</li>
-                <li>Gratis gebruik van douches</li>
-                <li>Groot aanbod aan tennisbanen</li>
-                <li class="na">50% korting op drankjes aan de bar</li>
-                <li class="na">50% korting op groepslessen</li>
-              </ul>
-              <a href="#" class="btn-buy">Koop nu</a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="box">
-              <span class="featured">Populair</span>
-              <h3 style="color: #65c600;">Advanced pakket</h3>
-              <div class="price"><sup>€</sup>19.99<span> / maand</span></div>
-              <img src="assets/img/pricing-starter.png" class="img-fluid" alt="">
-              <ul>
-                <li>Een ledenpas</li>
-                <li>Gratis gebruik van douches</li>
-                <li>Groot aanbod aan tennisbanen</li>
-                <li>50% korting op drankjes aan de bar</li>
-                <li class="na">50% korting op groepslessen</li>
-              </ul>
-              <a href="#" class="btn-buy">Koop nu</a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="box">
-              <h3 style="color: #ff901c;">Premium pakket</h3>
-              <div class="price"><sup>€</sup>29.99<span> / maand</span></div>
-              <img src="assets/img/pricing-business.png" class="img-fluid" alt="">
-              <ul>
-                <li>Een ledenpas</li>
-                <li>Gratis gebruik van douches</li>
-                <li>Groot aanbod aan tennisbanen</li>
-                <li>50% korting op drankjes aan de bar</li>
-                <li>50% korting op groepslessen</li>
-              </ul>
-              <a href="#" class="btn-buy">Koop nu</a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="box">
-              <h3 style="color: #ff0071;">All inclusive pakket</h3>
-              <div class="price"><sup>€</sup>49.95<span> / maand</span></div>
-              <img src="assets/img/pricing-ultimate.png" class="img-fluid" alt="">
-              <ul>
-                <li>Een ledenpas</li>
-                <li>Gratis gebruik van douches</li>
-                <li>Groot aanbod aan tennisbanen</li>
-                <li>Gratis drankjes aan de bar</li>
-                <li>Gratis groepslessen</li>
-              </ul>
-              <a href="#" class="btn-buy">Koop nu</a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- End Pricing Section -->
-
-    <!-- ======= Contact Section ======= -->
+    {{-- <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
 
       <div class="container" data-aos="fade-up">
@@ -274,7 +193,7 @@
                 <div class="info-box">
                   <i class="bi bi-clock"></i>
                   <h3>Openeningstijden</h3>
-                  <p>Maandag - Vrijdag<br>10:00 - 21:00</p>
+                  <p>Maandag - Zondag<br>09:00 - 17:00</p>
                 </div>
               </div>
             </div>
@@ -318,7 +237,7 @@
 
       </div>
 
-    </section><!-- End Contact Section -->
+    </section><!-- End Contact Section --> --}}
 
   </main><!-- End #main -->
 
