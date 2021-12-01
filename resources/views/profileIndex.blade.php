@@ -117,10 +117,10 @@
                     </div>
                 </div>
 
-                <div class="profile-reservations">
+                <div class="account-reservations">
                     <h1>Reserveringen</h1>
 
-                    <h2 class="mt-4 mb-4">Toernooien</h2>
+                    <h2>Toernooien:</h2>
 
                     @if (count($resTournaments) == 0)
                     <table>
@@ -143,7 +143,7 @@
                     </table>
                     @endif
 
-                    <h2 class="mt-4 mb-4">Banen</h2>
+                    <h2>Banen:</h2>
 
                     @if (count($resCourts) == 0)
                     <table>
