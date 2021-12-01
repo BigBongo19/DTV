@@ -2152,8 +2152,14 @@ main .container .account-details-change .account-options .profile-update form .r
 }
 
 main .container .account-details-change .account-options .profile-update form .row:nth-child(6) .col .btn{
+    background: #4154F1;
     width: 150px;
     float: right;
+    transition: 0.2s ease-in-out;
+}
+
+main .container .account-details-change .account-options .profile-update form .row:nth-child(6) .col .btn:hover{
+    background: #2f3db4;
 }
 
 main .container .account-details-change .account-options .profile-update form .delete .col,
@@ -2555,4 +2561,33 @@ a:hover {
 
 .addTournament {
     float: right;
+}
+
+main .container .changePass .modal-content .modal-header{
+    background: #4154F1;
+    color: white;
+}
+
+main .container .changePass .modal-content .modal-body form{
+    height: 250px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+main .container .changePass .modal-content .modal-body form .form-group > label{
+    font-weight: bold;
+}
+
+main .container .changePass .modal-content .modal-footer button{
+    height: 33.5px;
+    width: 150px;
+    background: #4154F1;
+    border: #4154F1;
+    border-radius: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+main .container .changePass .modal-content .modal-footer button:hover{
+    background: #2f3db4;
 }
