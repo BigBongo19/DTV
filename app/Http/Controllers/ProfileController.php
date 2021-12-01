@@ -35,8 +35,8 @@ class ProfileController extends Controller
         $user->phone_number = $request->phone;
         $user->gender = $request->gender;
         $user->save();
-        session()->flash('message','Uw gegevens zijn aangepast');
-        return back();
+        // session()->flash('message','Uw gegevens zijn aangepast');
+        return redirect('/profile')->with('message','Uw gegevens zijn aangepast');
     }
 
     public function editPassword(Request $request){

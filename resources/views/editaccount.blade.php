@@ -158,35 +158,38 @@
                 </div>
             </section>
 
-            <div class="modal fade" tabindex="-1" id="modalDelete" data-bs-backdrop="static"
+            <div class="modal fade changePass" tabindex="-1" id="modalDelete" data-bs-backdrop="static"
                 data-bs-keyboard="false">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Wachtwoord wijzigen</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <form data-parsley-validate class="form-horizontal form-label-left"
                                 action="/edit-profile/submitpassword" method="post">
                                 @csrf
                                 <div class="form-group" style="margin-bottom: 5px">
+                                    <label for="oldPass">Huidig wachtwoord</label>
                                     <input type="password" class="form-control"
-                                        placeholder="Uw huidige wachtwoord" name="oldpassword">
+                                        placeholder="" name="oldpassword" id="oldPass">
                                 </div>
 
                                 <div class="form-group" style="margin-bottom: 5px">
-                                    <input type="password" placeholder="Nieuw wachtwoord"
-                                        class="form-control" name="newpassword">
+                                    <label for="newPass">Nieuw wachtwoord</label>
+                                    <input type="password" placeholder=""
+                                        class="form-control" name="newpassword" id="newPass">
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="newPassRepeat">Herhaal nieuw wachtwoord</label>
                                     <input type="password" class="form-control"
-                                        placeholder="Herhaal nieuw wachtwoord" name="password_confirmation">
+                                        placeholder="" name="password_confirmation" id="newPassRepeat">
                                 </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="submit" class="btn btn-primary">Aanpassen</button>
 
                             </form>
                         </div>
