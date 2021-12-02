@@ -169,15 +169,18 @@ class ReserveController extends Controller
         $start_time = date("Y-m-d H:00:00", $time);
         $end_time = date("Y-m-d H:00:00", $time + 3600);
 
-        $selection = Reservation::all()->where('court_id', '=', $request->court_id);
-                                //->where('start_time', '>', Carbon::now()/*$start_time*/)->get();
+        $selection = Reservation::all()->where('court_id', '=', $request->court_id)
+            ->where('start_time', '>', Carbon::now()/*$start_time*/);
         foreach ($selection as $reservation) {
             if($reservation->start_time == $start_time) {
                 return redirect()->back()->with('error', "Deze baan is op dit tijdstip al gereserveerd");
             }
         }
 
-        dd(get_defined_vars());
+        if($start_time >= Carbon::now()->addDays(7)) {
+            return redirect()->back()->with('error', "Dit tijdstip is niet binnen 7 dagen");
+        }
+
         $court = new Reservation();
         $court->court_id = $request->court_id;
         $court->user_id = Auth::id();
