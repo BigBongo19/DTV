@@ -135,12 +135,20 @@ class ReserveController extends Controller
     {
         $reservations = Reservation::all();
         $names = array();
+        $i = 0;
         foreach ($reservations as $reservation) {
             $user = User::find($reservation->user_id);
-            array_push($names, [
-                'name' => $user->name,
-                'last_name' => $user->last_name
-            ]);
+
+            if($user != null) {
+                array_push($names, [
+                    'name' => $user->name,
+                    'last_name' => $user->last_name
+                ]);
+            } else {
+                Reservation::where('id', '=', $reservation->id)->delete();
+                unset($reservations[$i]);
+            }
+            $i++;
         }
         return view('admin.reservations', ['reservations' => $reservations, 'names' => $names]);
     }
