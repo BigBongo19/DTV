@@ -58,7 +58,6 @@
                                             <th>Geregistereerd door</th>
                                             <th>Gebruiker ID</th>
                                             <th>Toernooi ID</th>
-                                            <th>Actie</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -68,14 +67,6 @@
                                                 <td>{{ $registeredTournament->registered_by}}</td>
                                                 <td>{{ $registeredTournament->user_id }}</td>
                                                 <td>{{ $registeredTournament->tournament_id }}</td>
-                                                <td>
-                                                    <a href="edit/{{ $registeredTournament->id }}" class="mr-2 ml-2"><i class="fas fa-edit"></i></a>
-
-                                                    <form method="POST" action="/admin/tournament/registered/delete/{{ $registeredTournament->id }}" accept-charset="UTF-8" style="display: inline;"><input name="_method" type="hidden">
-                                                        @csrf
-                                                        <span onclick="deleteEntity(this)"><i class="fas fa-trash" style="color: red"></i></span>
-                                                    </form>
-                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
