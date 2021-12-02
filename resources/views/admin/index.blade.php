@@ -48,44 +48,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- small box -->
                   <div class="small-box bg-info">
                     <div class="inner">
-                        <?php
-                        $countMembers = 0;
-                        ?>
-                    @foreach ($users as $user)
-                        @if ($user->is_member == 1)
-                            <?php
-                            $countMembers += 1;
-                            ?>
-                        @endif
-                    @endforeach
-                      <h3>{{$countMembers}}</h3>
-                      <p>Abonnement houders</p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-bag"></i>
-                    </div>
-                    <a href="/admin/users" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="small-box bg-success">
-                    <div class="inner">
-                      <h3>{{$tournament_count}}<sup style="font-size: 20px"></sup></h3>
-                      <p>Toernooien</p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-stats-bars"></i>
-                    </div>
-                    <a href="/admin/tournament/list" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="small-box bg-warning">
-                    <div class="inner">
                       <?php
                       $countUsers = 0;
                       ?>
@@ -96,10 +58,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         @endforeach
                     <h3>{{$countUsers}}</h3>
 
-                      <p>Geregistreede gebruikers</p>
+                      <p>Geregistreerde klanten</p>
                     </div>
                     <div class="icon">
-                      <i class="ion ion-person-add"></i>
+                      <i class="ion ion-bag"></i>
                     </div>
                     <a href="/admin/users" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
@@ -107,19 +69,48 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                   <!-- small box -->
+                  <div class="small-box bg-success">
+                    <div class="inner">
+                      <h3>{{$wedstrijden}}<sup style="font-size: 20px"></sup></h3>
+                      <p>Actieve toernooien</p>
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a href="/admin/tournament/list" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
+                  </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                  <!-- small box -->
+                  <div class="small-box bg-warning">
+                    <div class="inner">
+                      @php $countReservations = 0; @endphp
+                        @foreach ($reservations as $reservation)
+                            @php $countReservations += 1; @endphp
+                        @endforeach
+                    <h3>{{$countReservations}}</h3>
+
+                      <p>Banen gereserveerd</p>
+                    </div>
+                    <div class="icon">
+                      <i class="ion ion-person-add"></i>
+                    </div>
+                    <a href="/admin/reservations" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
+                  </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                  <!-- small box -->
                   <div class="small-box bg-danger">
                     <div class="inner">
-                        <?php
-                        $countItems = 0;
-                        ?>
+                        @php $countItems = 0; @endphp
                           @foreach ($menus as $menu)
-                                  <?php
-                                  $countItems += 1;
-                                  ?>
+                                  @php $countItems += 1; @endphp
                           @endforeach
                       <h3>{{$countItems}}</h3>
 
-                      <p>Producten op menukaart</p>
+                      <p>Producten op de menukaart</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-pie-graph"></i>

@@ -30,6 +30,8 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
+    <script src="/plugins/jquery/jquery.min.js"></script>
+
     <!-- =======================================================
   * Template Name: FlexStart - v1.7.0
   * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
