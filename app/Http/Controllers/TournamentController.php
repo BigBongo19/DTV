@@ -32,13 +32,20 @@ class TournamentController extends Controller
         }
         $participant_registrations = $this->getParticipants($id);
         $participants = array();
-
+        $i = 0;
         foreach ($participant_registrations as $registration) {
             $user = User::find($registration->user_id);
-            array_push($participants, [
-                'name' => $user->name,
-                'last_name' => $user->last_name,
-                'registration_date' => $registration->created_at]);
+            if($user != null) {
+                array_push($participants, [
+                    'name' => $user->name,
+                    'last_name' => $user->last_name,
+                    'registration_date' => $registration->created_at]);
+            } else {
+                //dd(get_defined_vars());
+                TournamentRegistration::where('id', '=', $registration->id)->delete();
+                unset($participant_registrations[$i]);
+            }
+            $i++;
         }
         return view('tournament-detail', [
             'tournament' => $tournament,
