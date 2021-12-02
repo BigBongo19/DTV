@@ -56,6 +56,7 @@
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
+                                            <th>ID</th>
                                             <th>Titel</th>
                                             <th>Start datum</th>
                                             <th>Eind datum</th>
@@ -71,6 +72,7 @@
                                         @foreach ($tournaments as $tournament)
                                             @php($participants = $participant_list[$i])
                                                 <tr>
+                                                    <td>{{ $tournament->id }}</td>
                                                     <td>{{ $tournament->title }}</td>
                                                     <td>{{ $tournament->start_date }}</td>
                                                     <td>{{ $tournament->end_date }}</td>
