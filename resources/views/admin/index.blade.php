@@ -85,18 +85,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- small box -->
                   <div class="small-box bg-warning">
                     <div class="inner">
-                      @php $countReservations = 0; @endphp
-                        @foreach ($reservations as $reservation)
-                            @php $countReservations += 1; @endphp
+                        <?php
+                        $countMembers = 0;
+                      ?>
+                        @foreach ($users as $user)
+                                <?php
+                                if ($user->is_member == 1) {
+                                    $countMembers += 1;
+                                }
+                                ?>
                         @endforeach
-                    <h3>{{$countReservations}}</h3>
+                    <h3>{{$countMembers}}<sup style="font-size: 20px"></sup></h3>
 
-                      <p>Banen gereserveerd</p>
+                      <p>club leden</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-person-add"></i>
                     </div>
-                    <a href="/admin/reservations" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/admin/users" class="small-box-footer">Meer info <i class="fas fa-arrow-circle-right"></i></a>
                   </div>
                 </div>
                 <!-- ./col -->
