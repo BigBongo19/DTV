@@ -88,7 +88,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/court" class="nav-link  {{ (request()->is('admin/courts')) ? 'active' : '' }}">
+                <a href="/admin/court" class="nav-link  {{ (request()->is('admin/court')) ? 'active' : '' }}">
                     <i class="fas fa-flag nav-icon"></i>
                     <p>Banen</p>
                 </a>
