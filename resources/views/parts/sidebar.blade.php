@@ -84,19 +84,19 @@
               <li class="nav-item">
                 <a href="/admin/users" class="nav-link  {{ (request()->is('admin/users')) ? 'active' : '' }}">
                     <i class="fas fa-user nav-icon"></i>
-                  <p>Users</p>
+                  <p>Gebruikers</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="/admin/court" class="nav-link  {{ (request()->is('admin/courts')) ? 'active' : '' }}">
                     <i class="fas fa-flag nav-icon"></i>
-                    <p>Courts</p>
+                    <p>Banen</p>
                 </a>
               </li>
               <li class="nav-item {{ (request()->is('admin/tournament/list') ||  request()->is('admin/tournament/registered')) ? 'menu-open' : '' }}">
                 <a href="#" class="nav-link">
                   <i class="fa fa-trophy nav-icon"></i>
-                  <p>Tournaments
+                  <p>Tournamenten
                   <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
@@ -104,13 +104,13 @@
                 <li class="nav-item">
                     <a href="/admin/tournament/registered" class="nav-link {{ (request()->is('admin/tournament/registered')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Tournament Registries</p>
+                      <p>Tournament Registraties</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="/admin/tournament/list" class="nav-link  {{ (request()->is('admin/tournament/list')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Manage Tournaments</p>
+                      <p>Alle Tournamenten</p>
                     </a>
                   </li>
                 </ul>
@@ -118,7 +118,7 @@
               <li class="nav-item">
                 <a href="/admin/reservations" class="nav-link  {{ (request()->is('admin/reservations')) ? 'active' : '' }}">
                   <i class="fa fa-calendar-check nav-icon"></i>
-                  <p>Reservations</p>
+                  <p>Reservaties</p>
                 </a>
               </li>
               <li class="nav-item">
