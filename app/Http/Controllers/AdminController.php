@@ -22,13 +22,15 @@ class AdminController extends Controller
 
         $users = User::all();
         $menus = Menu::all();
-        $wedstrijden = Tournament::where('start_date', '>', Carbon::today()->toDateString())->get();
+        $tournament_count = Tournament::where('start_date', '>=', Carbon::now())->count();
 
         return view('admin.index', [
             'users' => $users,
             'menus' => $menus,
-            'wedstrijden' => $wedstrijden
+            'tournament_count' => $tournament_count
         ]);
+
+        //return view('admin.index', compact('tournament_count'));
     }
 
     public function users()

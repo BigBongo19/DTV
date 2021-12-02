@@ -56,7 +56,7 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('/admin/reservations', 'ReserveController@reservations')->name('adminReservations');
         Route::get('/admin/reservation/add', 'ReserveController@addReservationView')->name('adminAddReservations');
-        Route::post('/admin/reservation/add', 'ReserveController@addReservation');
+        Route::post('/admin/reservation/add', 'ReserveController@addAdminReservation');
         Route::get('/admin/reservation/edit/{id}', 'ReserveController@editReservationView')->name('adminEditReservations');
         Route::post('/admin/reservation/edit/{id}', 'ReserveController@editReservation');
         Route::delete('/admin/reservation/delete/{id}', 'ReserveController@deleteReservation');

@@ -72,16 +72,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- small box -->
                   <div class="small-box bg-success">
                     <div class="inner">
-                        <?php
-                            $wedstrijdenAantal = 0;
-                        ?>
-                        @foreach ($wedstrijden as $wedstrijd)
-                        <?php
-                        $wedstrijdenAantal += 1;
-                        ?>
-                        <h3>{{$wedstrijdenAantal}}<sup style="font-size: 20px"></sup></h3>
-                        @endforeach
-                      <p>open Toernooien</p>
+                      <h3>{{$tournament_count}}<sup style="font-size: 20px"></sup></h3>
+                      <p>Toernooien</p>
                     </div>
                     <div class="icon">
                       <i class="ion ion-stats-bars"></i>

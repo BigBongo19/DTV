@@ -78,24 +78,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <i class="fas fa-exclamation-circle" style="color: red"></i>
                                 @endforeach
                             @endif
-                            Begin tijd
+                            Tijd
                         </label>
                         <input type="datetime-local" class="form-control" id="dateTournament"
-                               aria-describedby="dateHelp" name="start_time">
-                        <div id="dateHelp" class="form-text">Datum + tijd</div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="dateTournament" class="form-label">
-                            @if($errors->first('dateTournamentEnd'))
-                                @foreach ($errors->get('dateTournamentEnd') as $error)
-                                    <i class="fas fa-exclamation-circle" style="color: red"></i>
-                                @endforeach
-                            @endif
-                            Eind tijd
-                        </label>
-                        <input type="datetime-local" class="form-control" id="dateTournament"
-                               aria-describedby="dateHelp" name="end_time">
+                               aria-describedby="dateHelp" name="time">
                         <div id="dateHelp" class="form-text">Datum + tijd</div>
                     </div>
 
