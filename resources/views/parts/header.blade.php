@@ -9,7 +9,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link  {{ (request()->is('/')) ? 'active' : '' }}" href="/">Home</a></li>
-          @if (Auth::check())
+          @if (Auth::check() && Auth::user()->is_member == 1)
           <li><a class="nav-link  {{ (request()->is('reserveren')) ? 'active' : '' }}" href="/reserveren">Baan reserveren</a></li>
           <li><a class="nav-link {{ (request()->is('toernooi')) || (request()->is('toernooien')) ? 'active' : '' }}" href="/toernooien">Toernooien</a></li>
           @endif
