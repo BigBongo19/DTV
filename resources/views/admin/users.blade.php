@@ -30,12 +30,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">gebruikers</h1>
+                            <h1 class="m-0">Gebruikers</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">gebruikers</li>
+                                <li class="breadcrumb-item active">Gebruikers</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -46,12 +46,6 @@
                 <div class="row">
                     <div class="col">
                         <div class="card">
-                            <div class="card-header">
-
-                                <h3 class="d-inline-block">gebruikers</h3>
-                                <a href="menu/toevoegen" class="add-btn btn btn-success float-right">Voeg een nieuw product toe</a>
-
-                            </div>
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <table id="dt_tournaments" class="table table-bordered table-striped">
