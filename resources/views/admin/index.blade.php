@@ -71,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <!-- small box -->
                   <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>{{$wedstrijden}}<sup style="font-size: 20px"></sup></h3>
+                      <h3>{{$wedstrijden}}<sup style="font-size: 20px"></sup></h3>
                       <p>Actieve toernooien</p>
                     </div>
                     <div class="icon">

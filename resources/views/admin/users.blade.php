@@ -50,43 +50,59 @@
 
                                 <h3 class="d-inline-block">Users</h3>
                                 <a href="menu/toevoegen" class="add-btn btn btn-success float-right">Voeg een nieuw product toe</a>
+
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <table id="dt_tournaments" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                          <th>ID</th>
-                                          <th>Voornaam</th>
-                                          <th>Achternaam</th>
-                                          <th>Email</th>
-                                          <th>admin</th>
-                                          <th>abonnement</th>
-                                          <th>actie</th>
+                                            <th>ID</th>
+                                            <th>Voornaam</th>
+                                            <th>Achternaam</th>
+                                            <th>Email</th>
+                                            <th>admin</th>
+                                            <th>abonnement</th>
+                                            <th>actie</th>
                                         </tr>
-                                      </thead>
-                                      <tbody>
-                                          @foreach ($users as $user)
-                                        <tr>
-                                          <td>{{$user->id}}</td>
-                                          <td>{{$user->name}}</td>
-                                          <td>{{$user->last_name}}</td>
-                                          <td>{{$user->email}}</td>
-                                          <td>{{$user->is_admin}}</td>
-                                          <td>{{$user->is_member}}</td>
-                                          <td>
-                                            <a name="edit_id" href="/admin/users/edit/{{$user->id}}" class="mr-2 ml-2">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-                                            <form method="POST" action="/admin/deleteUser/{{$user->id}}" accept-charset="UTF-8" style="display: inline;">
-                                                <input name="_method" type="hidden">
-                                                @csrf
-                                                <span onclick="deleteEntity(this)"><i class="fas fa-trash" style="color: red"></i></span>
-                                            </form>
-                                          </td>
-                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($users as $user)
+                                            <tr>
+                                                <td>{{ $user->id }}</td>
+                                                <td>{{ $user->name }}</td>
+                                                <td>{{ $user->last_name }}</td>
+                                                <td>{{ $user->email }}</td>
+                                                <td>
+                                                    @if ($user->is_admin == 0)
+                                                        @php echo 'Nee' @endphp
+                                                    @else
+                                                        @php echo 'Ja' @endphp
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    @if ($user->is_member == 0)
+                                                        @php echo 'Nee' @endphp
+                                                    @else
+                                                        @php echo 'Ja' @endphp
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <a name="edit_id" href="/admin/users/edit/{{ $user->id }}"
+                                                        class="mr-2 ml-2">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                    <form method="POST" action="/admin/deleteUser/{{ $user->id }}"
+                                                        accept-charset="UTF-8" style="display: inline;">
+                                                        <input name="_method" type="hidden">
+                                                        @csrf
+                                                        <span onclick="deleteEntity(this)"><i class="fas fa-trash"
+                                                                style="color: red"></i></span>
+                                                    </form>
+                                                </td>
+                                            </tr>
                                         @endforeach
-                                      </tbody>
+                                    </tbody>
                                 </table>
                             </div>
                             <!-- /.card-body -->
@@ -154,27 +170,27 @@
                 "responsive": true,
             });
         });
-        window.deleteEntity = function (element, message = "Weet je zeker dat je dit wil verwijderen?") {
+        window.deleteEntity = function(element, message = "Weet je zeker dat je dit wil verwijderen?") {
             Swal.fire({
-  title: 'Weet je het zeker?',
-  text: "Je kan dit niet terugdraaien!",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Ja, verwijderen'
-}).then((result) => {
-  if (result.isConfirmed) {
+                title: 'Weet je het zeker?',
+                text: "Je kan dit niet terugdraaien!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ja, verwijderen'
+            }).then((result) => {
+                if (result.isConfirmed) {
 
-    Swal.fire(
-      'Verwijderd!',
-      'Het is verwijderd.',
-      'success'
-    )
-    $(element).closest('form').submit();
-  }
-})
-};
+                    Swal.fire(
+                        'Verwijderd!',
+                        'Het is verwijderd.',
+                        'success'
+                    )
+                    $(element).closest('form').submit();
+                }
+            })
+        };
     </script>
 </body>
 
