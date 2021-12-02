@@ -65,7 +65,7 @@ class ReserveController extends Controller
         if (Court::find($id)) {
             $times = $this->get_hours_range(32400, 57600, 3600, 'H:i');
 
-            $reservations = Reservation::whereBetween('start_time', [$startOfDay, $endOfDay])->get();
+            $reservations = Reservation::where('court_id', $id)->whereBetween('start_time', [$startOfDay, $endOfDay])->get();
             $reservationsTimes = [];
             foreach ($reservations as $reservation) {
                 $reservationsTimes[] = Carbon::parse($reservation->start_time)->format('H,i');
@@ -142,7 +142,6 @@ class ReserveController extends Controller
                 'last_name' => $user->last_name
             ]);
         }
-        //dd($names[0]['name']);
         return view('admin.reservations', ['reservations' => $reservations, 'names' => $names]);
     }
 
