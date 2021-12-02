@@ -56,20 +56,23 @@ class ProfileController extends Controller
                 $user->password = bcrypt($request->newpassword);
                 $user->save();
 
-                session()->flash('message','Uw wachtwoord is aangepast');
-                return redirect()->back();
+                /* session()->flash('message','Uw wachtwoord is aangepast');
+                return redirect()->back(); */
+                return redirect('/edit-profile')->with('message','Uw wachtwoord is aangepast');
             }
 
             else{
-                session()->flash('warning','Het nieuwe wachtwoord kan niet het zelfde als de oude zijn');
-                return redirect()->back();
+                /* session()->flash('warning','Het nieuwe wachtwoord kan niet het zelfde als de oude zijn');
+                return redirect()->back(); */
+                return redirect('/edit-profile')->with('warning','Het nieuwe wachtwoord kan niet het zelfde als de oude zijn');
             }
 
         }
 
         else{
-            session()->flash('warning','Het oude wachtwoord klopt niet');
-            return redirect()->back();
+            /* session()->flash('warning','Het oude wachtwoord klopt niet');
+            return redirect()->back(); */
+            return redirect('/edit-profile')->with('warning','Het oude wachtwoord klopt niet');
         }
     }
 
@@ -90,10 +93,12 @@ class ProfileController extends Controller
             $path = Storage::disk('public')->put('avatars', $request->file('image'));
             $user->img_path = $path;
             $user->save();
-            return redirect()->back()->with('message','Uw profielfoto is aangepast');
+            // return redirect()->back()->with('message','Uw profielfoto is aangepast');
+            return redirect('/edit-profile')->with('message','Uw profielfoto is aangepast');
         }
         else{
-            return redirect()->back()->with('error','Er is iets fout gegaan');
+            // return redirect()->back()->with('error','Er is iets fout gegaan');
+            return redirect('/edit-profile')->with('error','Er is iets fout gegaan');
         }
     }
     public function removeImage(){
@@ -101,7 +106,8 @@ class ProfileController extends Controller
         Storage::disk('public')->delete($user->img_path);
         $user->img_path = NULL;
         $user->save();
-        return redirect()->back()->with('message','Uw profielfoto is verwijderd');
+        // return redirect()->back()->with('message','Uw profielfoto is verwijderd');
+        return redirect('/edit-profile')->with('message','Uw profielfoto is verwijderd');
     }
 
     public function users()

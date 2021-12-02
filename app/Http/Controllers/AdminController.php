@@ -18,16 +18,18 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $date = date("Y-m-d");
 
         $users = User::all();
         $menus = Menu::all();
-        $tournament_count = Tournament::where('start_date', '>=', Carbon::now())->count();
+
+        $wedstrijden = Tournament::where('start_date', '>=', Carbon::now())->count();
+        $reservations = Reservation::all();
 
         return view('admin.index', [
             'users' => $users,
             'menus' => $menus,
-            'tournament_count' => $tournament_count
+            'wedstrijden' => $wedstrijden,
+            'reservations' => $reservations
         ]);
 
         //return view('admin.index', compact('tournament_count'));
