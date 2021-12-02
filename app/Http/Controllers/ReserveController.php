@@ -20,8 +20,6 @@ class ReserveController extends Controller
         if (isset($request->datum)) {
 
 
-
-
             $date = $request->datum;
 
             $validated = $request->validate([
@@ -65,32 +63,31 @@ class ReserveController extends Controller
         }
 
         if (Court::find($id)) {
-            function get_hours_range($start = 0, $end = 86400, $step = 3600, $format = 'g:i a')
-            {
-                $times = array();
-                foreach (range($start, $end, $step) as $timestamp) {
-                    $hour_mins = gmdate('H,i', $timestamp);
-                    if (!empty($format))
-                        $times[$hour_mins] = $hour_mins;
-                    else $times[$hour_mins] = $hour_mins;
-                }
-
-                return $times;
-            }
-            $times = get_hours_range(32400, 57600, 3600, 'H:i');
+            $times = $this->get_hours_range(32400, 57600, 3600, 'H:i');
 
             $reservations = Reservation::whereBetween('start_time', [$startOfDay, $endOfDay])->get();
             $reservationsTimes = [];
-            foreach($reservations as $reservation) {
+            foreach ($reservations as $reservation) {
                 $reservationsTimes[] = Carbon::parse($reservation->start_time)->format('H,i');
-              }
-
-            //   dd($reservationsTimes);
+            }
 
             return view('reservecourt', compact('times', 'date', 'court_id', 'reservationsTimes'));
         } else {
             return redirect('reserveren')->with('warning', 'Deze baan bestaat niet');
         }
+    }
+
+    function get_hours_range($start = 0, $end = 86400, $step = 3600, $format = 'g:i a')
+    {
+        $times = array();
+        foreach (range($start, $end, $step) as $timestamp) {
+            $hour_mins = gmdate('H,i', $timestamp);
+            if (!empty($format))
+                $times[$hour_mins] = $hour_mins;
+            else $times[$hour_mins] = $hour_mins;
+        }
+
+        return $times;
     }
 
     public function ConfirmReservation(Request $request)
@@ -108,7 +105,6 @@ class ReserveController extends Controller
         if ($date->isPast()) {
             return back()->with('warning', 'Deze datum is al geweest');
         }
-
 
 
         $reservation = new Reservation();
@@ -153,36 +149,33 @@ class ReserveController extends Controller
     public function addReservationView()
     {
         $courts = Court::all();
-        return view('admin.addReservation', ['courts' => $courts]);
+        return view('admin.addReservation', compact('courts'));
     }
 
-    public function addReservation(Request $request)
+    public function addAdminReservation(Request $request)
     {
         $request->validate([
             'court_id' => 'required',
-            'start_time' => 'required',
-            'end_time' => 'required'
+            'time' => 'required'
         ]);
+        $time = strtotime($request->time);
+        $start_time = date("Y-m-d H:00:00", $time);
+        $end_time = date("Y-m-d H:00:00", $time + 3600);
 
-        $start_time = date('Y-m-d H:i:s', strtotime($request->start_time));
-        $end_time = date('Y-m-d H:i:s', strtotime($request->start_time));
-
-        $reservations = Reservation::all()->where('court_id', $request->court_id);
-
-        foreach ($reservations as $reservation) {
-            if ($start_time >=$reservation->start_time && $start_time <= $reservation->end_time) {
-                return redirect()->back()->with('error', "Deze baan is niet beschikbaar op dit tijdstip");
-            }
-            if ($end_time >=$reservation->start_time && $end_time <= $reservation->end_time) {
-                return redirect()->back()->with('error', "Deze baan is niet beschikbaar op dit tijdstip");
+        $selection = Reservation::all()->where('court_id', '=', $request->court_id);
+                                //->where('start_time', '>', Carbon::now()/*$start_time*/)->get();
+        foreach ($selection as $reservation) {
+            if($reservation->start_time == $start_time) {
+                return redirect()->back()->with('error', "Deze baan is op dit tijdstip al gereserveerd");
             }
         }
 
+        dd(get_defined_vars());
         $court = new Reservation();
         $court->court_id = $request->court_id;
         $court->user_id = Auth::id();
-        $court->start_time = $request->start_time;
-        $court->end_time = $request->end_time;
+        $court->start_time = $start_time;
+        $court->end_time = $end_time;
         $court->save();
 
         return redirect('admin/reservations')->with('message', "Reservatie is toegevoegd");
